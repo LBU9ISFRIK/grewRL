@@ -30,7 +30,10 @@ import ruamel.yaml as yaml
 #  print("normal ====================================================")
 
 import tensorflow.compat.v1 as tf
-from . import tools
+#tf.enable_eager_execution()
+tf.disable_eager_execution()
+tf.disable_v2_behavior()
+import tools
 
 
 def define_simulation_graph(batch_env, algo_cls, config):
@@ -45,9 +48,6 @@ def define_simulation_graph(batch_env, algo_cls, config):
     Object providing graph elements via attributes.
   """
   # pylint: disable=unused-variable
-
-  #tf.enable_eager_execution()
-  tf.disable_eager_execution()
 
   step = tf.Variable(0, False, dtype=tf.int32, name='global_step')
   is_training = tf.placeholder(tf.bool, name='is_training')
@@ -102,7 +102,6 @@ def define_saver(exclude=None):
     variables.append(variable)
   saver = tf.train.Saver(variables, keep_checkpoint_every_n_hours=5)
   return saver
-
 
 def initialize_variables(sess, saver, logdir, checkpoint=None, resume=None):
   """Initialize or restore variables from a checkpoint if available.
