@@ -1,0 +1,17 @@
+<mujoco model="cloth_practice">
+  <include file="scene_practice.xml"/>
+
+
+  <size nconmax="300" njmax="1000" nstack="1000000"/>
+  <worldbody>
+    <body name="B3_5" pos="0 0 1">
+      <freejoint />
+      <composite type="cloth" count="10 10 1" spacing="0.05" flatinertia="0.01">
+        <joint kind="main" damping="0.001"/>
+
+        <skin material="matcarpet" texcoord="true" inflate="0.005" subgrid="0.001"/>
+        <geom type="capsule" size="0.015 0.01" rgba=".8 .2 .1 1"/>
+      </composite>
+    </body>
+  </worldbody>
+</mujoco>
