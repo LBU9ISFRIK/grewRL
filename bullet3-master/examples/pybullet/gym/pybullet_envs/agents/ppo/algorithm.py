@@ -70,6 +70,7 @@ class PPOAlgorithm(object):
     with tf.device('/gpu:0' if use_gpu else '/cpu:0'):
       # Create network variables for later calls to reuse.
       action_size = self._batch_env.action.shape[1].value
+      #action_size = self._batch_env.action.shape[1]
       self._network = tf.make_template('network',
                                        functools.partial(config.network, config, action_size))
       output = self._network(

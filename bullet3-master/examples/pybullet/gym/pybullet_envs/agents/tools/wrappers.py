@@ -326,9 +326,7 @@ class ExternalProcess(object):
     self._conn, conn = multiprocessing.Pipe()
     self._process = multiprocessing.Process(target=self._worker, args=(constructor, conn))
     atexit.register(self.close)
-    print("process start ==================================================== ")
     self._process.start()
-    print("process start ==================================================== ")
 
     self._observ_space = None
     self._action_space = None

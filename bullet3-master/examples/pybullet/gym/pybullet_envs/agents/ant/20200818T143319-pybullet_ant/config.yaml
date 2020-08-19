@@ -1,0 +1,36 @@
+!!python/object/new:tools.attr_dict.AttrDict
+dictitems:
+  algorithm: !!python/name:ppo.algorithm.PPOAlgorithm ''
+  discount: 0.995
+  env: AntBulletEnv-v0
+  eval_episodes: 30
+  init_logstd: -1
+  init_mean_factor: 0.1
+  kl_cutoff_coef: 1000
+  kl_cutoff_factor: 2
+  kl_init_penalty: 1
+  kl_target: 0.01
+  learning_rate: 0.0001
+  logdir: ant\20200818T143319-pybullet_ant
+  max_length: 1000
+  network: !!python/name:networks.feed_forward_gaussian ''
+  num_agents: 30
+  optimizer: !!python/name:tensorflow.python.training.adam.AdamOptimizer ''
+  policy_layers: !!python/tuple
+  - 200
+  - 100
+  steps: 50000000.0
+  update_epochs: 25
+  update_epochs_policy: 64
+  update_epochs_value: 64
+  update_every: 30
+  use_gpu: false
+  value_layers: !!python/tuple
+  - 200
+  - 100
+  weight_summaries:
+    all: .*
+    policy: .*/policy/.*
+    value: .*/value/.*
+state:
+  _mutable: false

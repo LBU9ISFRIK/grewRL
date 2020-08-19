@@ -31,9 +31,9 @@ try:
 except Exception:
   import tensorflow as tf
 
-from . import tools
-from . import configs
-from . import utility
+import tools
+import configs
+import utility
 
 
 def _create_environment(config):
@@ -46,6 +46,9 @@ def _create_environment(config):
     Wrapped OpenAI Gym environment.
   """
   if isinstance(config.env, str):
+    print("====================================================")
+    #print(gym.__file__)
+    print(config.env)
     env = gym.make(config.env)
   else:
     env = config.env()
@@ -104,6 +107,9 @@ def train(config, env_processes):
   Yields:
     Evaluation scores.
   """
+
+  print(config)
+
   print("train ==================================================== ")
   tf.reset_default_graph()
   if config.update_every % config.num_agents:
@@ -133,6 +139,7 @@ def train(config, env_processes):
 
   with tf.Session(config=sess_config) as sess:
     utility.initialize_variables(sess, saver, config.logdir)
+    #saver.restore(sess, "ant/20200818T151509-pybullet_ant/model.ckpt-2400000")
     for score in loop.run(sess, saver, total_steps):
       yield score
   batch_env.close()

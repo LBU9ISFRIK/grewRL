@@ -51,8 +51,6 @@ def main():
       time.sleep(1. / 60.)
       a = pi.act(obs)
       obs, r, done, _ = env.step(a)
-      #print("reward")
-      #print(r)
       score += r
       frame += 1
       distance = 5

@@ -33,10 +33,14 @@ class WalkerBase(MJCFBasedRobot):
       j.set_motor_torque(self.power * j.power_coef * float(np.clip(a[n], -1, +1)))
 
   def calc_state(self):
+    #for i in self.ordered_joints:
+    #    a = i.current_relative_position()
+
     j = np.array([j.current_relative_position() for j in self.ordered_joints],
                  dtype=np.float32).flatten()
     # even elements [0::2] position, scaled to -1..+1 between limits
     # odd elements  [1::2] angular speed, scaled to show -1..+1
+    print("==================================================")
     self.joint_speeds = j[1::2]
     self.joints_at_limit = np.count_nonzero(np.abs(j[0::2]) > 0.99)
 
@@ -73,6 +77,13 @@ class WalkerBase(MJCFBasedRobot):
             p
         ],
         dtype=np.float32)
+
+    #str = ""
+    #for i in range(len(more)):
+    #    str += i, " : ", more[i]
+
+    #print(more)
+    #print(j)
     return np.clip(np.concatenate([more] + [j] + [self.feet_contact]), -5, +5)
 
   def calc_potential(self):
@@ -80,14 +91,10 @@ class WalkerBase(MJCFBasedRobot):
     # all rewards have rew/frame units and close to 1.0
     debugmode = 0
     if (debugmode):
-      print("calc_potential: self.walk_target_dist")
-      print(self.walk_target_dist)
-      print("self.scene.dt")
-      print(self.scene.dt)
-      print("self.scene.frame_skip")
-      print(self.scene.frame_skip)
-      print("self.scene.timestep")
-      print(self.scene.timestep)
+      print("calc_potential: self.walk_target_dist=",self.walk_target_dist)
+      print("self.scene.dt=",self.scene.dt)
+      print("self.scene.frame_skip=",self.scene.frame_skip)
+      print("self.scene.timestep=",self.scene.timestep)
     return -self.walk_target_dist / self.scene.dt
 
 

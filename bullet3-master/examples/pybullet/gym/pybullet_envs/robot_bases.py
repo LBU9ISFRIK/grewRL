@@ -348,10 +348,25 @@ class Joint:
   def current_relative_position(self):
     pos, vel = self.get_state()
     pos_mid = 0.5 * (self.lowerLimit + self.upperLimit)
-    return (2 * (pos - pos_mid) / (self.upperLimit - self.lowerLimit), 0.1 * vel)
+
+    returnPos = 2 * (pos - pos_mid) / (self.upperLimit - self.lowerLimit)
+    returnVel = 0.1 * vel
+
+    print("returnPos : ", returnPos)
+    #print("returnVel : ", returnVel)
+
+    #return (2 * (pos - pos_mid) / (self.upperLimit - self.lowerLimit), 0.1 * vel)
+    return (returnPos, returnVel)
 
   def get_state(self):
     x, vx, _, _ = self._p.getJointState(self.bodies[self.bodyIndex], self.jointIndex)
+    
+    #print("self.bodyIndex : ", self.bodyIndex) #항상 0
+    #print("self.bodies[self.bodyIndex] : ",self.bodies[self.bodyIndex]) #항상 1
+    print("self.jointIndex : ", self.jointIndex)
+    print("pos : ", x)
+    #print("vel : ", vx)
+
     return x, vx
 
   def get_position(self):
