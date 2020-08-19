@@ -32,8 +32,9 @@ try:
 except Exception:
   import tensorflow as tf
 
-from . import tools
-from . import utility
+import tools
+import configs
+import utility
 
 
 def _create_environment(config, outdir):
@@ -97,18 +98,22 @@ def visualize(logdir, outdir, num_agents, num_episodes, checkpoint=None, env_pro
     checkpoint: Checkpoint name to load; defaults to most recent.
     env_processes: Whether to step environments in separate processes.
   """
+
   config = utility.load_config(logdir)
+  
   with tf.device('/cpu:0'):
     batch_env = utility.define_batch_env(lambda: _create_environment(config, outdir), num_agents,
-                                         env_processes)
+                                         env_processes=False)
     graph = utility.define_simulation_graph(batch_env, config.algorithm, config)
     total_steps = num_episodes * config.max_length
     loop = _define_loop(graph, total_steps)
+
   saver = utility.define_saver(exclude=(r'.*_temporary/.*', r'global_step'))
   sess_config = tf.ConfigProto(allow_soft_placement=True)
   sess_config.gpu_options.allow_growth = True
   with tf.Session(config=sess_config) as sess:
-    utility.initialize_variables(sess, saver, config.logdir, checkpoint, resume=True)
+    #utility.initialize_variables(sess, saver, config.logdir, checkpoint, resume=True)
+    utility.initialize_variables(sess, saver, logdir, checkpoint, resume=True)
     for unused_score in loop.run(sess, saver, total_steps):
       pass
   batch_env.close()
@@ -119,6 +124,7 @@ def main(_):
   utility.set_up_logging()
   if not FLAGS.logdir or not FLAGS.outdir:
     raise KeyError('You must specify logging and outdirs directories.')
+
   FLAGS.logdir = os.path.expanduser(FLAGS.logdir)
   FLAGS.outdir = os.path.expanduser(FLAGS.outdir)
   visualize(FLAGS.logdir, FLAGS.outdir, FLAGS.num_agents, FLAGS.num_episodes, FLAGS.checkpoint,

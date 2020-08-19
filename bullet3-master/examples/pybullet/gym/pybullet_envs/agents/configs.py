@@ -19,8 +19,8 @@ from __future__ import print_function
 
 import functools
 
-from . import ppo
-from . import networks
+import ppo
+import networks
 from pybullet_envs.bullet import minitaur_gym_env
 from pybullet_envs.bullet import minitaur_duck_gym_env
 from pybullet_envs.bullet import minitaur_env_randomizer
@@ -36,7 +36,8 @@ def default():
   """Default configuration for PPO."""
   # General
   algorithm = ppo.PPOAlgorithm
-  num_agents = 30
+  #num_agents = 30
+  num_agents = 10
   eval_episodes = 30
   use_gpu = False
   # Network
@@ -99,7 +100,8 @@ def pybullet_cheetah():
 def pybullet_ant():
   locals().update(default())
   env = 'AntBulletEnv-v0'
-  max_length = 1000
+  #max_length = 1000
+  max_length = 5000
   steps = 5e7  # 50M
   return locals()
 
