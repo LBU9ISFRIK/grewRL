@@ -33,7 +33,8 @@ class SmallReactivePolicy:
 def main():
   env = gym.make("AntBulletEnv-v0")
 
-  env.render(mode="human")
+  #env.render(mode="human")
+  env.render()
 
   pi = SmallReactivePolicy(env.observation_space, env.action_space)
   print("obs dim : ", env.observation_space)
@@ -55,7 +56,8 @@ def main():
       frame += 1
       distance = 5
       yaw = 0
-      still_open = env.render("human")
+      #still_open = env.render("human")
+      still_open = env.render()
       if still_open == False:
         return
       if not done: continue

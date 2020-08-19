@@ -74,6 +74,8 @@ class WalkerBaseBulletEnv(MJCFBaseBulletEnv):
             state[0] + self.robot.initial_z, #현재 높이. (state[0] == 현재 높이(z) - 초기 높이)이므로 (state[0] + 초기 높이 == 현재 높이)가 된다.
             self.robot.body_rpy[1]))  # state[0] is body height above ground, body_rpy[1] is pitch
     done = self._isDone()
+    #if done:
+    #  print("done : ", done)
     if not np.isfinite(state).all():
       print("~INF~", state)
       done = True
