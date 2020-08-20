@@ -11,6 +11,9 @@ import src.policies as policies
 import random
 import string
 import socket
+import matplotlib.pyplot as plt
+import matplotlib
+import pandas as pd
 
 class Valuefun(nn.Module):
     def __init__(self, env):
@@ -29,6 +32,12 @@ class Valuefun(nn.Module):
         x = self.fc3(x)
         return x
 
+save_data=[]
+def save_csv(y):
+    
+    save_data.append(y)
+   
+    return None
 
 def train(env, policy, params):
 
@@ -39,7 +48,7 @@ def train(env, policy, params):
     batch_rewards = []
     batch_new_states = []
     batch_terminals = []
-
+   
     batch_ctr = 0
     batch_rew = 0
 
@@ -51,11 +60,16 @@ def train(env, policy, params):
 
         while not done:
             # Sample action from policy
+            #18개
             action = policy.sample_action(my_utils.to_tensor(s_0, True)).detach()
-
+            
             # Step action
             s_1, r, done, _ = env.step(action.squeeze(0).numpy())
+            
+
+            #if r<10 print
             assert r < 10, print("Large rew {}, step: {}".format(r, step_ctr))
+
             r = np.clip(r, -3, 3)
             step_ctr += 1
 
@@ -72,9 +86,14 @@ def train(env, policy, params):
             batch_terminals.append(done)
 
             s_0 = s_1
-
+            y = r
+            
         # Just completed an episode
         batch_ctr += 1
+
+        x =i
+        
+        save_csv(y)
 
         # If enough data gathered, then perform update
         if batch_ctr == params["batchsize"]:
@@ -98,7 +117,13 @@ def train(env, policy, params):
                   format(i, params["iters"], None, None, batch_rew / params["batchsize"])) # T.exp(policy.log_std)[0][0].detach().numpy())
 
             policy.decay_std(params["std_decay"])
+            
+            
 
+            print("batch_ctr : ", batch_ctr,"batch_rew : ",batch_rew)
+            print("batch_states : ", batch_states.size())
+            print("batch_actions : ",batch_actions.size())
+            print("batch_rewards : ",batch_rewards.size())
             # Finally reset all batch lists
             batch_ctr = 0
             batch_rew = 0
@@ -109,9 +134,19 @@ def train(env, policy, params):
             batch_new_states = []
             batch_terminals = []
 
+            #torch size 
+            #for param_tensor in policy.state_dict():
+            #    print(param_tensor,"\t",policy.state_dict()[param_tensor].size())
+
+            sdir = os.path.join(os.path.dirname(os.path.realpath(__file__)),
+                                "agents/{}_{}_{}_pg.p".format(env.__class__.__name__, policy.__class__.__name__, params["ID"]))
+            T.save(policy.state_dict(), sdir)
+            print("saved checkpoint at {} with params {}".format(sdir, params))
+
         if i % 500 == 0 and i > 0:
             sdir = os.path.join(os.path.dirname(os.path.realpath(__file__)),
                                 "agents/{}_{}_{}_pg.p".format(env.__class__.__name__, policy.__class__.__name__, params["ID"]))
+            
             T.save(policy.state_dict(), sdir)
             print("Saved checkpoint at {} with params {}".format(sdir, params))
 
@@ -150,6 +185,7 @@ def update_ppo(policy, policy_optim, batch_states, batch_actions, batch_advantag
             batch_states_rev[:, 12:15] = batch_states[:, 15:18]
             batch_states_rev[:, 18] = -batch_states[:, 18]
 
+            
             if batch_states.shape[1] > 19:
                 batch_states_rev[:, 18:24:2] = batch_states[:, 19:24:2]
                 batch_states_rev[:, 19:24:2] = batch_states[:, 18:24:2]
@@ -168,7 +204,7 @@ def update_ppo(policy, policy_optim, batch_states, batch_actions, batch_advantag
             actions_rev[:, 15:18] = actions[:, 12:15]
 
             loss = (actions_rev_pred - actions_rev).pow(2).mean()
-            print(loss)
+            
             policy_optim.zero_grad()
             loss.backward()
             #policy.soft_clip_grads(1.)
@@ -226,18 +262,21 @@ def calc_advantages(V, gamma, batch_states, batch_rewards, batch_next_states, ba
     Vs = V(batch_states)
     Vs_ = V(batch_next_states)
     targets = []
+    #Print(batch_states,batch_rewards,batch_next_states,batch_terminals)
     for s, r, s_, t, vs_ in zip(batch_states, batch_rewards, batch_next_states, batch_terminals, Vs_):
         if t:
             targets.append(r.unsqueeze(0))
         else:
             targets.append(r + gamma * vs_)
 
+    #print(batch_states,batch_rewards,batch_next_states,batch_terminals)
+
     return T.cat(targets) - Vs
 
 
 def calc_advantages_MC(gamma, batch_rewards, batch_terminals):
     N = len(batch_rewards)
-
+    #print(batch_rewards)
     # Monte carlo estimate of targets
     targets = []
     for i in range(N):
@@ -261,8 +300,8 @@ if __name__=="__main__":
         env_list = [sys.argv[1]]
 
     ID = ''.join(random.choices(string.ascii_uppercase + string.digits, k=3))
-    params = {"iters": 500000, "batchsize": 60, "gamma": 0.99, "policy_lr": 0.0007, "weight_decay" : 0.0001, "ppo": True,
-              "ppo_update_iters": 6, "animate": True, "train" : False, "env_list" : env_list,
+    params = {"iters": 500000, "batchsize":50, "gamma": 0.99, "policy_lr": 0.0007, "weight_decay" : 0.0001, "ppo": True,
+              "ppo_update_iters": 6, "animate": False, "train" : True, "env_list" : env_list,
               "note" : "Straight line with yaw", "ID" : ID, "std_decay" : 0.000, "target_vel" : 0.1, "use_contacts" : True, "turn_dir" : None}
 
     if socket.gethostname() == "goedel":
@@ -271,7 +310,7 @@ if __name__=="__main__":
 
     from src.envs.hexapod_trossen_terrain_all.hexapod_deploy_default import Hexapod as env
     env = env(env_list, max_n_envs=1, specific_env_len=70, s_len=120, walls=True,
-              target_vel=params["target_vel"], use_contacts=params["use_contacts"], turn_dir="LEFT")
+              target_vel=params["target_vel"], use_contacts=params["use_contacts"], turn_dir= None)
 
     # TODO: Experiment with RL algo improvement, add VF to PG
     # TODO: Experiment with decayed exploration
@@ -286,11 +325,11 @@ if __name__=="__main__":
     if params["train"]:
         print("Training")
         policy = policies.NN_PG(env, 96)
-        print(params, env.obs_dim, env.act_dim, env.__class__.__name__, policy.__class__.__name__)
+        print("p : ",params,"env.obs : ",env.obs_dim,"env.act : " ,env.act_dim, env.__class__.__name__, policy.__class__.__name__)
         train(env, policy, params)
     else:
         print("Testing")
-        policy_name = "LH3" # Try LH3 on real robot (spoof IMU and with contacts)
+        policy_name = "SL0" # Try LH3 on real robot (spoof IMU and with contacts)
         policy_path = 'agents/{}_NN_PG_{}_pg.p'.format(env.__class__.__name__, policy_name)
         policy = policies.NN_PG(env, 96)
         policy.load_state_dict(T.load(policy_path))
@@ -298,7 +337,8 @@ if __name__=="__main__":
         env.test(policy, N=10)
         print(policy_path)
 
-
-
+save_data=pd.DataFrame(save_data)
+#print(save_data)
+save_data.to_csv("test.csv")
 
 

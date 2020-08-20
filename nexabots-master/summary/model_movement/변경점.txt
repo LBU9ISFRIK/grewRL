@@ -1,0 +1,5 @@
+r_neg = np.square(q_yaw) * 0.7 + \
+                np.square(pitch) * 0.5 + \
+                np.square(roll) * 0.5 + \
+                ctrl_pen * 0.01 + \
+                np.square(zd) * 0.7

@@ -1,0 +1,12 @@
+python -m pybullet_envs.agents.train_ppo --config=pybullet_ant --logdir=ant
+
+python train_ppo.py --config=pybullet_ant --logdir=ant
+python train_ppo.py --config=pybullet_ant --logdir=ant\20200818T151509-pybullet_ant
+
+python visualize_ppo.py --config=pybullet_ant --logdir=ant\20200818T151509-pybullet_ant --outdir=ant_video2
+python visualize_ppo.py --logdir=ant\20200818T182550-pybullet_ant --outdir=ant_video2 --checkpoint=model.ckpt-18000000
+
+import_meta_graph
+
+class 'stable_baselines.common.vec_env.dummy_vec_env.DummyVecEnv'
+class 'gym.wrappers.time_limit.TimeLimit'

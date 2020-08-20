@@ -17,12 +17,13 @@ def main():
 
   while True:
     obs, done = env.reset(), False
-    print("obs")
-    print(obs)
-    print("type(obs)")
-    print(type(obs))
+    #print("obs")
+    #print(obs)
+    #print("type(obs)")
+    #print(type(obs))
     episode_rew = 0
     while not done:
+      env.render()
       env.render()
 
       o = obs[None]
@@ -30,7 +31,7 @@ def main():
       a = aa[0]
       obs, rew, done, _ = env.step(a)
       episode_rew += rew
-      time.sleep(1. / 240.)
+      #time.sleep(1. / 240.)
     print("Episode reward", episode_rew)
 
 
