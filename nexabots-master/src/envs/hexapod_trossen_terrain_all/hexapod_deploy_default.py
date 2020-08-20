@@ -61,8 +61,8 @@ class Hexapod(gym.Env):
         self.generate_hybrid_env(self.n_envs, self.specific_env_len * self.n_envs)
         self.reset()
 
-        self.observation_space = spaces.Box(low=-1, high=1, dtype=np.float32, shape=(self.obs_dim,))
-        self.action_space = spaces.Box(low=-1, high=1, dtype=np.float32, shape=(self.act_dim,))
+        self.observation_space = spaces.Box(low=-1, high=1,  shape=(self.obs_dim,))
+        self.action_space = spaces.Box(low=-1, high=1,  shape=(self.act_dim,))
 
 
     def setupcam(self):
@@ -95,6 +95,8 @@ class Hexapod(gym.Env):
 
     def get_obs(self):
         qpos = self.sim.get_state().qpos.tolist()
+        #print("len(qpos) : ", len(qpos))
+        #print("qpos : ", qpos)
         qvel = self.sim.get_state().qvel.tolist()
         a = qpos + qvel
         return np.asarray(a, dtype=np.float32)
@@ -141,26 +143,38 @@ class Hexapod(gym.Env):
             self.sim.step()
             if render:
                 self.render()
-
+        #print("ctrl",ctrl)
         # Simulate read delay
         self.model.opt.timestep = 0.0008
         joints = []
+        
         for i in range(18):
             joints.append(self.sim.get_state().qpos.tolist()[7 + i])
             self.sim.forward()
             self.sim.step()
-
+        #print("joints : ",joints)
+        #print(self.sim.get_state().qpos)
         self.step_ctr += 1
         self.current_difficulty = np.minimum(self.current_difficulty + self.difficulty_per_step_increment, 1)
         torques = self.sim.data.actuator_force
         ctrl_pen = np.square(torques).mean()
-
+        #print(np.square(torques).mean())
+        
         obs = self.get_obs()
+        #print("qpos",len(self.sim.get_state().qpos.tolist()))
+        #print("qvel====",len(self.sim.get_state().qvel.tolist()))
+        #print("get_state",self.sim.get_state())
 
         # Angle deviation
         x, y, z, qw, qx, qy, qz = obs[:7]
         xd, yd, zd, thd, phid, psid = self.sim.get_state().qvel.tolist()[:6]
+        #print(self.sim.get_state().qvel.tolist())
+        #print("qpos",self.sim.get_state().qpos.tolist())
+        #print("obs",obs[:7])
+        #print("x =={},y =={},z =={},thd =={},phid =={},psid =={}".format(xd,yd,zd,thd,phid,psid))
+        
 
+        #print("thd===",thd,"phid===",phid)
         self.xd_queue.append(xd)
         if len(self.xd_queue) > 15:
             self.xd_queue.pop(0)
@@ -171,13 +185,17 @@ class Hexapod(gym.Env):
 
         roll, pitch, _ = my_utils.quat_to_rpy([qw,qx,qy,qz])
         q_yaw = 2 * acos(qw)
-
+        #print("qw : ",qw)
+        #print("acos(qw) : ",acos(qw))
+        #q_yaw = y축 각도
+        #print("degree : ", q_yaw * 57.2958)
+        #print(pitch,roll)
         yaw_deviation = np.min((abs((q_yaw % 6.183) - (0 % 6.183)), abs(q_yaw - 0)))
-
+        #print("q_yaw : ",q_yaw," pitch : ",pitch," roll : ",roll,"ctrl_pen : ", ctrl_pen,"zd : ",zd)
         r_neg = np.square(q_yaw) * 0.5 + \
                 np.square(pitch) * 0.5 + \
                 np.square(roll) * 0.5 + \
-                ctrl_pen * 0.000001 + \
+                ctrl_pen * 0.01 + \
                 np.square(zd) * 0.7
 
         if self.env_list == ["flat"]:
@@ -202,7 +220,11 @@ class Hexapod(gym.Env):
             r = np.clip(r_pos - r_neg, -3, 3)
 
         if self.turn_dir is not None:
-            r = np.clip(psid * (1 - 2 * (self.turn_dir == "LEFT")), -3, 3)
+            r = np.clip(thd * (1 - 2 * (self.turn_dir == "LEFT")), -3, 3)
+            #print('is not none')
+
+        if self.turn_dir is not None:
+            r = np.clip(thd *(1 - 2 * (self.turn_dir == "forward")), -3, 3)
 
         self.prev_deviation = yaw_deviation
 
@@ -216,12 +238,14 @@ class Hexapod(gym.Env):
 
         #clipped_torques = np.clip(torques * 0.05, -1, 1)
         c_obs = self.scale_joints(joints)
+        #print("c_obs",c_obs)
         quat = obs[3:7]
 
         if self.use_contacts:
             c_obs = np.concatenate([c_obs, contacts])
 
         c_obs = np.concatenate([c_obs, quat])
+        #print(len(c_obs))
         return c_obs, r, done, {}
 
 
@@ -559,17 +583,17 @@ class Hexapod(gym.Env):
 
             for i in range(30):
                 obs = self.step(np.zeros((self.act_dim)), render=True)
-            print(T.tensor(obs[0]).unsqueeze(0))
+            print("1",T.tensor(obs[0]).unsqueeze(0))
             for i in range(30):
                 act = np.array([0., -scaler, scaler] * 6)
                 obs = self.step(act, render=True)
             for i in range(30):
                 obs = self.step(np.array([0., scaler, -scaler] * 6), render=True)
-            print(T.tensor(obs[0]).unsqueeze(0))
+            print("2",T.tensor(obs[0]).unsqueeze(0))
 
             for i in range(30):
                 obs = self.step(np.ones((self.act_dim)) * scaler, render=True)
-            print(T.tensor(obs[0]).unsqueeze(0))
+            print("3",T.tensor(obs[0]).unsqueeze(0))
             for i in range(30):
                 obs = self.step(np.ones((self.act_dim)) * -scaler, render=True)
             print(T.tensor(obs[0]).unsqueeze(0))

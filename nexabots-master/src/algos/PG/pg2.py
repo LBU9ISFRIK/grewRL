@@ -62,7 +62,7 @@ def train(env, policy, params):
             # Sample action from policy
             #18개
             action = policy.sample_action(my_utils.to_tensor(s_0, True)).detach()
-            
+           
             # Step action
             s_1, r, done, _ = env.step(action.squeeze(0).numpy())
             
@@ -138,10 +138,10 @@ def train(env, policy, params):
             #for param_tensor in policy.state_dict():
             #    print(param_tensor,"\t",policy.state_dict()[param_tensor].size())
 
-            sdir = os.path.join(os.path.dirname(os.path.realpath(__file__)),
-                                "agents/{}_{}_{}_pg.p".format(env.__class__.__name__, policy.__class__.__name__, params["ID"]))
-            T.save(policy.state_dict(), sdir)
-            print("saved checkpoint at {} with params {}".format(sdir, params))
+            #sdir = os.path.join(os.path.dirname(os.path.realpath(__file__)),
+            #                    "agents/{}_{}_{}_pg.p".format(env.__class__.__name__, policy.__class__.__name__, params["ID"]))
+            #T.save(policy.state_dict(), sdir)
+            #print("Saved checkpoint at {} with params {}".format(sdir, params))
 
         if i % 500 == 0 and i > 0:
             sdir = os.path.join(os.path.dirname(os.path.realpath(__file__)),
@@ -179,7 +179,7 @@ def update_ppo(policy, policy_optim, batch_states, batch_actions, batch_advantag
             batch_states_rev[:, 0:3] = batch_states[:, 6:9]
             batch_states_rev[:, 3:6] = batch_states[:, 9:12]
             batch_states_rev[:, 15:18] = batch_states[:, 12:15]
-
+            
             batch_states_rev[:, 6:9] = batch_states[:, 0:3]
             batch_states_rev[:, 9:12] = batch_states[:, 3:6]
             batch_states_rev[:, 12:15] = batch_states[:, 15:18]
@@ -209,6 +209,8 @@ def update_ppo(policy, policy_optim, batch_states, batch_actions, batch_advantag
             loss.backward()
             #policy.soft_clip_grads(1.)
             policy_optim.step()
+
+            
 
 
 def update_V(V, V_optim, gamma, batch_states, batch_rewards, batch_terminals):
@@ -300,8 +302,8 @@ if __name__=="__main__":
         env_list = [sys.argv[1]]
 
     ID = ''.join(random.choices(string.ascii_uppercase + string.digits, k=3))
-    params = {"iters": 500000, "batchsize":50, "gamma": 0.99, "policy_lr": 0.0007, "weight_decay" : 0.0001, "ppo": True,
-              "ppo_update_iters": 6, "animate": False, "train" : True, "env_list" : env_list,
+    params = {"iters": 500, "batchsize":1, "gamma": 0.99, "policy_lr": 0.0007, "weight_decay" : 0.0001, "ppo": True,
+              "ppo_update_iters": 6, "animate": True, "train" : False, "env_list" : env_list,
               "note" : "Straight line with yaw", "ID" : ID, "std_decay" : 0.000, "target_vel" : 0.1, "use_contacts" : True, "turn_dir" : None}
 
     if socket.gethostname() == "goedel":
@@ -310,7 +312,7 @@ if __name__=="__main__":
 
     from src.envs.hexapod_trossen_terrain_all.hexapod_deploy_default import Hexapod as env
     env = env(env_list, max_n_envs=1, specific_env_len=70, s_len=120, walls=True,
-              target_vel=params["target_vel"], use_contacts=params["use_contacts"], turn_dir= None)
+              target_vel=params["target_vel"], use_contacts=params["use_contacts"], turn_dir=None)
 
     # TODO: Experiment with RL algo improvement, add VF to PG
     # TODO: Experiment with decayed exploration
@@ -329,7 +331,7 @@ if __name__=="__main__":
         train(env, policy, params)
     else:
         print("Testing")
-        policy_name = "SL0" # Try LH3 on real robot (spoof IMU and with contacts)
+        policy_name = "MK3" # Try LH3 on real robot (spoof IMU and with contacts)
         policy_path = 'agents/{}_NN_PG_{}_pg.p'.format(env.__class__.__name__, policy_name)
         policy = policies.NN_PG(env, 96)
         policy.load_state_dict(T.load(policy_path))
