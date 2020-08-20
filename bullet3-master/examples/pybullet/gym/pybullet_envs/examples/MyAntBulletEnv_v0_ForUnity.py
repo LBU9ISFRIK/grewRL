@@ -15,9 +15,20 @@ from stable_baselines.common.policies import MlpPolicy
 #from stable_baselines.common.vec_env import DummyVecEnv
 from stable_baselines import PPO2
 
+os.sys.path.append("C:\\users\\grew\\anaconda3\\lib\\site-packages")
+os.sys.path.append("D:\\grew_svn\\2019\\[2020]ML\\ml-agents-release_1\\ml-agents-envs")
+
+from mlagents_envs.environment import UnityEnvironment
+from gym_unity.envs import UnityToGymWrapper
+
 sess = tf.Session()
 
-env = gym.make('AntBulletEnv-v0')
+print("play unity")
+
+#유니티 에디터 연동
+unity_env = UnityEnvironment(file_name=None, seed=1)#, side_channels = [my_channel, config_channel]) 
+env = UnityToGymWrapper(unity_env)
+#env = gym.make('AntBulletEnv-v0')
 
 obs_dim = env.observation_space.shape[0]
 act_dim = env.action_space.shape[0]
@@ -32,8 +43,8 @@ saveFileString = "ppo2_pybulletAnt_end_{}".format(loadFileIndex + 1)
 print("loadFile : ", loadFileString)
 print("saveFile : ", saveFileString)
 
-isTrain = False
-isContinue = True
+isTrain = True
+isContinue = False
 if isTrain:
   print("start training =========================================")
 

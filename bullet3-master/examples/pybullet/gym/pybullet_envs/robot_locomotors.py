@@ -40,8 +40,9 @@ class WalkerBase(MJCFBasedRobot):
                  dtype=np.float32).flatten()
     # even elements [0::2] position, scaled to -1..+1 between limits
     # odd elements  [1::2] angular speed, scaled to show -1..+1
-    print("==================================================")
+    #print("==================================================")
     self.joint_speeds = j[1::2]
+    print(self.joint_speeds)
     self.joints_at_limit = np.count_nonzero(np.abs(j[0::2]) > 0.99)
 
     body_pose = self.robot_body.pose()
@@ -64,7 +65,7 @@ class WalkerBase(MJCFBasedRobot):
                                                              np.cos(-yaw), 0], [0, 0, 1]])
     vx, vy, vz = np.dot(rot_speed,
                         self.robot_body.speed())  # rotate speed back to body point of view
-
+    
     more = np.array(
         [
             z - self.initial_z,
@@ -78,12 +79,6 @@ class WalkerBase(MJCFBasedRobot):
         ],
         dtype=np.float32)
 
-    #str = ""
-    #for i in range(len(more)):
-    #    str += i, " : ", more[i]
-
-    #print(more)
-    #print(j)
     return np.clip(np.concatenate([more] + [j] + [self.feet_contact]), -5, +5)
 
   def calc_potential(self):
