@@ -1,0 +1,46 @@
+openai/gym
+https://github.com/openai/gym
+
+rllab
+https://github.com/junpilan/rllab
+
+ml-agents
+https://github.com/Unity-Technologies/ml-agents
+
+marathon-envs
+https://github.com/Unity-Technologies/marathon-envs
+
+DeepMimic
+https://github.com/xbpeng/DeepMimic
+
+pangyolab
+https://github.com/seungeunrho/minimalRL
+https://github.com/minyoungjun/Pang-yo
+
+(제대로 걷는)ant n족 모델 자료  
+https://github.com/silverjoda/nexabots
+
+6족 모델 자료
+https://github.com/erdnaxe/kraby
+https://github.com/tugwitt/rl_hexapod
+
+예제,논문 정리
+https://github.com/dennybritz/reinforcement-learning
+https://github.com/aikorea/awesome-rl
+https://github.com/rlcode/reinforcement-learning
+https://github.com/udacity/deep-reinforcement-learning
+https://github.com/for-ai/rl
+https://github.com/MorvanZhou/Reinforcement-learning-with-tensorflow
+
+
+keras -v rl
+https://github.com/keras-rl/keras-rl
+
+pybullet
+https://github.com/bulletphysics/bullet3
+https://github.com/bulletphysics/bullet3/tree/master/examples/pybullet
+
+mujoco 연동 RL
+https://github.com/aravindr93/mjrl
+https://github.com/MahanFathi/Model-Based-RL
+
