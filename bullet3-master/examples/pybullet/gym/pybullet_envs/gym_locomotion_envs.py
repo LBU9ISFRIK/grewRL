@@ -43,6 +43,9 @@ class WalkerBaseBulletEnv(MJCFBaseBulletEnv):
       self.stateId = self._p.saveState()
       #print("saving state self.stateId:",self.stateId)
 
+    for line in traceback.format_stack():
+      print(line.strip())
+
     return r
 
   def _isDone(self):

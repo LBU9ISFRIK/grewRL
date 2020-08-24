@@ -42,7 +42,7 @@ class WalkerBase(MJCFBasedRobot):
     # odd elements  [1::2] angular speed, scaled to show -1..+1
     #print("==================================================")
     self.joint_speeds = j[1::2]
-    print(self.joint_speeds)
+    #print(self.joint_speeds)
     self.joints_at_limit = np.count_nonzero(np.abs(j[0::2]) > 0.99)
 
     body_pose = self.robot_body.pose()
@@ -59,6 +59,7 @@ class WalkerBase(MJCFBasedRobot):
                                         self.walk_target_x - self.body_xyz[0])
     self.walk_target_dist = np.linalg.norm(
         [self.walk_target_y - self.body_xyz[1], self.walk_target_x - self.body_xyz[0]])
+    #print(self.walk_target_dist)
     angle_to_target = self.walk_target_theta - yaw
 
     rot_speed = np.array([[np.cos(-yaw), -np.sin(-yaw), 0], [np.sin(-yaw),
@@ -66,6 +67,8 @@ class WalkerBase(MJCFBasedRobot):
     vx, vy, vz = np.dot(rot_speed,
                         self.robot_body.speed())  # rotate speed back to body point of view
     
+    #print("vx {}, vy {}, vz {}".format(vx, vy, vz))
+    #print("z {}, init z {}".format(z, self.initial_z))
     more = np.array(
         [
             z - self.initial_z,

@@ -57,6 +57,7 @@ else:
   env.render(mode="human")
 
   obs = env.reset()
+  #time.sleep(3)
   #while 1:
   frame = 0
   score = 0
