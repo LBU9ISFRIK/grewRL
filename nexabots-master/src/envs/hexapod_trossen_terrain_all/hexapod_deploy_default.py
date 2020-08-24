@@ -173,7 +173,7 @@ class Hexapod(gym.Env):
         #print("obs",obs[:7])
         #print("x =={},y =={},z =={},thd =={},phid =={},psid =={}".format(xd,yd,zd,thd,phid,psid))
         
-
+        
         #print("thd===",thd,"phid===",phid)
         self.xd_queue.append(xd)
         if len(self.xd_queue) > 15:
@@ -183,16 +183,18 @@ class Hexapod(gym.Env):
         velocity_rew = 1. / (abs(xd_av - self.target_vel) + 1.) - 1. / (self.target_vel + 1.)
         velocity_rew *= (0.3 / self.target_vel)
 
+
         roll, pitch, _ = my_utils.quat_to_rpy([qw,qx,qy,qz])
         q_yaw = 2 * acos(qw)
-        #print("qw : ",qw)
-        #print("acos(qw) : ",acos(qw))
+       
+        print("qw : ",qw)
+        print("acos(qw) : ",acos(qw))
         #q_yaw = y축 각도
         #print("degree : ", q_yaw * 57.2958)
         #print(pitch,roll)
         yaw_deviation = np.min((abs((q_yaw % 6.183) - (0 % 6.183)), abs(q_yaw - 0)))
         #print("q_yaw : ",q_yaw," pitch : ",pitch," roll : ",roll,"ctrl_pen : ", ctrl_pen,"zd : ",zd)
-        r_neg = np.square(q_yaw) * 0.5 + \
+        r_neg = np.square(q_yaw) * 0.7 + \
                 np.square(pitch) * 0.5 + \
                 np.square(roll) * 0.5 + \
                 ctrl_pen * 0.01 + \
