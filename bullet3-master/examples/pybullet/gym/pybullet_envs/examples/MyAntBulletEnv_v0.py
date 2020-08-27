@@ -33,7 +33,7 @@ print("loadFile : ", loadFileString)
 print("saveFile : ", saveFileString)
 
 isTrain = False
-isContinue = True
+isContinue = False
 if isTrain:
   print("start training =========================================")
 

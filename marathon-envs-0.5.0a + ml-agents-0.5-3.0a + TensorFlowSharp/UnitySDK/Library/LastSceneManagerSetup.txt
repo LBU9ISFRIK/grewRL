@@ -1,0 +1,5 @@
+sceneSetups:
+- path: Assets/MarathonEnvs/Environments/OpenAIAnt/Scenes/OpenAIAnt.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0

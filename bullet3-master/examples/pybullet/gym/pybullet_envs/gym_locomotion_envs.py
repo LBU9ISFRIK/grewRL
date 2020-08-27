@@ -11,6 +11,8 @@ import traceback
 class WalkerBaseBulletEnv(MJCFBaseBulletEnv):
 
   def __init__(self, robot, render=False):
+    render=True
+
     # print("WalkerBase::__init__ start")
     self.camera_x = 0
     self.walk_target_x = 1e3  # kilometer away
