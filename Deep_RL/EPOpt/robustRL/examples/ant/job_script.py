@@ -27,7 +27,7 @@ job_set = []
 with open (os.path.join(os.path.dirname(os.path.abspath(__file__)), 'job_data.txt'), 'rt') as data_file:
 
     for line in data_file:
-        print(line)
+
         job_set.append(eval(line))
 
 
