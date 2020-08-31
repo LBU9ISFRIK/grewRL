@@ -10,18 +10,18 @@ from rllab.envs.gym_env import GymEnv
 # Functions used in training and testing phase
 
 def make_train_MDP():
-    return _standard_hopper()
+    return _standard_ant()
 
 def make_test_MDP():
-    return _heavy_hopper()
+    return _heavy_ant()
 
 # ===================================================================
 # Local functions to create envs
 
-def _standard_hopper():
+def _standard_ant():
     return GymEnv('Ant-v2')
 
-def _heavy_hopper():
+def _heavy_ant():
     # Make the torso heavy
     e = GymEnv("Ant-v2")
     bm = np.array(e.env.model.body_mass)
