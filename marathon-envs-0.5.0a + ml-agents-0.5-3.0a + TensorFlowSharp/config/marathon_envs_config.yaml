@@ -97,7 +97,7 @@ OpenAIAntBrain:
     num_layers: 3
     #hidden_units: 53
     hidden_units: 64
-    max_steps: 2010000
+    max_steps: 3000000
     # use_curiosity: true
     # curiosity_strength: 0.01
     # curiosity_enc_size: 256    

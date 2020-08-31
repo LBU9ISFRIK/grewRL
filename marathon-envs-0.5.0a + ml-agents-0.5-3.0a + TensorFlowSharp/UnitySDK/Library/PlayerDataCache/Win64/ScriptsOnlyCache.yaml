@@ -34,6 +34,8 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
+    com.unity.multiplayer-hlapi.Runtime.dll:
+    - UnityEngine.Networking.NetworkCallbacks
   sceneClasses:
     Assets/MarathonEnvs/Environments/OpenAIAnt/Scenes/OpenAIAnt.unity:
     - Class: 1
@@ -1617,4 +1619,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/MarathonEnvs/Environments/OpenAIAnt/Scenes/OpenAIAnt.unity
   playerPath: D:/grew_svn/2020/GitHub/grewRL/marathon-envs-0.5.0a + ml-agents-0.5-3.0a
-    + TensorFlowSharp/UnitySDK/Build/RealAnt0827_NoDeathNoAlive/Unity Environment.exe
+    + TensorFlowSharp/UnitySDK/Build/RealAnt_4_0828_NoDeathOnlyProgress/Unity Environment.exe

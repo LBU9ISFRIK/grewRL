@@ -67,7 +67,7 @@ public class OpenAIAntAgent : MarathonAgent
     }
 
     float init_y;
-    float[] beforeAngle = new float[8];
+    float[] beforeAngle;
     void ObservationsDefault()
     {
         //print(Time.frameCount + " obs");
@@ -78,6 +78,8 @@ public class OpenAIAntAgent : MarathonAgent
             {
                 Actions.Add(0f);
             }
+
+            beforeAngle = new float[MarathonJoints.Count];
         }
 
         var pelvis = BodyParts["pelvis"];
@@ -265,12 +267,12 @@ public class OpenAIAntAgent : MarathonAgent
     {
         //print(Time.frameCount + " reward");
         //생존 보너스
-        float alive_bonus = 1f; //상수
-        if (torso[0].localPosition.y <= 0.26f)
-        {
-            alive_bonus = -1f;
-            //print("-1");
-        }
+        //float alive_bonus = 1f; //상수
+        //if (torso[0].localPosition.y <= 0.26f)
+        //{
+        //    alive_bonus = -1f;
+        //    //print("-1");
+        //}
 
         //float alive_bonus = 0f; //상수
 
@@ -283,40 +285,40 @@ public class OpenAIAntAgent : MarathonAgent
         //beforeTargetDist = targetDist;
 
         //action 페널티
-        const float self_electricity_cost = -2f;
-        float actionAbsSum = 0f;
-        const float self_stall_torque_cost = -0.1f;
-        float actionSqrSum = 0f;
-        for (int i = 0; i < Actions.Count; i++)
-        {
-            actionAbsSum += Mathf.Abs(Actions[i] * JointVelocity[i]);
-            actionSqrSum += Actions[i] * Actions[i];
-        }
-        float absMean = actionAbsSum / Actions.Count;
-        float sqrMean = actionSqrSum / Actions.Count;
-        float electricity_cost = self_electricity_cost * absMean + self_stall_torque_cost * sqrMean;
-        electricity_cost = Mathf.Clamp(electricity_cost, -1f, 1f);
+        //const float self_electricity_cost = -2f;
+        //float actionAbsSum = 0f;
+        //const float self_stall_torque_cost = -0.1f;
+        //float actionSqrSum = 0f;
+        //for (int i = 0; i < Actions.Count; i++)
+        //{
+        //    actionAbsSum += Mathf.Abs(Actions[i] * JointVelocity[i]);
+        //    actionSqrSum += Actions[i] * Actions[i];
+        //}
+        //float absMean = actionAbsSum / Actions.Count;
+        //float sqrMean = actionSqrSum / Actions.Count;
+        //float electricity_cost = self_electricity_cost * absMean + self_stall_torque_cost * sqrMean;
+        //electricity_cost = Mathf.Clamp(electricity_cost, -1f, 1f);
 
-        //joint stuck 페널티
-        const float self_joints_at_limit_cost = -0.1f;
-        int joints_at_limit = 0;
-        for (int i = 0; i < configurableJoints.Count; i++)
-        {
-            float lowerLimit = configurableJoints[i].lowAngularXLimit.limit * Mathf.Deg2Rad;
-            float upperLimit = configurableJoints[i].highAngularXLimit.limit * Mathf.Deg2Rad;
+        ////joint stuck 페널티
+        //const float self_joints_at_limit_cost = -0.1f;
+        //int joints_at_limit = 0;
+        //for (int i = 0; i < configurableJoints.Count; i++)
+        //{
+        //    float lowerLimit = configurableJoints[i].lowAngularXLimit.limit * Mathf.Deg2Rad;
+        //    float upperLimit = configurableJoints[i].highAngularXLimit.limit * Mathf.Deg2Rad;
 
-            //float pos = MarathonJoints[i].Joint.transform.position.x;
-            float pos = lowerLimit + (upperLimit - lowerLimit) * (Actions[i] + 1f) * 0.5f;
-            float pos_mid = 0.5f * (lowerLimit + upperLimit);
-            pos = 2 * (pos - pos_mid) / (upperLimit - lowerLimit);
+        //    //float pos = MarathonJoints[i].Joint.transform.position.x;
+        //    float pos = lowerLimit + (upperLimit - lowerLimit) * (Actions[i] + 1f) * 0.5f;
+        //    float pos_mid = 0.5f * (lowerLimit + upperLimit);
+        //    pos = 2 * (pos - pos_mid) / (upperLimit - lowerLimit);
 
-            if (Mathf.Abs(pos) > 0.99f)
-                joints_at_limit++;
-        }
-        float joints_at_limit_cost = self_joints_at_limit_cost * joints_at_limit;
+        //    if (Mathf.Abs(pos) > 0.99f)
+        //        joints_at_limit++;
+        //}
+        //float joints_at_limit_cost = self_joints_at_limit_cost * joints_at_limit;
 
-        //접촉 페널티
-        float feet_collision_cost = 0f; //상수
+        ////접촉 페널티
+        //float feet_collision_cost = 0f; //상수
 
         //float reward = alive_bonus + progress + electricity_cost + joints_at_limit_cost + feet_collision_cost;
         //float reward = progress + electricity_cost + joints_at_limit_cost + feet_collision_cost;

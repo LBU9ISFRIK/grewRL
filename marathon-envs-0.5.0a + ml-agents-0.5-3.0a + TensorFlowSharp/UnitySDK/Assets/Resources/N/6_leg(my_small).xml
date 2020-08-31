@@ -20,11 +20,11 @@
     <geom conaffinity="1" condim="6" material="MatPlane" name="floor" pos="0 0 0" rgba="0.8 0.9 0.8 1" size="40 40 40"  type="plane"/>
     <body pos="0 0 0.75">
       <!--몸통-->
-      <geom name="torso" fromto ="-0.4 0.0 0.0 0.2 0.0 0.0" size="0.12" type="capsule"/>
+      <geom name="torso_geom" fromto ="-0.4 0.0 0.0 0.2 0.0 0.0" size="0.12" type="capsule"/>
       <!--<geom name="torso_geom2" pos ="0 0 0" size="0.2" type="sphere"/>-->
 
       <!--머리-->
-      <geom name="head" pos ="0.4 0 0" size="0.23" type="sphere"/>
+      <geom name="head_geom" pos ="0.4 0 0" size="0.23" type="sphere"/>
       <!--<joint axis="0 0 1" name="head_1" pos="0.0 0.0 0.0" range="-10 10" type="hinge"/>
 				<joint axis="0 1 0" name="head_2" pos="0.0 0.0 0.0" range="-10 10" type="hinge"/>-->
 
@@ -32,7 +32,7 @@
 					<geom name="feeler" fromto ="0 0.0 0 0.4 0.4 0" size="0.02" type="capsule"/>-->
 
       <!--배-->
-      <geom name="tail" fromto ="-1.0 0 0 -0.6 0 0.0" size="0.2" type="capsule"/>
+      <geom name="tail_geom" fromto ="-1.0 0 0 -0.6 0 0.0" size="0.2" type="capsule"/>
       <!--<joint axis="0 0 1" name="tail_1" pos="0.0 0.0 0.0" range="-20 20" type="hinge"/>
 				<joint axis="0 1 0" name="tail_2" pos="0.0 0.0 0.0" range="-10 10" type="hinge"/>-->
 
@@ -49,14 +49,14 @@
       <!--다리1-->
       <body pos="0.15 0.2 0">
         <joint axis="0 0 1" name="joint_leg_left_forward" pos="0.0 0.0 0.0" range="-25 25" type="hinge"/>
-        <geom fromto="0.0 0.0 0.0 0.2 0.2 0.0" name="aux_left_forward" size="0.03" type="capsule"/>
+        <geom fromto="0.0 0.0 0.0 0.2 0.2 0.0" name="aux_left_forward_geom" size="0.03" type="capsule"/>
         <body pos="0.2 0.2 0">
 
           <!--<joint axis="1 0 0" name="hip_1x" pos="0.0 0.0 0.0" range="-5 5" type="hinge"/>-->
-          <geom fromto="0.0 0.0 0.0 0.2 0.2 0.0" name="leg_left_forward" size="0.03" type="capsule"/>
+          <geom fromto="0.0 0.0 0.0 0.2 0.2 0.0" name="leg_left_forward_geom" size="0.03" type="capsule"/>
           <body pos="0.2 0.2 0">
-            <joint axis="-1 1 0" name="joint_ankle_left_forward" pos="0.0 0.0 0.0" range="20 55" type="hinge"/>
-            <geom fromto="0.0 0.0 0.0 0.4 0.4 0.0" name="ankle_left_forward" size="0.03" type="capsule"/>
+            <joint axis="-1 1 0" name="joint_ankle_left_forward" pos="0.0 0.0 0.0" range="30 100" type="hinge"/>
+            <geom fromto="0.0 0.0 0.0 0.4 0.4 0.0" name="ankle_left_forward_geom" size="0.03" type="capsule"/>
           </body>
         </body>
       </body>
@@ -64,14 +64,14 @@
       <!--다리2-->
       <body pos="-0.075 0.2 0">
         <joint axis="0 0 1" name="joint_leg_left_middle" pos="0.0 0 0.0" range="-25 25" type="hinge"/>
-        <geom fromto="0.0 0.0 0.0 0.0 0.28284 0.0" name="aux_left_middle" size="0.03" type="capsule"/>
+        <geom fromto="0.0 0.0 0.0 0.0 0.28284 0.0" name="aux_left_middle_geom" size="0.03" type="capsule"/>
         <body pos="0.0 0.28284 0">
 
           <!--<joint axis="1 0 0" name="hip_2x" pos="0.0 0.0 0.0" range="-5 5" type="hinge"/>-->
-          <geom fromto="0.0 0.0 0.0 0.0 0.28284 0.0" name="leg_left_middle" size="0.03" type="capsule"/>
+          <geom fromto="0.0 0.0 0.0 0.0 0.28284 0.0" name="leg_left_middle_geom" size="0.03" type="capsule"/>
           <body pos="0.0 0.28284 0">
-            <joint axis="-1 0 0" name="joint_ankle_left_middle" pos="0.0 0 0.0" range="20 55" type="hinge"/>
-            <geom fromto="0.0 0.56568 0.0 0 0 0.0" name="ankle_left_middle" size="0.03" type="capsule"/>
+            <joint axis="-1 0 0" name="joint_ankle_left_middle" pos="0.0 0 0.0" range="30 100" type="hinge"/>
+            <geom fromto="0.0 0.56568 0.0 0 0 0.0" name="ankle_left_middle_geom" size="0.03" type="capsule"/>
           </body>
         </body>
       </body>
@@ -79,14 +79,14 @@
       <!--다리3-->
       <body pos="-0.3 0.1 0">
         <joint axis="0 0 1" name="joint_leg_left_backward" pos="0.0 0.0 0.0" range="-25 25" type="hinge"/>
-        <geom fromto="0.0 0.0 0.0 -0.2 0.2 0.0" name="aux_left_backward" size="0.03" type="capsule"/>
+        <geom fromto="0.0 0.0 0.0 -0.2 0.2 0.0" name="aux_left_backward_geom" size="0.03" type="capsule"/>
         <body pos="-0.2 0.2 0">
 
           <!--<joint axis="1 0 0" name="hip_3x" pos="0.0 0.0 0.0" range="-5 5" type="hinge"/>-->
-          <geom fromto="0.0 0.0 0.0 -0.2 0.2 0.0" name="leg_left_backward" size="0.03" type="capsule"/>
+          <geom fromto="0.0 0.0 0.0 -0.2 0.2 0.0" name="leg_left_backward_geom" size="0.03" type="capsule"/>
           <body pos="-0.2 0.2 0">
-            <joint axis="-1 -1 0" name="joint_ankle_left_backward" pos="0.0 0.0 0.0" range="20 55" type="hinge"/>
-            <geom fromto="0.0 0.0 0.0 -0.4 0.4 0.0" name="ankle_left_backward" size="0.03" type="capsule"/>
+            <joint axis="-1 -1 0" name="joint_ankle_left_backward" pos="0.0 0.0 0.0" range="30 100" type="hinge"/>
+            <geom fromto="0.0 0.0 0.0 -0.4 0.4 0.0" name="ankle_left_backward_geom" size="0.03" type="capsule"/>
           </body>
         </body>
       </body>
@@ -94,14 +94,14 @@
       <!--다리 4-->
       <body pos="0.15 -0.2 0">
         <joint axis="0 0 -1" name="joint_leg_right_forward" pos="0.0 0.0 0.0" range="-25 25" type="hinge"/>
-        <geom fromto="0.0 0.0 0.0 0.2 -0.2 0.0" name="aux_right_forward" size="0.03" type="capsule"/>
+        <geom fromto="0.0 0.0 0.0 0.2 -0.2 0.0" name="aux_right_forward_geom" size="0.03" type="capsule"/>
         <body pos="0.2 -0.2 0">
 
           <!--<joint axis="1 0 0" name="hip_6x" pos="0.0 0.0 0.0" range="-5 5" type="hinge"/>-->
-          <geom fromto="0.0 0.0 0.0 0.2 -0.2 0.0" name="leg_right_forward" size="0.03" type="capsule"/>
+          <geom fromto="0.0 0.0 0.0 0.2 -0.2 0.0" name="leg_right_forward_geom" size="0.03" type="capsule"/>
           <body pos="0.2 -0.2 0">
-            <joint axis="1 1 0" name="joint_ankle_right_forward" pos="0.0 0.0 0.0" range="20 55" type="hinge"/>
-            <geom fromto="0.0 0.0 0.0 0.4 -0.4 0.0" name="ankle_right_forward" size="0.03" type="capsule"/>
+            <joint axis="1 1 0" name="joint_ankle_right_forward" pos="0.0 0.0 0.0" range="30 100" type="hinge"/>
+            <geom fromto="0.0 0.0 0.0 0.4 -0.4 0.0" name="ankle_right_forward_geom" size="0.03" type="capsule"/>
           </body>
         </body>
       </body>
@@ -109,14 +109,14 @@
       <!--다리 5-->
       <body pos="-0.075 -0.2 0">
         <joint axis="0 0 -1" name="joint_leg_right_middle" pos="0.0 0.0 0.0" range="-25 25" type="hinge"/>
-        <geom fromto="0.0 0 0.0 0 -0.28284 0.0" name="aux_right_middle" size="0.03" type="capsule"/>
+        <geom fromto="0.0 0 0.0 0 -0.28284 0.0" name="aux_right_middle_geom" size="0.03" type="capsule"/>
         <body pos="0 -0.28284 0">
           
           <!--<joint axis="1 0 0" name="hip_5x" pos="0.0 0.0 0.0" range="-5 5" type="hinge"/>-->
-          <geom fromto="0.0 0 0.0 0 -0.28284 0.0" name="leg_right_middle" size="0.03" type="capsule"/>
+          <geom fromto="0.0 0 0.0 0 -0.28284 0.0" name="leg_right_middle_geom" size="0.03" type="capsule"/>
           <body pos="0 -0.28284 0">
-            <joint axis="1 0 0" name="joint_ankle_right_middle" pos="0.0 0.0 0.0" range="20 55" type="hinge"/>
-            <geom fromto="0.0 -0.56568 0.0 0 0 0.0" name="ankle_right_middle" size="0.03" type="capsule"/>
+            <joint axis="1 0 0" name="joint_ankle_right_middle" pos="0.0 0.0 0.0" range="30 100" type="hinge"/>
+            <geom fromto="0.0 -0.56568 0.0 0 0 0.0" name="ankle_right_middle_geom" size="0.03" type="capsule"/>
           </body>
         </body>
       </body>
@@ -124,14 +124,14 @@
       <!--다리6-->
       <body pos="-0.3 -0.1 0">
         <joint axis="0 0 -1" name="joint_leg_right_backward" pos="0.0 0.0 0.0" range="-25 25" type="hinge"/>
-        <geom fromto="0.0 0.0 0.0 -0.2 -0.2 0.0" name="aux_right_backward" size="0.03" type="capsule"/>
+        <geom fromto="0.0 0.0 0.0 -0.2 -0.2 0.0" name="aux_right_backward_geom" size="0.03" type="capsule"/>
         <body pos="-0.2 -0.2 0">
 
           <!--<joint axis="1 0 0" name="hip_4x" pos="0.0 0.0 0.0" range="-5 5" type="hinge"/>-->
-          <geom fromto="0.0 0.0 0.0 -0.2 -0.2 0.0" name="leg_right_backward" size="0.03" type="capsule"/>
+          <geom fromto="0.0 0.0 0.0 -0.2 -0.2 0.0" name="leg_right_backward_geom" size="0.03" type="capsule"/>
           <body pos="-0.2 -0.2 0">
-            <joint axis="1 -1 0" name="joint_ankle_right_backward" pos="0.0 0.0 0.0" range="20 55" type="hinge"/>
-            <geom fromto="0.0 0.0 0.0 -0.4 -0.4 0.0" name="ankle_right_backward" size="0.03" type="capsule"/>
+            <joint axis="1 -1 0" name="joint_ankle_right_backward" pos="0.0 0.0 0.0" range="30 100" type="hinge"/>
+            <geom fromto="0.0 0.0 0.0 -0.4 -0.4 0.0" name="ankle_right_backward_geom" size="0.03" type="capsule"/>
           </body>
         </body>
       </body>

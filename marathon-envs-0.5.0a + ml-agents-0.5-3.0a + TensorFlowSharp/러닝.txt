@@ -7,13 +7,13 @@ mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt_0827_py
 mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt_0826_pybullet_NoDeathAllReward
 
 익스큐터블
-mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt_0827_pybullet_NoDeathOnlyProgress --env="UnitySDK/Build/RealAnt0827_NoDeathOnlyProgress/Unity Environment.exe" --no-graphics
+mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt_6_0828_pybullet_NoDeathOnlyProgress --env="UnitySDK/Build/RealAnt_6_0828_NoDeathOnlyProgress/Unity Environment.exe" --no-graphics
 
-mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt0827_NoDeathAliveProgress --env="UnitySDK/Build/RealAnt0827_NoDeathAliveProgress/Unity Environment.exe" --no-graphics
+mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt_0827_NoDeathAliveProgress --env="UnitySDK/Build/RealAnt_0827_NoDeathAliveProgress/Unity Environment.exe" --no-graphics
 
-mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt_0827_pybullet_NoDeathAllReward --env="UnitySDK/Build/RealAnt0827_NoDeathAllReward/Unity Environment.exe" --no-graphics
+mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt_0827_pybullet_NoDeathAllReward --env="UnitySDK/Build/RealAnt_0827_NoDeathAllReward/Unity Environment.exe" --no-graphics
 
-mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt0827_NoDeathNoAlive --env="UnitySDK/Build/RealAnt0827_NoDeathNoAlive/Unity Environment.exe" --no-graphics
+mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt_6_0828_NoDeathNoAlive --env="UnitySDK/Build/RealAnt_6_0828_NoDeathNoAlive/Unity Environment.exe" --no-graphics
 
 
 체크포인트 이어서(원하는 지점부터 하려면 checkpoint 파일 내용 수정)
