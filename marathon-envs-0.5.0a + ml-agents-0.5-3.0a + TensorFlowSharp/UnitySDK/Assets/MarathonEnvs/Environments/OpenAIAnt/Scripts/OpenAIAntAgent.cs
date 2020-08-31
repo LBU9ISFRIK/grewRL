@@ -261,8 +261,7 @@ public class OpenAIAntAgent : MarathonAgent
         return reward;
     }
 
-    float beforeTargetDist = 0f;
-
+    //float beforeTargetDist = 0f;
     float StepRewardAnt_PyBullet()
     {
         //print(Time.frameCount + " reward");
@@ -274,14 +273,12 @@ public class OpenAIAntAgent : MarathonAgent
         //    //print("-1");
         //}
 
-        //float alive_bonus = 0f; //상수
-
         //속도 보너스
         float progress = GetVelocity();
+        
         //float targetDist = new Vector2(target.z - BodyParts["pelvis"].transform.position.z, target.x - BodyParts["pelvis"].transform.position.x).magnitude;
         //float progress = (beforeTargetDist - targetDist) / Time.fixedDeltaTime;
         //print(targetDist + ", " + beforeTargetDist + ", " + progress + ", " + GetVelocity());
-
         //beforeTargetDist = targetDist;
 
         //action 페널티

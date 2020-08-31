@@ -563,7 +563,8 @@ namespace MLAgents
             for (int i = 0; i < MarathonJoints.Count; i++)
             {
                 configurableJoints.Add(MarathonJoints[i].Joint.GetComponent<ConfigurableJoint>());
-                if (configurableJoints[i].gameObject.name.Contains("ankle"))
+                if (configurableJoints[i].gameObject.name.Contains("ankle") 
+                    || configurableJoints[i].gameObject.name.Contains("tibia"))
                 {
                     CollisionSensor sensor = configurableJoints[i].gameObject.AddComponent<CollisionSensor>();
                     collisionSensors.Add(sensor);

@@ -1,20 +1,2 @@
-2020-08-28 PM 2:58:40
+2020-08-31 PM 4:53:28
  
-Exception
-SocketException: 액세스 권한에 의해 숨겨진 소켓에 액세스를 시도했습니다.
-
-System.Net.Sockets.Socket.Bind (System.Net.EndPoint localEP) (at <14e3453b740b4bd690e8d4e5a013a715>:0)
-SyntaxTree.VisualStudio.Unity.Messaging.UdpSocket.Bind (System.Net.IPAddress address, System.Int32 port) (at <7bfe50ea87ae444bb97944401234ceb7>:0)
-SyntaxTree.VisualStudio.Unity.Messaging.Messager..ctor (System.Int32 port) (at <7bfe50ea87ae444bb97944401234ceb7>:0)
-SyntaxTree.VisualStudio.Unity.Messaging.Messager.BindTo (System.Int32 port) (at <7bfe50ea87ae444bb97944401234ceb7>:0)
-SyntaxTree.VisualStudio.Unity.Bridge.VisualStudioIntegration+<>c__DisplayClass9_0.<.cctor>b__0 () (at <843b7c5ab4d34b2491669c24f4d94522>:0)
-SyntaxTree.VisualStudio.Unity.Bridge.Project+<>c__DisplayClass40_0.<RunOnceOnUpdate>b__0 () (at <843b7c5ab4d34b2491669c24f4d94522>:0)
-System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) (at <fb001e01371b4adca20013e0ac763896>:0)
-Rethrow as TargetInvocationException: Exception has been thrown by the target of an invocation.
-System.Reflection.MonoMethod.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) (at <fb001e01371b4adca20013e0ac763896>:0)
-System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) (at <fb001e01371b4adca20013e0ac763896>:0)
-System.Delegate.DynamicInvokeImpl (System.Object[] args) (at <fb001e01371b4adca20013e0ac763896>:0)
-System.MulticastDelegate.DynamicInvokeImpl (System.Object[] args) (at <fb001e01371b4adca20013e0ac763896>:0)
-System.Delegate.DynamicInvoke (System.Object[] args) (at <fb001e01371b4adca20013e0ac763896>:0)
-UnityEditor.EditorApplication.Internal_CallUpdateFunctions () (at <47ddc45fb441488ba3df69fab6753def>:0)
-
