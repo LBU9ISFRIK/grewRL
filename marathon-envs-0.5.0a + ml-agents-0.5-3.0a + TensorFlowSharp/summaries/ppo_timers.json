@@ -1,0 +1,36 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1594088909",
+        "python_version": "3.6.10 |Anaconda, Inc.| (default, Mar 23 2020, 17:58:33) [MSC v.1916 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\GREW\\Anaconda3\\envs\\py36\\Scripts\\mlagents-learn config\\marathon_envs_config.yaml --force",
+        "mlagents_version": "0.16.0",
+        "mlagents_envs_version": "0.16.0",
+        "communication_protocol_version": "1.0.0",
+        "tensorflow_version": "2.0.0",
+        "end_time_seconds": "1594088975"
+    },
+    "total": 65.5605957,
+    "count": 1,
+    "self": 0.35242659999998693,
+    "children": {
+        "run_training.setup": {
+            "total": 0.014701,
+            "count": 1,
+            "self": 0.014701
+        },
+        "TrainerController.start_learning": {
+            "total": 65.1934681,
+            "count": 1,
+            "self": 0.0004113000000103284,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 65.1930568,
+                    "count": 1,
+                    "self": 65.1930568
+                }
+            }
+        }
+    }
+}
