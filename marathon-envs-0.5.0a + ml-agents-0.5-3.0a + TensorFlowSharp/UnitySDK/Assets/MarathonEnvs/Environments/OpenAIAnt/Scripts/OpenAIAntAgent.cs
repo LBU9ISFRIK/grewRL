@@ -167,6 +167,12 @@ public class OpenAIAntAgent : MarathonAgent
         }
         //print(str);
 
+        int remain = brain.brainParameters.vectorObservationSize - info.vectorObservation.Count;
+        for (int i = 0; i < remain; i++)
+        {
+            AddVectorObs(0f);
+        }
+        
         #endregion
     }
 
@@ -275,51 +281,51 @@ public class OpenAIAntAgent : MarathonAgent
 
         //속도 보너스
         float progress = GetVelocity();
-        
+
         //float targetDist = new Vector2(target.z - BodyParts["pelvis"].transform.position.z, target.x - BodyParts["pelvis"].transform.position.x).magnitude;
         //float progress = (beforeTargetDist - targetDist) / Time.fixedDeltaTime;
         //print(targetDist + ", " + beforeTargetDist + ", " + progress + ", " + GetVelocity());
         //beforeTargetDist = targetDist;
 
         //action 페널티
-        //const float self_electricity_cost = -2f;
-        //float actionAbsSum = 0f;
-        //const float self_stall_torque_cost = -0.1f;
-        //float actionSqrSum = 0f;
-        //for (int i = 0; i < Actions.Count; i++)
-        //{
-        //    actionAbsSum += Mathf.Abs(Actions[i] * JointVelocity[i]);
-        //    actionSqrSum += Actions[i] * Actions[i];
-        //}
-        //float absMean = actionAbsSum / Actions.Count;
-        //float sqrMean = actionSqrSum / Actions.Count;
-        //float electricity_cost = self_electricity_cost * absMean + self_stall_torque_cost * sqrMean;
-        //electricity_cost = Mathf.Clamp(electricity_cost, -1f, 1f);
+        const float self_electricity_cost = -2f;
+        float actionAbsSum = 0f;
+        const float self_stall_torque_cost = -0.1f;
+        float actionSqrSum = 0f;
+        for (int i = 0; i < Actions.Count; i++)
+        {
+            actionAbsSum += Mathf.Abs(Actions[i] * JointVelocity[i]);
+            actionSqrSum += Actions[i] * Actions[i];
+        }
+        float absMean = actionAbsSum / Actions.Count;
+        float sqrMean = actionSqrSum / Actions.Count;
+        float electricity_cost = self_electricity_cost * absMean + self_stall_torque_cost * sqrMean;
+        electricity_cost = Mathf.Clamp(electricity_cost, -1f, 1f);
 
-        ////joint stuck 페널티
-        //const float self_joints_at_limit_cost = -0.1f;
-        //int joints_at_limit = 0;
-        //for (int i = 0; i < configurableJoints.Count; i++)
-        //{
-        //    float lowerLimit = configurableJoints[i].lowAngularXLimit.limit * Mathf.Deg2Rad;
-        //    float upperLimit = configurableJoints[i].highAngularXLimit.limit * Mathf.Deg2Rad;
+        //joint stuck 페널티
+        const float self_joints_at_limit_cost = -0.1f;
+        int joints_at_limit = 0;
+        for (int i = 0; i < configurableJoints.Count; i++)
+        {
+            float lowerLimit = configurableJoints[i].lowAngularXLimit.limit * Mathf.Deg2Rad;
+            float upperLimit = configurableJoints[i].highAngularXLimit.limit * Mathf.Deg2Rad;
 
-        //    //float pos = MarathonJoints[i].Joint.transform.position.x;
-        //    float pos = lowerLimit + (upperLimit - lowerLimit) * (Actions[i] + 1f) * 0.5f;
-        //    float pos_mid = 0.5f * (lowerLimit + upperLimit);
-        //    pos = 2 * (pos - pos_mid) / (upperLimit - lowerLimit);
+            //float pos = MarathonJoints[i].Joint.transform.position.x;
+            float pos = lowerLimit + (upperLimit - lowerLimit) * (Actions[i] + 1f) * 0.5f;
+            float pos_mid = 0.5f * (lowerLimit + upperLimit);
+            pos = 2 * (pos - pos_mid) / (upperLimit - lowerLimit);
 
-        //    if (Mathf.Abs(pos) > 0.99f)
-        //        joints_at_limit++;
-        //}
-        //float joints_at_limit_cost = self_joints_at_limit_cost * joints_at_limit;
+            if (Mathf.Abs(pos) > 0.99f)
+                joints_at_limit++;
+        }
+        float joints_at_limit_cost = self_joints_at_limit_cost * joints_at_limit;
 
-        ////접촉 페널티
-        //float feet_collision_cost = 0f; //상수
+        //접촉 페널티
+        float feet_collision_cost = 0f; //상수
 
         //float reward = alive_bonus + progress + electricity_cost + joints_at_limit_cost + feet_collision_cost;
-        //float reward = progress + electricity_cost + joints_at_limit_cost + feet_collision_cost;
-        float reward = progress;
+        float reward = progress + electricity_cost + joints_at_limit_cost + feet_collision_cost;
+        //float reward = progress;
 
         //print(string.Format("alive_bonus : {0}, progress : {1}, electricity_cost : {2}, joints_at_limit_cost : {3}, reward : {4}", alive_bonus, progress, electricity_cost, joints_at_limit_cost, reward));
         //print("reward : " + reward);

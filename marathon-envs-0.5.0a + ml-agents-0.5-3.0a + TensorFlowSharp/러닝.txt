@@ -7,32 +7,23 @@ mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt_0827_py
 mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt_0826_pybullet_NoDeathAllReward
 
 익스큐터블
-mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt_6_0831_pybullet_NoDeathOnlyProgress --env="UnitySDK/Build/RealAnt_6_0831_NoDeathOnlyProgress/Unity Environment.exe" --no-graphics
+mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt_6_0901_pybullet_NoDeathOnlyProgress --env="UnitySDK/Build/RealAnt_6_0901_NoDeathOnlyProgress/Unity Environment.exe" --no-graphics
 
-mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt_0827_NoDeathAliveProgress --env="UnitySDK/Build/RealAnt_0827_NoDeathAliveProgress/Unity Environment.exe" --no-graphics
+mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt_0827_pybullet_NoDeathAliveProgress --env="UnitySDK/Build/RealAnt_0827_NoDeathAliveProgress/Unity Environment.exe" --no-graphics
 
 mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt_6_0831_pybullet_NoDeathAllReward --env="UnitySDK/Build/RealAnt_6_0831_NoDeathAllReward/Unity Environment.exe" --no-graphics
 
-mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt_6_0831_pybullet_NoDeathNoAlive --env="UnitySDK/Build/RealAnt_6_0831_pybullet_NoDeathNoAlive/Unity Environment.exe" --no-graphics
+mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt_6_0902_pybullet_NoDeathNoAlive --env="UnitySDK/Build/RealAnt_6_0902_NoDeathNoAlive/Unity Environment.exe" --no-graphics
 
 mlagents-learn config\marathon_envs_config.yaml --train --run-id=hexapod_0831_NoDeathOnlyProgress --env="UnitySDK/Build/hexapod_0831_NoDeathOnlyProgress/Unity Environment.exe" --no-graphics
 
 체크포인트 이어서(원하는 지점부터 하려면 checkpoint 파일 내용 수정)
 --load
 
-다리 수	obs(with sensor)	obs(no sensor)	action
-4	53		49		8
-6	75		69		12
-8	97		89		16
+다리 수	obs(with sensor)	action
+4	28		8
+6	38		12
+8	48		16
 
-l f	r f	1	4
-l m	r m	2	5
-l b	r b	3	6
-
-
-tf_upgrade_v2 --intree bullet3-2.89/ --outtree bullet3-2.89_v2/ --reportfile report.txt
-
-D:\grew_svn\2020\GitHub\grewRL\bullet3-master\examples\pybullet\gym\pybullet_envs\examples\enjoy_TF_AntBulletEnv_v0_2017may.py
-D:\grew_svn\2020\GitHub\grewRL\bullet3-master\examples\pybullet\gym\pybullet_envs\examples
-
-
+python import_pb_to_tensorboard.py --model_dir=models\RealAnt_6_0831_pybullet_NoDeathOnlyProgress-0\raw_graph_def.pb --log_dir=summaries
+python import_pb_to_tensorboard.py --model_dir=README.md --log_dir=summaries

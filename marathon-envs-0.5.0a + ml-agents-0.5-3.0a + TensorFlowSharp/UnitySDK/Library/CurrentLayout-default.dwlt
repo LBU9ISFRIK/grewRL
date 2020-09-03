@@ -112,10 +112,10 @@ MonoBehaviour:
     y: 30
     width: 2560
     height: 1307
-  m_MinSize: {x: 880, y: 492}
-  m_MaxSize: {x: 16005, y: 14042}
+  m_MinSize: {x: 881, y: 492}
+  m_MaxSize: {x: 16006, y: 14042}
   vertical: 0
-  controlID: 150
+  controlID: 132
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 492}
   m_MaxSize: {x: 12005, y: 14042}
   vertical: 1
-  controlID: 151
+  controlID: 133
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 605, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
-  controlID: 152
+  controlID: 134
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -420,23 +420,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 265c0000
-      m_LastClickedID: 23590
-      m_ExpandedIDs: bee4feffdee4fefff0e6feff40e8feff00fbffff62fbfffffa3f0000845c0000
+      m_SelectedIDs: 507bfeff
+      m_LastClickedID: -99504
+      m_ExpandedIDs: 547cfeff287efeff487efeff5a80feff62fbfffff83f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Academy
-        m_OriginalName: Academy
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 23684
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 4
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -482,9 +482,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -0.34457052, y: -0.564469, z: -0.65762293}
+    m_Target: {x: 15.450965, y: 1.1376896, z: 3.051835}
     speed: 2
-    m_Value: {x: -0.34457052, y: -0.564469, z: -0.65762293}
+    m_Value: {x: 15.450965, y: 1.1376896, z: 3.051835}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -530,13 +530,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.31682748, y: -0.46182412, z: 0.18098502, w: -0.80844724}
+    m_Target: {x: -0.44973952, y: -0.009387331, z: 0.0047248383, w: -0.89310086}
     speed: 2
-    m_Value: {x: -0.3168269, y: -0.46182328, z: 0.18098469, w: -0.8084458}
+    m_Value: {x: -0.44973832, y: -0.009387307, z: 0.0047248257, w: -0.89309853}
   m_Size:
-    m_Target: 1.5325856
+    m_Target: 21.977982
     speed: 2
-    m_Value: 1.5325856
+    m_Value: 21.977982
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -600,21 +600,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/MarathonEnvs/Environments/OpenAIAnt/Models
+    - Assets/1_Scripts/Net
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/MarathonEnvs/Environments/OpenAIAnt/Models
+  - Assets/1_Scripts/Net
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\grew_svn\2020\GitHub\grewRL\marathon-envs-0.5.0a + ml-agents-0.5-3.0a
     + TensorFlowSharp\UnitySDK
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 285}
-    m_SelectedIDs: e8420000
-    m_LastClickedID: 17128
-    m_ExpandedIDs: 00000000b4400000b6400000b8400000ba400000bc400000be400000c0400000c2400000c4400000c6400000c8400000ca4000005241000000ca9a3b
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 6e590000
+    m_LastClickedID: 22894
+    m_ExpandedIDs: 00000000b4400000b6400000b8400000ba400000bc400000be400000c0400000c2400000c4400000c6400000c8400000ca4000004a41000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -789,6 +789,6 @@ MonoBehaviour:
     height: 1286
   m_ViewDataDictionary: {fileID: 0}
   m_PosLeft: {x: 0, y: 0}
-  m_PosRight: {x: 0, y: 320}
+  m_PosRight: {x: 0, y: 0}
   m_Scope: 1
   m_SplitterFlex: 0.2
