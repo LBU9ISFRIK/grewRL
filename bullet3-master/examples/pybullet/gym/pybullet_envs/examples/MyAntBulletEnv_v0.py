@@ -26,14 +26,14 @@ print("obs dim : ", env.observation_space)
 print("act dim : ", env.action_space)
 
 loadFileIndex = 2
-loadFileString = "ppo2_pybulletAnt_end_{}".format(loadFileIndex)
-saveFileString = "ppo2_pybulletAnt_end_{}".format(loadFileIndex + 1)
+loadFileString = "ppo2_pybulletAnt_6_end_{}".format(loadFileIndex)
+saveFileString = "ppo2_pybulletAnt_6_end_{}".format(loadFileIndex + 1)
 
 print("loadFile : ", loadFileString)
 print("saveFile : ", saveFileString)
 
-isTrain = False
-isContinue = False
+isTrain = True
+isContinue = True
 if isTrain:
   print("start training =========================================")
 
@@ -43,7 +43,7 @@ if isTrain:
     print("load model =========================================")
     model = PPO2.load(loadFileString, env)
 
-  model.learn(total_timesteps=100000)
+  model.learn(total_timesteps=1000000)
   print("end training =========================================")
   
   model.save(saveFileString)

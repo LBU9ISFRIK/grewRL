@@ -45,8 +45,8 @@ class WalkerBaseBulletEnv(MJCFBaseBulletEnv):
       self.stateId = self._p.saveState()
       #print("saving state self.stateId:",self.stateId)
 
-    for line in traceback.format_stack():
-      print(line.strip())
+    #for line in traceback.format_stack():
+    #  print(line.strip())
 
     return r
 
@@ -119,7 +119,8 @@ class WalkerBaseBulletEnv(MJCFBaseBulletEnv):
     self.HUD(state, a, done)
     self.reward += sum(self.rewards)
 
-    #print("self._alive {}, progress {}, electricity_cost {}, joints_at_limit_cost {}, feet_collision_cost {}, sum {}".format(self._alive, progress, electricity_cost, joints_at_limit_cost, feet_collision_cost, sum(self.rewards)))
+    if done:
+        print("self._alive {}, progress {}, electricity_cost {}, joints_at_limit_cost {}, feet_collision_cost {}, sum {}".format(self._alive, progress, electricity_cost, joints_at_limit_cost, feet_collision_cost, sum(self.rewards)))
 
     return state, sum(self.rewards), bool(done), {}
 

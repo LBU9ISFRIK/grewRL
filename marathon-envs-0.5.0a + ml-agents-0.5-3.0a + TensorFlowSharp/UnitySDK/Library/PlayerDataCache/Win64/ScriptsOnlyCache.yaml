@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Client
     - GridAgent
     - LegOnOff
     - MLAgents.Brain
@@ -95,29 +96,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13366}
     - Class: 114
-      Script: {instanceID: 13784}
+      Script: {instanceID: 13396}
     - Class: 114
-      Script: {instanceID: 13792}
+      Script: {instanceID: 13786}
     - Class: 114
-      Script: {instanceID: 14200}
+      Script: {instanceID: 13794}
     - Class: 114
-      Script: {instanceID: 14296}
+      Script: {instanceID: 14202}
     - Class: 114
-      Script: {instanceID: 14408}
+      Script: {instanceID: 14298}
     - Class: 114
-      Script: {instanceID: 14546}
+      Script: {instanceID: 14410}
     - Class: 114
-      Script: {instanceID: 14660}
+      Script: {instanceID: 14548}
     - Class: 114
-      Script: {instanceID: 14694}
+      Script: {instanceID: 14662}
     - Class: 114
-      Script: {instanceID: 14714}
+      Script: {instanceID: 14696}
     - Class: 114
-      Script: {instanceID: 15086}
+      Script: {instanceID: 14716}
     - Class: 114
-      Script: {instanceID: 15166}
+      Script: {instanceID: 15088}
     - Class: 114
-      Script: {instanceID: 15474}
+      Script: {instanceID: 15168}
+    - Class: 114
+      Script: {instanceID: 15476}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -841,6 +844,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: 769a783d45ccf2a0b4046fd365bb3671
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Client
   - hash:
       serializedVersion: 2
       Hash: dde432dbd034a188dff286f2ed428b3d
@@ -1619,4 +1628,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/MarathonEnvs/Environments/OpenAIAnt/Scenes/OpenAIAnt.unity
   playerPath: D:/grew_svn/2020/GitHub/grewRL/marathon-envs-0.5.0a + ml-agents-0.5-3.0a
-    + TensorFlowSharp/UnitySDK/Build/hexapod_0831_NoDeathOnlyProgress/Unity Environment.exe
+    + TensorFlowSharp/UnitySDK/Build/test_0904/Unity Environment.exe
