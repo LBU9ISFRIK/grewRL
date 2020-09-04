@@ -22,17 +22,30 @@ public class Client : MonoBehaviour
 
     byte[] data;
 
+    public Transform plane;
+
     void Start()
     {
-        udpClient = new UdpClient();
         remoteEP = new IPEndPoint(IPAddress.Parse(strIP), port);
+        udpClient = new UdpClient(remoteEP);
+        udpClient.Client.Blocking = false;
+        udpClient.Client.ReceiveTimeout = 1000;
 
         udpState.udpClient = udpClient;
         udpState.remoteEP = remoteEP;
 
-        udpClient.Client.Bind(remoteEP);
+        //udpClient.Client.Bind(remoteEP);
 
-        udpClient.BeginReceive(new System.AsyncCallback(ReceiveCallback), udpState); //한번만 받음(비동기)
+        //udpClient.BeginReceive(new System.AsyncCallback(ReceiveCallback), udpState); //한번만 받음(비동기)
+
+        while (udpClient.Available > 0)
+        {
+            // receive bytes
+            data = udpClient.Receive(ref remoteEP);
+            print("clear data : " + Encoding.Default.GetString(data));
+        }
+
+        StartCoroutine(ReceiveData());
     }
 
     void Update()
@@ -46,16 +59,88 @@ public class Client : MonoBehaviour
         udpClient.Close();
     }
 
-    public static void ReceiveCallback(System.IAsyncResult ar)
+    IEnumerator ReceiveData()
     {
-        UdpClient u = ((UdpState)(ar.AsyncState)).udpClient;
-        IPEndPoint e = ((UdpState)(ar.AsyncState)).remoteEP;
+        while (true)
+        {
+            try
+            {
+                if (udpClient.Available > 0)
+                {
+                    // receive bytes
+                    data = udpClient.Receive(ref remoteEP);
+                    print(Encoding.Default.GetString(data));
+                    string str = Encoding.Default.GetString(data);
 
-        byte[] receiveBytes = u.EndReceive(ar, ref e);
-        string receiveString = Encoding.ASCII.GetString(receiveBytes);
+                    string[] sp = str.Split('$');
 
-        print($"Received: {receiveString}");
+                    Vector3 temp = plane.localScale;
 
-        u.BeginReceive(new System.AsyncCallback(ReceiveCallback), (UdpState)(ar.AsyncState)); //한번만 받고 끝나지 않도록
+                    for (int i = 0; i < sp.Length; i++)
+                    {
+
+
+                        print(sp[0]);
+                        print(sp[1]);
+
+                        
+                        temp.x = int.Parse(sp[0]);
+                        temp.z = int.Parse(sp[1]);
+                        plane.localScale = temp;
+
+                    }
+
+
+                }
+            }
+            catch (System.Exception err)
+            {
+                //print(err.ToString());
+            }
+
+            yield return new WaitForEndOfFrame();
+        }
     }
+
+    //public void ReceiveCallback(System.IAsyncResult ar)
+    //{
+    //    UdpClient u = ((UdpState)(ar.AsyncState)).udpClient;
+    //    IPEndPoint e = ((UdpState)(ar.AsyncState)).remoteEP;
+
+    //    byte[] receiveBytes = u.EndReceive(ar, ref e);
+    //    string receiveString = Encoding.ASCII.GetString(receiveBytes);
+
+    //    print($"Received: {receiveString}");
+
+    //    u.BeginReceive(new System.AsyncCallback(ReceiveCallback), (UdpState)(ar.AsyncState)); //한번만 받고 끝나지 않도록
+    //}
+
+    //public void asdf()
+    //{
+    //    var academyParameters =
+    //                new MLAgents.CommunicatorObjects.UnityRLInitializationOutput();
+    //    academyParameters.Name = gameObject.name;
+    //    academyParameters.Version = kApiVersion;
+    //    foreach (var brain in brains)
+    //    {
+    //        var bp = brain.brainParameters;
+    //        academyParameters.BrainParameters.Add(
+    //            MLAgents.Batcher.BrainParametersConvertor(
+    //                bp,
+    //                brain.gameObject.name,
+    //                (MLAgents.CommunicatorObjects.BrainTypeProto)
+    //                brain.brainType));
+    //    }
+
+    //    //academyParameters.EnvironmentParameters =
+    //    //    new MLAgents.CommunicatorObjects.EnvironmentParametersProto();
+    //    //foreach (var key in resetParameters.Keys)
+    //    //{
+    //    //    academyParameters.EnvironmentParameters.FloatParameters.Add(
+    //    //        key, resetParameters[key]
+    //    //    );
+    //    //}
+
+    //    marathonAcademy.brainBatcher.SendAcademyParameters(academyParameters);
+    //}
 }
