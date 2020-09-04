@@ -27,7 +27,7 @@ public class Client : MonoBehaviour
     public Brain brain;
     public MarathonSpawner[] agents;
 
-    int leg_count = 6;
+    int leg_count;
 
     void Start()
     {
@@ -74,25 +74,33 @@ public class Client : MonoBehaviour
                 {
                     // receive bytes
                     data = udpClient.Receive(ref remoteEP);
-                    print(Encoding.Default.GetString(data));
+                    string str = Encoding.Default.GetString(data);
 
-                    brain.brainParameters.vectorObservationSize = 8 + leg_count * 5;
-                    brain.brainParameters.vectorActionSize[0] = leg_count * 2;
-
-                    for (int i = 0; i < agents.Length; i++)
+                    string[] sp = str.Split('$');
+                    for (int i = 0; i < sp.Length; i++)
                     {
-                        string str = string.Format("N/pybullet_ant_{0}", leg_count);
-                        TextAsset asset = Resources.Load<TextAsset>(str);
-                        agents[i].Xml = asset;
+                        print(sp[i]);
                     }
 
-                    marathonAcademy.InitializeEnvironment();
-                    marathonAcademy.enabled = true;
+                    if(int.TryParse(str, out leg_count))
+                    {
+                        brain.brainParameters.vectorObservationSize = 8 + leg_count * 5;
+                        brain.brainParameters.vectorActionSize[0] = leg_count * 2;
 
-                    if (leg_count == 4)
-                        leg_count = 6;
+                        for (int i = 0; i < agents.Length; i++)
+                        {
+                            string xmlPath = string.Format("N/pybullet_ant_{0}", leg_count);
+                            TextAsset asset = Resources.Load<TextAsset>(xmlPath);
+                            agents[i].Xml = asset;
+                        }
+
+                        marathonAcademy.InitializeEnvironment();
+                        marathonAcademy.enabled = true;
+                    }
                     else
-                        leg_count = 4;
+                    {
+                        print("수신 데이터 int 아님");
+                    }
                 }
             }
             catch (System.Exception err)
