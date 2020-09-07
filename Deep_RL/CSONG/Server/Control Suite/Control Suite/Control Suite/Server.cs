@@ -34,6 +34,8 @@ namespace Control_Suite
 
             string send = g_s_width.Text;
             send += "$"+g_s_height.Text;
+            send += "$" + t_s_x.Text;
+            send += "$" + t_s_y.Text;
 
             data = Encoding.Default.GetBytes(send);
             udpServer.Send(data, data.Length, remoteEP);

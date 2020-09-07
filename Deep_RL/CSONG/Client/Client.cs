@@ -7,6 +7,13 @@ using System.Net.Sockets;
 
 public class Client : MonoBehaviour
 {
+    public Terrain terrain;
+    public int sizeX;
+    public int sizeY;
+    public int sizeZ;
+    public Vector3 terrainSize;
+    public Transform transform;
+
     public struct UdpState
     {
         public UdpClient udpClient;
@@ -22,8 +29,8 @@ public class Client : MonoBehaviour
 
     byte[] data;
 
-    public Transform plane;
 
+    // Start is called before the first frame update
     void Start()
     {
         remoteEP = new IPEndPoint(IPAddress.Parse(strIP), port);
@@ -46,10 +53,16 @@ public class Client : MonoBehaviour
         }
 
         StartCoroutine(ReceiveData());
+
+
+        terrain = GetComponent<Terrain>();
     }
 
+
+    // Update is called once per frame
     void Update()
     {
+
         //data = udpClient.Receive(ref remoteEP); //받을때까지 멈춤(동기)
         //print(string.Format("{0} : 수신 : {1}", remoteEP.ToString(), Encoding.Default.GetString(data)));
     }
@@ -74,7 +87,8 @@ public class Client : MonoBehaviour
 
                     string[] sp = str.Split('$');
 
-                    Vector3 temp = plane.localScale;
+
+                    Vector3 temp = transform.localScale;
 
                     for (int i = 0; i < sp.Length; i++)
                     {
@@ -83,10 +97,23 @@ public class Client : MonoBehaviour
                         print(sp[0]);
                         print(sp[1]);
 
-                        
+                        //Ground W
                         temp.x = int.Parse(sp[0]);
+                        //Ground H
                         temp.z = int.Parse(sp[1]);
-                        plane.localScale = temp;
+                        transform.localScale = temp;
+
+                        // tile size X = sp[2]
+                        int sizeX = int.Parse(sp[2]);
+                        int sizeY = 600;
+                        // tile size Y = sp[3]
+                        int sizeZ = int.Parse(sp[3]);
+
+
+                        terrainSize = new Vector3(sizeX, sizeY, sizeZ);
+                        terrain.terrainData.size = terrainSize;
+
+
 
                     }
 
@@ -101,46 +128,4 @@ public class Client : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
     }
-
-    //public void ReceiveCallback(System.IAsyncResult ar)
-    //{
-    //    UdpClient u = ((UdpState)(ar.AsyncState)).udpClient;
-    //    IPEndPoint e = ((UdpState)(ar.AsyncState)).remoteEP;
-
-    //    byte[] receiveBytes = u.EndReceive(ar, ref e);
-    //    string receiveString = Encoding.ASCII.GetString(receiveBytes);
-
-    //    print($"Received: {receiveString}");
-
-    //    u.BeginReceive(new System.AsyncCallback(ReceiveCallback), (UdpState)(ar.AsyncState)); //한번만 받고 끝나지 않도록
-    //}
-
-    //public void asdf()
-    //{
-    //    var academyParameters =
-    //                new MLAgents.CommunicatorObjects.UnityRLInitializationOutput();
-    //    academyParameters.Name = gameObject.name;
-    //    academyParameters.Version = kApiVersion;
-    //    foreach (var brain in brains)
-    //    {
-    //        var bp = brain.brainParameters;
-    //        academyParameters.BrainParameters.Add(
-    //            MLAgents.Batcher.BrainParametersConvertor(
-    //                bp,
-    //                brain.gameObject.name,
-    //                (MLAgents.CommunicatorObjects.BrainTypeProto)
-    //                brain.brainType));
-    //    }
-
-    //    //academyParameters.EnvironmentParameters =
-    //    //    new MLAgents.CommunicatorObjects.EnvironmentParametersProto();
-    //    //foreach (var key in resetParameters.Keys)
-    //    //{
-    //    //    academyParameters.EnvironmentParameters.FloatParameters.Add(
-    //    //        key, resetParameters[key]
-    //    //    );
-    //    //}
-
-    //    marathonAcademy.brainBatcher.SendAcademyParameters(academyParameters);
-    //}
 }
