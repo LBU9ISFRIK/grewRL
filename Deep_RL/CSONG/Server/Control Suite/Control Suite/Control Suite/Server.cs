@@ -31,8 +31,17 @@ namespace Control_Suite
 
         private void button3_Click(object sender, EventArgs e)
         {
-            data = Encoding.Default.GetBytes(textBox1.Text);
+
+            string send = g_s_width.Text;
+            send += "$"+g_s_height.Text;
+            send += "$" + t_s_x.Text;
+            send += "$" + t_s_y.Text;
+
+            data = Encoding.Default.GetBytes(send);
             udpServer.Send(data, data.Length, remoteEP);
+
+
+
         }
 
 
@@ -120,7 +129,7 @@ namespace Control_Suite
             
             if (ofd_tb24.ShowDialog() == DialogResult.OK)
             {
-                textBox24.Text = ofd_tb24.FileName;
+                e_3d_model.Text = ofd_tb24.FileName;
             }
         }
 
@@ -130,7 +139,7 @@ namespace Control_Suite
         {
             if (ofd_tb25.ShowDialog() == DialogResult.OK)
             {
-                textBox25.Text = ofd_tb25.FileName;
+                goal_tem1.Text = ofd_tb25.FileName;
             }
         }
 
@@ -140,7 +149,7 @@ namespace Control_Suite
         {
             if (ofd_tb26.ShowDialog() == DialogResult.OK)
             {
-                textBox26.Text = ofd_tb26.FileName;
+                goal_tem2.Text = ofd_tb26.FileName;
             }
         }
 
@@ -150,7 +159,7 @@ namespace Control_Suite
         {
             if (ofd_tb27.ShowDialog() == DialogResult.OK)
             {
-                textBox27.Text = ofd_tb27.FileName;
+                goal_tem3.Text = ofd_tb27.FileName;
             }
         }
 
@@ -160,7 +169,7 @@ namespace Control_Suite
         {
             if (ofd_tb28.ShowDialog() == DialogResult.OK)
             {
-                textBox28.Text = ofd_tb28.FileName;
+                goal_tem4.Text = ofd_tb28.FileName;
             }
         }
 
@@ -184,6 +193,11 @@ namespace Control_Suite
             gobject.DrawLine(grayPen, 10, 25, 1440, 25);
             // Down Line
             gobject.DrawLine(grayPen, 10, 500, 1440, 500);
+
+        }
+
+        private void g_s_width_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
