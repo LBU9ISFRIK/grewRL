@@ -8,3 +8,13 @@ C:\Users\GREW\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Server.cs
 C:\Users\GREW\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Server.exe
 C:\Users\GREW\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Server.pdb
 C:\Users\GREW\source\repos\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\Server.csprojAssemblyReference.cache
+D:\grew_svn\2020\GitHub\grewRL\Server\WindowsFormsApp1\bin\Debug\Server.exe.config
+D:\grew_svn\2020\GitHub\grewRL\Server\WindowsFormsApp1\bin\Debug\Server.exe
+D:\grew_svn\2020\GitHub\grewRL\Server\WindowsFormsApp1\bin\Debug\Server.pdb
+D:\grew_svn\2020\GitHub\grewRL\Server\WindowsFormsApp1\obj\Debug\Server.csprojAssemblyReference.cache
+D:\grew_svn\2020\GitHub\grewRL\Server\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Server.resources
+D:\grew_svn\2020\GitHub\grewRL\Server\WindowsFormsApp1\obj\Debug\Server.Properties.Resources.resources
+D:\grew_svn\2020\GitHub\grewRL\Server\WindowsFormsApp1\obj\Debug\Server.csproj.GenerateResource.cache
+D:\grew_svn\2020\GitHub\grewRL\Server\WindowsFormsApp1\obj\Debug\Server.csproj.CoreCompileInputs.cache
+D:\grew_svn\2020\GitHub\grewRL\Server\WindowsFormsApp1\obj\Debug\Server.exe
+D:\grew_svn\2020\GitHub\grewRL\Server\WindowsFormsApp1\obj\Debug\Server.pdb

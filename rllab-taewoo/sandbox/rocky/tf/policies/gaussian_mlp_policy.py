@@ -13,6 +13,7 @@ from rllab.misc import logger
 from sandbox.rocky.tf.misc import tensor_utils
 import tensorflow as tf
 
+import traceback
 
 class GaussianMLPPolicy(StochasticPolicy, LayersPowered, Serializable):
     def __init__(
@@ -31,7 +32,8 @@ class GaussianMLPPolicy(StochasticPolicy, LayersPowered, Serializable):
             output_nonlinearity=None,
             mean_network=None,
             std_network=None,
-            std_parametrization='exp'
+            std_parametrization='exp',
+            create_count=0
     ):
         """
         :param env_spec:
@@ -52,6 +54,10 @@ class GaussianMLPPolicy(StochasticPolicy, LayersPowered, Serializable):
             - softplus: the std will be computed as log(1+exp(x))
         :return:
         """
+        print("-======================= gaussian policy")
+        print("env_spec : ", env_spec)
+        print("env_spec type: ", type(env_spec))
+
         Serializable.quick_init(self, locals())
         assert isinstance(env_spec.action_space, Box)
 
@@ -63,7 +69,7 @@ class GaussianMLPPolicy(StochasticPolicy, LayersPowered, Serializable):
             # create network
             if mean_network is None:
                 mean_network = MLP(
-                    name="mean_network",
+                    name="mean_network{}".format(create_count),
                     input_shape=(obs_dim,),
                     output_dim=action_dim,
                     hidden_sizes=hidden_sizes,
@@ -100,7 +106,7 @@ class GaussianMLPPolicy(StochasticPolicy, LayersPowered, Serializable):
                         mean_network.input_layer,
                         num_units=action_dim,
                         param=tf.constant_initializer(init_std_param),
-                        name="output_std_param",
+                        name="output_std_param{}".format(create_count),
                         trainable=learn_std,
                     )
 
@@ -162,6 +168,9 @@ class GaussianMLPPolicy(StochasticPolicy, LayersPowered, Serializable):
     @overrides
     def get_action(self, observation):
         flat_obs = self.observation_space.flatten(observation)
+        #print("flat_obs size : ", len(flat_obs))
+        #print("flat_obs : ", flat_obs)
+
         mean, log_std = [x[0] for x in self._f_dist([flat_obs])]
         rnd = np.random.normal(size=mean.shape)
         action = rnd * np.exp(log_std) + mean

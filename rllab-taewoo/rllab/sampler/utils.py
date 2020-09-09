@@ -2,7 +2,6 @@ import numpy as np
 from rllab.misc import tensor_utils
 import time
 
-
 def rollout(env, agent, max_path_length=np.inf, animated=False, speedup=1, save_video=True, video_filename='sim_out.mp4', reset_arg=None):
     observations = []
     actions = []

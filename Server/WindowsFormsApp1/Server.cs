@@ -20,7 +20,7 @@ namespace WindowsFormsApp1
         UdpClient udpServer;
         IPEndPoint remoteEP;
 
-        byte[] data;
+        byte[] sendData;
 
         public Server()
         {
@@ -45,11 +45,11 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             //int width = 10;
-            //string send = "leg_count : " + send_textBox.Text;
-            //send += "$width : " + width;
+            string sendString = "LegCount:" + send_textBox.Text;
+            sendString += "$StateType:position,torso_velocity";
 
-            data = Encoding.Default.GetBytes(send_textBox.Text);
-            udpServer.Send(data, data.Length, remoteEP);
+            sendData = Encoding.Default.GetBytes(sendString);
+            udpServer.Send(sendData, sendData.Length, remoteEP);
         }
 
         private void Server_FormClosed(object sender, FormClosedEventArgs e)

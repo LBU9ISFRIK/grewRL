@@ -1,8 +1,10 @@
 import tensorflow as tf
 import numpy as np
 
+import traceback
 
 def compile_function(inputs, outputs, log_name=None):
+    print("compile_function")
     def run(*input_vals):
         sess = tf.get_default_session()
         return sess.run(outputs, feed_dict=dict(list(zip(inputs, input_vals))))
@@ -11,6 +13,9 @@ def compile_function(inputs, outputs, log_name=None):
 
 
 def flatten_tensor_variables(ts):
+    print("flatten_tensor_variables")
+    #for line in traceback.format_stack():
+    #    print(line.strip())
     return tf.concat(axis=0, values=[tf.reshape(x, [-1]) for x in ts])
 
 

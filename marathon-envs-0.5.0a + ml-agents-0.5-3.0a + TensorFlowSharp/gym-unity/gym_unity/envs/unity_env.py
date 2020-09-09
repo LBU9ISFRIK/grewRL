@@ -128,7 +128,9 @@ class UnityEnv(gym.Env):
             else:
                 action = np.array(action)
 
-        info = self._env.step(action)[self.brain_name]
+        result = self._env.step(action) #추가함
+        info = result[self.brain_name] #수정함
+
         n_agents = len(info.agents)
         self._check_agents(n_agents)
         self._current_state = info

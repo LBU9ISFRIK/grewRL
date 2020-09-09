@@ -1,8 +1,2 @@
-2020-09-04 PM 6:51:55
+2020-09-09 PM 6:49:01
  
-Log
-4
-UnityEngine.MonoBehaviour:print(Object)
-<ReceiveData>d__14:MoveNext() (at Assets/1_Scripts/Net/Client.cs:82)
-UnityEngine.GUIUtility:ProcessEvent(Int32, IntPtr)
-

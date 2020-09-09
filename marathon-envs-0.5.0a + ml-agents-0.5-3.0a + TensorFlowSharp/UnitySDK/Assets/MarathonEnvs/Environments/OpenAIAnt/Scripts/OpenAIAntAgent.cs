@@ -36,6 +36,14 @@ public class OpenAIAntAgent : MarathonAgent
                     }
                 }
             }
+
+            Actions = new List<float>();
+            for (int i = 0; i < MarathonJoints.Count; i++)
+            {
+                Actions.Add(0f);
+            }
+
+            beforeAngle = new float[MarathonJoints.Count];
         }
         catch (Exception e)
         {
@@ -70,18 +78,6 @@ public class OpenAIAntAgent : MarathonAgent
     float[] beforeAngle;
     void ObservationsDefault()
     {
-        //print(Time.frameCount + " obs");
-        if (Actions.Count <= 0)
-        {
-            Actions = new List<float>();
-            for (int i = 0; i < MarathonJoints.Count; i++)
-            {
-                Actions.Add(0f);
-            }
-
-            beforeAngle = new float[MarathonJoints.Count];
-        }
-
         var pelvis = BodyParts["pelvis"];
         #region origin
         //AddVectorObs(pelvis.velocity); //3
@@ -167,12 +163,20 @@ public class OpenAIAntAgent : MarathonAgent
         }
         //print(str);
 
-        int remain = brain.brainParameters.vectorObservationSize - info.vectorObservation.Count;
+        //int remain = brain.brainParameters.vectorObservationSize - info.vectorObservation.Count;
+        int remain = 38 - info.vectorObservation.Count;
         for (int i = 0; i < remain; i++)
         {
             AddVectorObs(0f);
         }
-        
+
+        #endregion
+
+        #region CSONG
+        foreach (var item in collectStateList)
+        {
+            item();
+        }
         #endregion
     }
 
