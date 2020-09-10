@@ -89,8 +89,8 @@ public class Client : MonoBehaviour
                         //print(sp[i]);
                         if (sp[i].Contains("LegCount"))
                             ChangeXML(sp[i]);
-                        //else if (sp[i].Contains("StateType"))
-                        //    ChangeState(sp[i]);
+                        else if (sp[i].Contains("StateType"))
+                            ChangeState(sp[i]);
                     }
                 }
             }
@@ -138,26 +138,48 @@ public class Client : MonoBehaviour
         }
     }
 
-    public void ChangeState(string str)
+    public void ChangeState(string str) //StateType,position:0,position:1,position:2,rotation:0,
     {
-        string[] split = str.Split(':');
-        split = split[1].Split(',');
+        foreach (var agent in marathonAgents)
+            agent.collectStateList.Clear();
 
-        foreach (var item in split)
+        str = str.Replace("StateType", ""); //,position:0,position:1,position:2,rotation:0,
+
+        string[] split = str.Split(','); //position:0 position:1 position:2 rotation:0
+        foreach (string item in split)
         {
+            if (item == "")
+                continue;
+
+            string[] split2 = item.Split(':');
+            string category = split2[0];
+            int xyz = int.Parse(split2[1]);
+
             foreach (var agent in marathonAgents)
             {
-                agent.collectStateList.Clear();
-
-                if (item.Equals(MarathonAgent.E_STATE.position.ToString()))
+                if (category.Equals(MarathonAgent.E_STATE.position.ToString()))
                 {
-                    agent.collectStateList.Add(agent.CollectPosition);
+                    agent.collectStateList.Add(new MarathonAgent.CollectStateStruct(agent.CollectPosition, xyz));
                 }
-                else if (item.Equals(MarathonAgent.E_STATE.torso_velocity.ToString()))
+                else if (category.Equals(MarathonAgent.E_STATE.rotation.ToString()))
+                {
+                    agent.collectStateList.Add(new MarathonAgent.CollectStateStruct(agent.CollectRotation, xyz));
+                }
+                else if (category.Equals(MarathonAgent.E_STATE.velocity.ToString()))
+                {
+                }
+                else if (category.Equals(MarathonAgent.E_STATE.angularVelocity.ToString()))
+                {
+                }
+                else if (category.Equals(MarathonAgent.E_STATE.joint_velocity.ToString()))
+                {
+                }
+                else if (category.Equals(MarathonAgent.E_STATE.joint_angularVelocity.ToString()))
                 {
                 }
             }
         }
+        
     }
 
     //public void ReceiveCallback(System.IAsyncResult ar)

@@ -11,16 +11,28 @@ namespace MLAgents
         public enum E_STATE
         {
             position,
-            eulerAngles,
-            torso_velocity,
-            torso_angularVelocity,
+            rotation,
+            velocity,
+            angularVelocity,
             joint_velocity,
             joint_angularVelocity,
             end,
         }
 
-        public delegate void CollectState();
-        public List<CollectState> collectStateList = new List<CollectState>();
+        public struct CollectStateStruct
+        {
+            public CollectState collectState;
+            public int index;
+
+            public CollectStateStruct(CollectState _collectState, int _index)
+            {
+                collectState = _collectState;
+                index = _index;
+            }
+        }
+
+        public delegate void CollectState(int index);
+        public List<CollectStateStruct> collectStateList = new List<CollectStateStruct>();
         //
         // Params for prefabs
 
@@ -240,18 +252,17 @@ namespace MLAgents
                 my_vectorAction = new float[MarathonJoints.Count];
 
                 //float re = -1f;
-                for (int i = 0; i < my_vectorAction.Length; i += 2)
-                {
-                    //my_vectorAction[i] = 0.5f * re;
-                    //my_vectorAction[i + 1] = 1f * re;
-                    //re *= -1f;
-                    my_vectorAction[i] = vectorAction[i];
-                }
+                //for (int i = 0; i < my_vectorAction.Length; i += 2)
+                //{
+                //    //my_vectorAction[i] = 0.5f * re;
+                //    //my_vectorAction[i + 1] = 1f * re;
+                //    //re *= -1f;
+                //}
             }
 
             if (useMyVector)
             {
-                for (int i = 0; i < my_vectorAction.Length; i += 2)
+                for (int i = 0; i < my_vectorAction.Length; i++)
                 {
                     my_vectorAction[i] = vectorAction[i];
                 }
@@ -713,9 +724,25 @@ namespace MLAgents
             }
         }
 
-        public void CollectPosition()
+        protected float GetAngle(float eulerAngle)
         {
-            AddVectorObs(transform.position);
+            while (eulerAngle <= -180)
+                eulerAngle += 360;
+            while (eulerAngle >= 180f)
+                eulerAngle -= 360f;
+
+            return eulerAngle;
+        }
+
+        public void CollectPosition(int xyz)
+        {
+            AddVectorObs(BodyParts["pelvis"].transform.position[xyz]);
+        }
+
+        public void CollectRotation(int xyz)
+        {
+            AddVectorObs(GetAngle(BodyParts["pelvis"].transform.localEulerAngles[xyz]) * Mathf.Deg2Rad);
+            
         }
     }
 }

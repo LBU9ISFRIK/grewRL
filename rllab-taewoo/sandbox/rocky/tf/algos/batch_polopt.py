@@ -12,6 +12,7 @@ import numpy as np
 from sandbox.rocky.tf import spaces
 from rllab.envs.base import EnvSpec
 from sandbox.rocky.tf.policies.gaussian_mlp_policy import GaussianMLPPolicy
+from rllab.envs.normalized_env import normalize
 
 class BatchPolopt(RLAlgorithm):
     """
@@ -149,7 +150,9 @@ class BatchPolopt(RLAlgorithm):
                         self.env.action_space = spaces.Box(-high, high)
 
                         self.env.spec = EnvSpec(observation_space=self.env.observation_space,action_space=self.env.action_space,)
-
+                        
+                        #self.env._wrapped_env = normalize(self.env)
+                        
                         self.policy = GaussianMLPPolicy(name='policy', env_spec=self.env.spec, create_count=1)
                         self.init_opt()
                         uninit_vars = []
@@ -161,7 +164,6 @@ class BatchPolopt(RLAlgorithm):
                         sess.run(tf.initialize_variables(uninit_vars))
                         print("re init")
                         paths = self.obtain_samples(itr)
-                        pass
                     
                     logger.log("Processing samples...")
                     samples_data = self.process_samples(itr, paths)
