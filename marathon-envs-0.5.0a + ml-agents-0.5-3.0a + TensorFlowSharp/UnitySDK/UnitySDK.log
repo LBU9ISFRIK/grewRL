@@ -1,8 +1,2402 @@
-2020-09-04 PM 6:51:55
+2020-09-10 PM 6:37:00
  
 Log
-4
+38
 UnityEngine.MonoBehaviour:print(Object)
-<ReceiveData>d__14:MoveNext() (at Assets/1_Scripts/Net/Client.cs:82)
-UnityEngine.GUIUtility:ProcessEvent(Int32, IntPtr)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+38
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
+
+Log
+28
+UnityEngine.MonoBehaviour:print(Object)
+OpenAIAntAgent:ObservationsDefault() (at Assets/MarathonEnvs/Environments/OpenAIAnt/Scripts/OpenAIAntAgent.cs:176)
+MLAgents.MarathonAgent:CollectObservations() (at Assets/MarathonEnvs/Scripts/MarathonAgent.cs:236)
+MLAgents.Agent:SendInfoToBrain() (at Assets/ML-Agents/Scripts/Agent.cs:527)
+MLAgents.Agent:SendInfo() (at Assets/ML-Agents/Scripts/Agent.cs:935)
+MLAgents.Academy:EnvironmentStep() (at Assets/ML-Agents/Scripts/Academy.cs:611)
+MLAgents.Academy:FixedUpdate() (at Assets/ML-Agents/Scripts/Academy.cs:639)
 

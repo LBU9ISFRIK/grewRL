@@ -108,6 +108,7 @@ class UnityGymEnv(Env, Serializable):
         #    print(line)
 
         next_obs, reward, done, info = self.env.step(action)
+        
         return Step(next_obs, reward, done, **info)
 
     def render(self):

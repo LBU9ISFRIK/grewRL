@@ -25,12 +25,19 @@ public class Client : MonoBehaviour
 
     public MarathonAcademy marathonAcademy;
     public Brain brain;
-    public MarathonSpawner[] agents;
+    public MarathonSpawner[] marathonSpawners;
+    private MarathonAgent[] marathonAgents;
 
     int leg_count;
 
     void Start()
     {
+        marathonAgents = new MarathonAgent[marathonSpawners.Length];
+        for (int i = 0; i < marathonAgents.Length; i++)
+        {
+            marathonAgents[i] = marathonSpawners[i].GetComponent<MarathonAgent>();
+        }
+
         remoteEP = new IPEndPoint(IPAddress.Parse(strIP), port);
         udpClient = new UdpClient(remoteEP);
         udpClient.Client.Blocking = false;
@@ -79,27 +86,11 @@ public class Client : MonoBehaviour
                     string[] sp = str.Split('$');
                     for (int i = 0; i < sp.Length; i++)
                     {
-                        print(sp[i]);
-                    }
-
-                    if(int.TryParse(str, out leg_count))
-                    {
-                        brain.brainParameters.vectorObservationSize = 8 + leg_count * 5;
-                        brain.brainParameters.vectorActionSize[0] = leg_count * 2;
-
-                        for (int i = 0; i < agents.Length; i++)
-                        {
-                            string xmlPath = string.Format("N/pybullet_ant_{0}", leg_count);
-                            TextAsset asset = Resources.Load<TextAsset>(xmlPath);
-                            agents[i].Xml = asset;
-                        }
-
-                        marathonAcademy.InitializeEnvironment();
-                        marathonAcademy.enabled = true;
-                    }
-                    else
-                    {
-                        print("수신 데이터 int 아님");
+                        //print(sp[i]);
+                        if (sp[i].Contains("LegCount"))
+                            ChangeXML(sp[i]);
+                        else if (sp[i].Contains("StateType"))
+                            ChangeState(sp[i]);
                     }
                 }
             }
@@ -110,6 +101,85 @@ public class Client : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }
+    }
+
+    public void ChangeXML(string str)
+    {
+        string[] split = str.Split(':');
+        foreach (var item in split)
+        {
+            if (int.TryParse(item, out leg_count))
+            {
+                //brain.brainParameters.vectorObservationSize = 8 + leg_count * 5;
+                //brain.brainParameters.vectorActionSize[0] = leg_count * 2;
+
+                for (int i = 0; i < marathonSpawners.Length; i++)
+                {
+                    string xmlPath = string.Format("N/pybullet_ant_{0}", leg_count);
+                    TextAsset asset = Resources.Load<TextAsset>(xmlPath);
+                    marathonSpawners[i].Xml = asset;
+                    marathonAgents[i].AgentReset();
+                }
+
+                //marathonAcademy.InitializeEnvironment();
+                try
+                {
+                    marathonAcademy.UpdateBrainParameters();
+                }
+                catch (System.Exception)
+                {
+                    
+                }
+                
+                marathonAcademy.enabled = true;
+
+                return;
+            }
+        }
+    }
+
+    public void ChangeState(string str) //StateType,position:0,position:1,position:2,rotation:0,
+    {
+        foreach (var agent in marathonAgents)
+            agent.collectStateList.Clear();
+
+        str = str.Replace("StateType", ""); //,position:0,position:1,position:2,rotation:0,
+
+        string[] split = str.Split(','); //position:0 position:1 position:2 rotation:0
+        foreach (string item in split)
+        {
+            if (item == "")
+                continue;
+
+            string[] split2 = item.Split(':');
+            string category = split2[0];
+            int xyz = int.Parse(split2[1]);
+
+            foreach (var agent in marathonAgents)
+            {
+                if (category.Equals(MarathonAgent.E_STATE.position.ToString()))
+                {
+                    agent.collectStateList.Add(new MarathonAgent.CollectStateStruct(agent.CollectPosition, xyz));
+                }
+                else if (category.Equals(MarathonAgent.E_STATE.rotation.ToString()))
+                {
+                    agent.collectStateList.Add(new MarathonAgent.CollectStateStruct(agent.CollectRotation, xyz));
+                }
+                else if (category.Equals(MarathonAgent.E_STATE.velocity.ToString()))
+                {
+                }
+                else if (category.Equals(MarathonAgent.E_STATE.angularVelocity.ToString()))
+                {
+                }
+                else if (category.Equals(MarathonAgent.E_STATE.joint_velocity.ToString()))
+                {
+                }
+                else if (category.Equals(MarathonAgent.E_STATE.joint_angularVelocity.ToString()))
+                {
+                }
+            }
+        }
+        
     }
 
     //public void ReceiveCallback(System.IAsyncResult ar)

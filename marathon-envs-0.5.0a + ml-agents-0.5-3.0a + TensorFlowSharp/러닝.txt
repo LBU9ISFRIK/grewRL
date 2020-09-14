@@ -4,7 +4,7 @@
 
 유니티 에디터
 
-mlagents-learn config\marathon_envs_config.yaml --train --run-id=test_0904
+mlagents-learn config\marathon_envs_config.yaml --train --run-id=test_0907
 
 mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt_0827_pybullet_NoDeathOnlyProgress
 mlagents-learn config\marathon_envs_config.yaml --train --run-id=RealAnt_0826_pybullet_NoDeathAllReward

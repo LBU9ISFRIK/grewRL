@@ -1,4 +1,4 @@
-ï»¿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +36,14 @@ public class OpenAIAntAgent : MarathonAgent
                     }
                 }
             }
+
+            Actions = new List<float>();
+            for (int i = 0; i < MarathonJoints.Count; i++)
+            {
+                Actions.Add(0f);
+            }
+
+            beforeAngle = new float[MarathonJoints.Count];
         }
         catch (Exception e)
         {
@@ -70,25 +78,13 @@ public class OpenAIAntAgent : MarathonAgent
     float[] beforeAngle;
     void ObservationsDefault()
     {
-        //print(Time.frameCount + " obs");
-        if (Actions.Count <= 0)
-        {
-            Actions = new List<float>();
-            for (int i = 0; i < MarathonJoints.Count; i++)
-            {
-                Actions.Add(0f);
-            }
-
-            beforeAngle = new float[MarathonJoints.Count];
-        }
-
         var pelvis = BodyParts["pelvis"];
         #region origin
         //AddVectorObs(pelvis.velocity); //3
         //AddVectorObs(pelvis.transform.forward); // gyroscope //3
         //AddVectorObs(pelvis.transform.up); //3
 
-        //AddVectorObs(SensorIsInTouch); //xml ì„¼ì„œ ìˆ˜
+        //AddVectorObs(SensorIsInTouch); //xml ¼¾¼­ ¼ö
         ////string str = "";
         ////for (int i = 0; i < SensorIsInTouch.Count; i++)
         ////{
@@ -96,10 +92,10 @@ public class OpenAIAntAgent : MarathonAgent
         ////}
         ////print(str);
 
-        //JointRotations.ForEach(x => AddVectorObs(x)); //xml actuator ìˆ˜ * 4
-        //AddVectorObs(JointVelocity); //xml actuator ìˆ˜
+        //JointRotations.ForEach(x => AddVectorObs(x)); //xml actuator ¼ö * 4
+        //AddVectorObs(JointVelocity); //xml actuator ¼ö
 
-        ////ìˆ˜ì§‘í•œ observationì´ brainì—ì„œ ìš”êµ¬í•˜ëŠ” observation sizeë³´ë‹¤ ì ì„ ê²½ìš° 0ìœ¼ë¡œ ì±„ìš°ê¸°
+        ////¼öÁıÇÑ observationÀÌ brain¿¡¼­ ¿ä±¸ÇÏ´Â observation sizeº¸´Ù ÀûÀ» °æ¿ì 0À¸·Î Ã¤¿ì±â
         ////brain.brainParameters.vectorObservationSize;
         ////while(info.vectorObservation.Count < brain.brainParameters.vectorObservationSize)
         ////{
@@ -107,72 +103,84 @@ public class OpenAIAntAgent : MarathonAgent
         ////}
         #endregion
 
-        #region pybullet
-        //more //8
-        float torso_height = Mathf.Abs(pelvis.transform.position.y - init_y);
-        AddVectorObs(torso_height);
-
-        float self_walk_target_theta = Mathf.Atan2(target.z - pelvis.transform.position.z, target.x - pelvis.transform.position.x);
-        float yaw = GetAngle(pelvis.transform.localEulerAngles.y) * Mathf.Deg2Rad;
-        float angle_to_target = self_walk_target_theta - yaw;
-        //print(self_walk_target_theta + ", " + yaw);
-        float sin = Mathf.Sin(angle_to_target);
-        float cos = Mathf.Cos(angle_to_target);
-        //print(sin + ", " + cos);
-        AddVectorObs(sin);
-        AddVectorObs(cos);
-
-        AddVectorObs(pelvis.velocity * 0.3f);
-
-        float pitch = GetAngle(pelvis.transform.localEulerAngles.x) * Mathf.Deg2Rad;
-        float roll = GetAngle(pelvis.transform.localEulerAngles.z) * Mathf.Deg2Rad;
-
-        float clampedAngleX = Mathf.Clamp(pitch, -5f, 5f);
-        //float clampedAngleY = Mathf.Clamp(yaw, -5f, 5f);
-        float clampedAngleZ = Mathf.Clamp(roll, -5f, 5f);
-
-        AddVectorObs(clampedAngleX);
-        //AddVectorObs(clampedAngleY);
-        AddVectorObs(clampedAngleZ);
-
-        //j //16
-        for (int i = 0; i < configurableJoints.Count; i++)
+        if(collectStateList.Count <= 0)
         {
-            float lowerLimit = configurableJoints[i].lowAngularXLimit.limit * Mathf.Deg2Rad;
-            float upperLimit = configurableJoints[i].highAngularXLimit.limit * Mathf.Deg2Rad;
+            #region pybullet
+            //more //8
+            float torso_height = Mathf.Abs(pelvis.transform.position.y - init_y);
+            AddVectorObs(torso_height);
 
-            //float pos = MarathonJoints[i].Joint.transform.position.x;
-            float pos = lowerLimit + (upperLimit - lowerLimit) * (Actions[i] + 1f) * 0.5f;
-            float pos_mid = 0.5f * (lowerLimit + upperLimit);
-            pos = 2 * (pos - pos_mid) / (upperLimit - lowerLimit);
+            float self_walk_target_theta = Mathf.Atan2(target.z - pelvis.transform.position.z, target.x - pelvis.transform.position.x);
+            float yaw = GetAngle(pelvis.transform.localEulerAngles.y) * Mathf.Deg2Rad;
+            float angle_to_target = self_walk_target_theta - yaw;
+            //print(self_walk_target_theta + ", " + yaw);
+            float sin = Mathf.Sin(angle_to_target);
+            float cos = Mathf.Cos(angle_to_target);
+            //print(sin + ", " + cos);
+            AddVectorObs(sin);
+            AddVectorObs(cos);
 
-            //float vel = JointVelocity[i];// = self.get_state()
-            float vel = pos - beforeAngle[i] / Time.fixedDeltaTime;
-            vel *= 0.1f;
+            AddVectorObs(pelvis.velocity * 0.3f);
 
-            AddVectorObs(pos); //ê°ë„
-            AddVectorObs(vel); //ê°ì†ë„
+            float pitch = GetAngle(pelvis.transform.localEulerAngles.x) * Mathf.Deg2Rad;
+            float roll = GetAngle(pelvis.transform.localEulerAngles.z) * Mathf.Deg2Rad;
 
-            beforeAngle[i] = pos;
-            //print("pos : " + pos + "  vel : " + vel);
+            float clampedAngleX = Mathf.Clamp(pitch, -5f, 5f);
+            //float clampedAngleY = Mathf.Clamp(yaw, -5f, 5f);
+            float clampedAngleZ = Mathf.Clamp(roll, -5f, 5f);
+
+            AddVectorObs(clampedAngleX);
+            //AddVectorObs(clampedAngleY);
+            AddVectorObs(clampedAngleZ);
+
+            //j //16
+            for (int i = 0; i < configurableJoints.Count; i++)
+            {
+                float lowerLimit = configurableJoints[i].lowAngularXLimit.limit * Mathf.Deg2Rad;
+                float upperLimit = configurableJoints[i].highAngularXLimit.limit * Mathf.Deg2Rad;
+
+                //float pos = MarathonJoints[i].Joint.transform.position.x;
+                float pos = lowerLimit + (upperLimit - lowerLimit) * (Actions[i] + 1f) * 0.5f;
+                float pos_mid = 0.5f * (lowerLimit + upperLimit);
+                pos = 2 * (pos - pos_mid) / (upperLimit - lowerLimit);
+
+                //float vel = JointVelocity[i];// = self.get_state()
+                float vel = pos - beforeAngle[i] / Time.fixedDeltaTime;
+                vel *= 0.1f;
+
+                AddVectorObs(pos); //°¢µµ
+                AddVectorObs(vel); //°¢¼Óµµ
+
+                beforeAngle[i] = pos;
+                //print("pos : " + pos + "  vel : " + vel);
+            }
+
+            //feet_contact //4
+            //string str = "";
+            for (int i = 0; i < collisionSensors.Count; i++)
+            {
+                AddVectorObs(collisionSensors[i].isCollision); //Áö¸é Á¢ÃË ¿©ºÎ
+                                                               //if (collisionSensors[i].isCollision)
+                                                               //    str += collisionSensors[i].name + ", ";
+            }
+            //print(str);
+            #endregion
         }
 
-        //feet_contact //4
-        //string str = "";
-        for (int i = 0; i < collisionSensors.Count; i++)
+        #region CSONG
+        foreach (var item in collectStateList)
         {
-            AddVectorObs(collisionSensors[i].isCollision); //ì§€ë©´ ì ‘ì´‰ ì—¬ë¶€
-            //if (collisionSensors[i].isCollision)
-            //    str += collisionSensors[i].name + ", ";
+            item.collectState(item.index);
         }
-        //print(str);
+
+        print(info.vectorObservation.Count);
 
         int remain = brain.brainParameters.vectorObservationSize - info.vectorObservation.Count;
+        //int remain = 38 - info.vectorObservation.Count;
         for (int i = 0; i < remain; i++)
         {
             AddVectorObs(0f);
         }
-        
         #endregion
     }
 
@@ -203,16 +211,6 @@ public class OpenAIAntAgent : MarathonAgent
         //}
 
         return done;
-    }
-
-    float GetAngle(float eulerAngle)
-    {
-        while (eulerAngle <= -180)
-            eulerAngle += 360;
-        while (eulerAngle >= 180f)
-            eulerAngle -= 360f;
-
-        return eulerAngle;
     }
 
     float StepRewardAnt101()
@@ -246,13 +244,13 @@ public class OpenAIAntAgent : MarathonAgent
             actionSquSum += Actions[i] * Actions[i];
         }
 
-        float forward_reward = GetVelocity();   //ì†ë„(ë‹¨ìœ„ ì‹œê°„ë‹¹ ë‚˜ì•„ê°„ ê±°ë¦¬)
-        float ctrl_cost = 0.5f * actionSquSum;  //ì•¡ì…˜ ë°°ì—´ ì›ì†Œë“¤ì˜ ì œê³±ì˜ í•©
+        float forward_reward = GetVelocity();   //¼Óµµ(´ÜÀ§ ½Ã°£´ç ³ª¾Æ°£ °Å¸®)
+        float ctrl_cost = 0.5f * actionSquSum;  //¾×¼Ç ¹è¿­ ¿ø¼ÒµéÀÇ Á¦°öÀÇ ÇÕ
         float contact_cost = 0f;                //0.5 * 1e-3 * np.sum(np.square(np.clip(self.sim.data.cfrc_ext, -1, 1)))
                                                 //The cfrc_ext are the external forces (force x,y,z and torque x,y,z) applied to each of the links at the center of mass. For the Ant, this is 14*6: the ground link, the torso link, and 12 links for all legs (3 links for each leg).
                                                 //https://github.com/openai/gym/issues/585 
-                                                //ì›ë³¸ì—ì„  í•­ìƒ 0
-        float survive_reward = 1.0f;            //ìƒìˆ˜
+                                                //¿øº»¿¡¼± Ç×»ó 0
+        float survive_reward = 1.0f;            //»ó¼ö
 
         //float accel = forward_reward - beforeVelocity;
         //accel = Mathf.Abs(accel);
@@ -271,15 +269,15 @@ public class OpenAIAntAgent : MarathonAgent
     float StepRewardAnt_PyBullet()
     {
         //print(Time.frameCount + " reward");
-        //ìƒì¡´ ë³´ë„ˆìŠ¤
-        //float alive_bonus = 1f; //ìƒìˆ˜
+        //»ıÁ¸ º¸³Ê½º
+        //float alive_bonus = 1f; //»ó¼ö
         //if (torso[0].localPosition.y <= 0.26f)
         //{
         //    alive_bonus = -1f;
         //    //print("-1");
         //}
 
-        //ì†ë„ ë³´ë„ˆìŠ¤
+        //¼Óµµ º¸³Ê½º
         float progress = GetVelocity();
 
         //float targetDist = new Vector2(target.z - BodyParts["pelvis"].transform.position.z, target.x - BodyParts["pelvis"].transform.position.x).magnitude;
@@ -287,7 +285,7 @@ public class OpenAIAntAgent : MarathonAgent
         //print(targetDist + ", " + beforeTargetDist + ", " + progress + ", " + GetVelocity());
         //beforeTargetDist = targetDist;
 
-        //action í˜ë„í‹°
+        //action Æä³ÎÆ¼
         const float self_electricity_cost = -2f;
         float actionAbsSum = 0f;
         const float self_stall_torque_cost = -0.1f;
@@ -302,7 +300,7 @@ public class OpenAIAntAgent : MarathonAgent
         float electricity_cost = self_electricity_cost * absMean + self_stall_torque_cost * sqrMean;
         electricity_cost = Mathf.Clamp(electricity_cost, -1f, 1f);
 
-        //joint stuck í˜ë„í‹°
+        //joint stuck Æä³ÎÆ¼
         const float self_joints_at_limit_cost = -0.1f;
         int joints_at_limit = 0;
         for (int i = 0; i < configurableJoints.Count; i++)
@@ -320,8 +318,8 @@ public class OpenAIAntAgent : MarathonAgent
         }
         float joints_at_limit_cost = self_joints_at_limit_cost * joints_at_limit;
 
-        //ì ‘ì´‰ í˜ë„í‹°
-        float feet_collision_cost = 0f; //ìƒìˆ˜
+        //Á¢ÃË Æä³ÎÆ¼
+        float feet_collision_cost = 0f; //»ó¼ö
 
         //float reward = alive_bonus + progress + electricity_cost + joints_at_limit_cost + feet_collision_cost;
         float reward = progress + electricity_cost + joints_at_limit_cost + feet_collision_cost;

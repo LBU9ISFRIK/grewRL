@@ -8,6 +8,31 @@ namespace MLAgents
 {
     public class MarathonAgent : Agent
     {
+        public enum E_STATE
+        {
+            position,
+            rotation,
+            velocity,
+            angularVelocity,
+            joint_velocity,
+            joint_angularVelocity,
+            end,
+        }
+
+        public struct CollectStateStruct
+        {
+            public CollectState collectState;
+            public int index;
+
+            public CollectStateStruct(CollectState _collectState, int _index)
+            {
+                collectState = _collectState;
+                index = _index;
+            }
+        }
+
+        public delegate void CollectState(int index);
+        public List<CollectStateStruct> collectStateList = new List<CollectStateStruct>();
         //
         // Params for prefabs
 
@@ -216,6 +241,9 @@ namespace MLAgents
         public float[] my_vectorAction;
         public override void AgentAction(float[] vectorAction, string textAction)
         {
+            //if (vectorAction.Length != MarathonJoints.Count)
+            //    return;
+
             //print(Time.frameCount + " action");
             ////str = "";
             ////모델에서 주는 action size를 필요한 만큼만 가져오기(뒷쪽 데이터 버림)
@@ -223,17 +251,23 @@ namespace MLAgents
             {
                 my_vectorAction = new float[MarathonJoints.Count];
 
-                float re = -1f;
-                for (int i = 0; i < my_vectorAction.Length; i += 2)
-                {
-                    my_vectorAction[i] = 0.5f * re;
-                    my_vectorAction[i + 1] = 1f * re;
-                    re *= -1f;
-                }
+                //float re = -1f;
+                //for (int i = 0; i < my_vectorAction.Length; i += 2)
+                //{
+                //    //my_vectorAction[i] = 0.5f * re;
+                //    //my_vectorAction[i + 1] = 1f * re;
+                //    //re *= -1f;
+                //}
             }
 
             if (useMyVector)
+            {
+                for (int i = 0; i < my_vectorAction.Length; i++)
+                {
+                    my_vectorAction[i] = vectorAction[i];
+                }
                 vectorAction = my_vectorAction;
+            }
 
             Actions = vectorAction.ToList();
             for (int i = 0; i < MarathonJoints.Count; i++)
@@ -563,7 +597,7 @@ namespace MLAgents
             for (int i = 0; i < MarathonJoints.Count; i++)
             {
                 configurableJoints.Add(MarathonJoints[i].Joint.GetComponent<ConfigurableJoint>());
-                if (configurableJoints[i].gameObject.name.Contains("ankle") 
+                if (configurableJoints[i].gameObject.name.Contains("ankle")
                     || configurableJoints[i].gameObject.name.Contains("tibia"))
                 {
                     CollisionSensor sensor = configurableJoints[i].gameObject.AddComponent<CollisionSensor>();
@@ -688,6 +722,27 @@ namespace MLAgents
                 var idx = MarathonSensors.IndexOf(sensor);
                 SensorIsInTouch[idx] = 0f;
             }
+        }
+
+        protected float GetAngle(float eulerAngle)
+        {
+            while (eulerAngle <= -180)
+                eulerAngle += 360;
+            while (eulerAngle >= 180f)
+                eulerAngle -= 360f;
+
+            return eulerAngle;
+        }
+
+        public void CollectPosition(int xyz)
+        {
+            AddVectorObs(BodyParts["pelvis"].transform.position[xyz]);
+        }
+
+        public void CollectRotation(int xyz)
+        {
+            AddVectorObs(GetAngle(BodyParts["pelvis"].transform.localEulerAngles[xyz]) * Mathf.Deg2Rad);
+            
         }
     }
 }
