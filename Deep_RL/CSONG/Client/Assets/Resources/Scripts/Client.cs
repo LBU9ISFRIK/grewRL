@@ -4,6 +4,8 @@ using UnityEngine;
 using System.Text;
 using System.Net;
 using System.Net.Sockets;
+using UnityEditor;
+using UnityEditor;
 
 public class Client : MonoBehaviour
 {
@@ -12,8 +14,12 @@ public class Client : MonoBehaviour
     public int sizeY;
     public int sizeZ;
     public Vector3 terrainSize;
-    public GameObject newObject;
-    
+    public List<GameObject> newObject;
+    int number_of_obstackles;
+    GameObject modelRootGo;
+    float e1_pos_x, e1_pos_y, e1_pos_z, e1_vel_x, e1_vel_y, e1_vel_z;
+    float e2_pos_x, e2_pos_y, e2_pos_z, e2_vel_x, e2_vel_y, e2_vel_z;
+    float e3_pos_x, e3_pos_y, e3_pos_z, e3_vel_x, e3_vel_y, e3_vel_z;
 
     public struct UdpState
     {
@@ -30,6 +36,63 @@ public class Client : MonoBehaviour
 
     byte[] data;
 
+    List<GameObject> gameObjects;
+    int n;
+    int num;
+
+    //GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+    private void Awake()
+    {
+        gameObjects = new List<GameObject>();
+
+        for (int i = 1; i <= n; i++)
+        {
+            //GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            modelRootGo = (GameObject)AssetDatabase.LoadMainAssetAtPath("Assets/Resources/Models/Wolf.fbx");
+            GameObject instanceRoot = Instantiate(modelRootGo);
+            instanceRoot.AddComponent<BoxCollider>();
+            instanceRoot.AddComponent<Rigidbody>();
+            gameObjects.Add(instanceRoot);
+
+            
+            if (i == 1)
+            {
+                gameObjects[0].transform.position = new Vector3(e1_pos_x, e1_pos_y, e1_pos_z);
+                gameObjects[0].GetComponent<Rigidbody>().velocity = new Vector3(e1_vel_x, e1_vel_y, e1_vel_z);
+            }
+
+            if (i == 2)
+            {
+                
+                gameObjects[1].transform.position = new Vector3(e2_pos_x, e2_pos_y, e2_pos_z);
+                gameObjects[1].GetComponent<Rigidbody>().velocity = new Vector3(e2_vel_x, e2_vel_y, e2_vel_z);
+            }
+
+            if (i == 3)
+            {           
+
+                gameObjects[2].transform.position = new Vector3(e3_pos_x, e3_pos_y, e3_pos_z);
+                gameObjects[2].GetComponent<Rigidbody>().velocity = new Vector3(e3_vel_x, e3_vel_y, e3_vel_z);
+            }
+            if (i == 4)
+            {
+
+                gameObjects[3].transform.position = new Vector3(6f, 2f, 6f);
+            }
+            if (i == 5)
+            {
+
+                gameObjects[4].transform.position = new Vector3(8f, 2f, 2f);
+            }
+
+
+
+
+
+
+        }
+
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -68,12 +131,17 @@ public class Client : MonoBehaviour
 
         //data = udpClient.Receive(ref remoteEP); //받을때까지 멈춤(동기)
         //print(string.Format("{0} : 수신 : {1}", remoteEP.ToString(), Encoding.Default.GetString(data)));
+
+        
+        
     }
 
     private void OnDestroy()
     {
         udpClient.Close();
+        
     }
+    
 
     IEnumerator ReceiveData()
     {
@@ -83,49 +151,65 @@ public class Client : MonoBehaviour
             {
                 if (udpClient.Available > 0)
                 {
+                    
                     // receive bytes
                     data = udpClient.Receive(ref remoteEP);
                     print(Encoding.Default.GetString(data));
                     string str = Encoding.Default.GetString(data);
 
-                    string[] sp = str.Split('$');
+                    List<string> result = new List<string>(str.Split('$'));
 
-
+                    
                     Vector3 temp = terrain.transform.localScale;
 
-                    print(sp[0]);
-                    print(sp[1]);
-
                     //Ground W
-                    temp.x = int.Parse(sp[0]);
+                    temp.x = int.Parse(result[0]);
                     //Ground H
-                    temp.z = int.Parse(sp[1]);
+                    temp.z = int.Parse(result[1]);
                     terrain.transform.localScale = temp;
 
-                    // tile size X = sp[2]
-                    int sizeX = int.Parse(sp[2]);
+                    // tile size X = result[2]
+                    int sizeX = int.Parse(result[2]);
                     int sizeY = 600;
-                    // tile size Y = sp[3]
-                    int sizeZ = int.Parse(sp[3]);
-
-
+                    // tile size Y = result[3]
+                    int sizeZ = int.Parse(result[3]);
                     terrainSize = new Vector3(sizeX, sizeY, sizeZ);
                     terrain.terrainData.size = terrainSize;
 
-                    int num = int.Parse(sp[4]);
+                    num = int.Parse(result[4]);   // number of entity
 
-                    if (num > 0)
+                    string FolderOfEntity = result[5];  // location of input entity
+                    
+                    // entity_1 pos(x,y,z) and vel(x,y,z)
+                    e1_pos_x = float.Parse(result[6]);  
+                    e1_pos_y = float.Parse(result[7]);
+                    e1_pos_z = float.Parse(result[8]);
+                    e1_vel_x = float.Parse(result[9]);
+                    e1_vel_y = float.Parse(result[10]);
+                    e1_vel_z = float.Parse(result[11]);
+
+                    // entity_2 pos(x,y,z) and vel(x,y,z)
+                    e2_pos_x = float.Parse(result[12]);
+                    e2_pos_y = float.Parse(result[13]);
+                    e2_pos_z = float.Parse(result[14]);
+                    e2_vel_x = float.Parse(result[15]);
+                    e2_vel_y = float.Parse(result[16]);
+                    e2_vel_z = float.Parse(result[17]);
+
+                    // entity_3 pos(x,y,z) and vel(x,y,z)
+                    e3_pos_x = float.Parse(result[18]);
+                    e3_pos_y = float.Parse(result[19]);
+                    e3_pos_z = float.Parse(result[20]);
+                    e3_vel_x = float.Parse(result[21]);
+                    e3_vel_y = float.Parse(result[22]);
+                    e3_vel_z = float.Parse(result[23]);
+
+                    for (int i = 0; i < n; i++)
                     {
-                        
-
-                        for (int j = 1; j <= num; j++)
-                        {
-                            newObject =  Instantiate(newObject, terrain.transform.localScale, terrain.transform.rotation);
-                        }
-
-
-
+                        Destroy(gameObjects[i]);
                     }
+                    n = num;
+                    Awake();              
 
 
                 }
