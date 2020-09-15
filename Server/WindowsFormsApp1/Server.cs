@@ -41,19 +41,21 @@ namespace WindowsFormsApp1
             //label1.Text = "전송된 데이터 : ";
             //label1.Text += result + "\n";
 
-            checkedListBoxes.Add(checkedListBox1);
-            checkedListBoxes.Add(checkedListBox2);
-            checkedListBoxes.Add(checkedListBox3);
-            checkedListBoxes.Add(checkedListBox4);
-            checkedListBoxes.Add(checkedListBox5);
-            checkedListBoxes.Add(checkedListBox6);
+            checkedListBoxes.Add(state_position_checkedListBox);
+            checkedListBoxes.Add(state_rotation_checkedListBox);
+            checkedListBoxes.Add(state_velocity_checkedListBox);
+            checkedListBoxes.Add(state_angularvelocity_checkedListBox);
+            checkedListBoxes.Add(state_joint_angle_checkedListBox);
+            checkedListBoxes.Add(state_joint_angularvelocity_checkedListBox);
+            checkedListBoxes.Add(state_joint_collisionSensor_checkedListBox);
 
             stateLabels.Add(state_position_label);
             stateLabels.Add(state_rotation_label);
             stateLabels.Add(state_velocity_label);
             stateLabels.Add(state_angularvelocity_label);
-            stateLabels.Add(state_joint_velocity_label);
+            stateLabels.Add(state_joint_angle_label);
             stateLabels.Add(state_joint_angularvelocity_label);
+            stateLabels.Add(state_joint_collisionSensor_label);
         }
 
         private List<Label> stateLabels = new List<Label>();
@@ -97,14 +99,29 @@ namespace WindowsFormsApp1
             int count = 0;
             for (int i = 0; i < checkedListBoxes.Count; i++)
             {
+                int plusCount = 1;
+                if (checkedListBoxes[i].Name.Contains("joint_"))
+                {
+                    int.TryParse(send_textBox.Text, out plusCount);
+                    if(!checkedListBoxes[i].Name.Contains("collisionSensor"))
+                        plusCount *= 2;
+                }
+
                 for (int j = 0; j < checkedListBoxes[i].Items.Count; j++)
                 {
                     if (checkedListBoxes[i].GetItemChecked(j))
-                        count++;
+                        count += plusCount;
                 }
             }
 
             return count;
+        }
+
+        //정수만 입력
+        private void send_textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar != '\b')
+                e.Handled = !char.IsDigit(e.KeyChar);
         }
     }
 }

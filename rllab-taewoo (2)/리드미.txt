@@ -1,0 +1,23 @@
+[설치법]
+anaconda 환경에서
+
+conda install mkl-service libpython m2w64-toolchain nose git
+conda install theano pygpu
+pip install git+https://github.com/neocxi/Lasagne.git
+pip install git+https://github.com/openai/gym.git
+pip install python-dateutil
+
+cd rllab
+pip install -e .
+
+pip install <기타등등 no module error뜨는 것들...>
+
+
+[실행법]
+examples/trpo_unity_win.py에서 exp_name이랑 log 경로 수정
+python trpo_unity_win.py
+
+[혹시 안되면]
+marathon-envs-0.5.0a + ml-agents-0.5-3.0a + TensorFlowSharp에서
+ml-agent 폴더에서 pip install -e .
+gym-unity 폴더에서 pip install -e .

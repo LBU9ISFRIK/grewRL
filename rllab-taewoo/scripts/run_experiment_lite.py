@@ -29,8 +29,10 @@ def run_experiment(argv):
 
     #default_exp_name = 'experiment_%s_%s' % (timestamp, rand_id)
     default_exp_name = 'experiment_%s' % (timestamp)
+
     parser = argparse.ArgumentParser()
-    parser.add_argument('--n_parallel', type=int, default=1,
+
+    parser.add_argument('--n_parallel', type=int, default=2,
                         help='Number of parallel workers to perform rollouts. 0 => don\'t start any workers')
     parser.add_argument(
         '--exp_name', type=str, default=default_exp_name, help='Name of the experiment.')

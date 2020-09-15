@@ -115,7 +115,7 @@ public class Client : MonoBehaviour
 
                 for (int i = 0; i < marathonSpawners.Length; i++)
                 {
-                    string xmlPath = string.Format("N/pybullet_ant_{0}", leg_count);
+                    string xmlPath = string.Format("N/pybullet_ant_{0}", leg_count); //TODO : 해당 파일 없을 경우 처리
                     TextAsset asset = Resources.Load<TextAsset>(xmlPath);
                     marathonSpawners[i].Xml = asset;
                     marathonAgents[i].AgentReset();
@@ -167,19 +167,26 @@ public class Client : MonoBehaviour
                 }
                 else if (category.Equals(MarathonAgent.E_STATE.velocity.ToString()))
                 {
+                    agent.collectStateList.Add(new MarathonAgent.CollectStateStruct(agent.CollectVelocity, xyz));
                 }
                 else if (category.Equals(MarathonAgent.E_STATE.angularVelocity.ToString()))
                 {
+                    agent.collectStateList.Add(new MarathonAgent.CollectStateStruct(agent.CollectAngularVelocity, xyz));
                 }
-                else if (category.Equals(MarathonAgent.E_STATE.joint_velocity.ToString()))
+                else if (category.Equals(MarathonAgent.E_STATE.joint_angle.ToString()))
                 {
+                    agent.collectStateList.Add(new MarathonAgent.CollectStateStruct(agent.CollectJointAngle, 0));
                 }
                 else if (category.Equals(MarathonAgent.E_STATE.joint_angularVelocity.ToString()))
                 {
+                    agent.collectStateList.Add(new MarathonAgent.CollectStateStruct(agent.CollectJointAngularVelocity, 0));
+                }
+                else if (category.Equals(MarathonAgent.E_STATE.joint_collisionSensor.ToString()))
+                {
+                    agent.collectStateList.Add(new MarathonAgent.CollectStateStruct(agent.CollectJointCollisionSensors, 0));
                 }
             }
         }
-        
     }
 
     //public void ReceiveCallback(System.IAsyncResult ar)

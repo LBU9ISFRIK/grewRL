@@ -133,37 +133,9 @@ public class OpenAIAntAgent : MarathonAgent
             //AddVectorObs(clampedAngleY);
             AddVectorObs(clampedAngleZ);
 
-            //j //16
-            for (int i = 0; i < configurableJoints.Count; i++)
-            {
-                float lowerLimit = configurableJoints[i].lowAngularXLimit.limit * Mathf.Deg2Rad;
-                float upperLimit = configurableJoints[i].highAngularXLimit.limit * Mathf.Deg2Rad;
-
-                //float pos = MarathonJoints[i].Joint.transform.position.x;
-                float pos = lowerLimit + (upperLimit - lowerLimit) * (Actions[i] + 1f) * 0.5f;
-                float pos_mid = 0.5f * (lowerLimit + upperLimit);
-                pos = 2 * (pos - pos_mid) / (upperLimit - lowerLimit);
-
-                //float vel = JointVelocity[i];// = self.get_state()
-                float vel = pos - beforeAngle[i] / Time.fixedDeltaTime;
-                vel *= 0.1f;
-
-                AddVectorObs(pos); //각도
-                AddVectorObs(vel); //각속도
-
-                beforeAngle[i] = pos;
-                //print("pos : " + pos + "  vel : " + vel);
-            }
-
-            //feet_contact //4
-            //string str = "";
-            for (int i = 0; i < collisionSensors.Count; i++)
-            {
-                AddVectorObs(collisionSensors[i].isCollision); //지면 접촉 여부
-                                                               //if (collisionSensors[i].isCollision)
-                                                               //    str += collisionSensors[i].name + ", ";
-            }
-            //print(str);
+            CollectJointAngle(0); //joint 각도
+            CollectJointAngularVelocity(0); //joint 각속도
+            CollectJointCollisionSensors(0); //feet_contact, 지면 접촉 여부
             #endregion
         }
 
@@ -173,7 +145,7 @@ public class OpenAIAntAgent : MarathonAgent
             item.collectState(item.index);
         }
 
-        print(info.vectorObservation.Count);
+        //print(info.vectorObservation.Count);
 
         int remain = brain.brainParameters.vectorObservationSize - info.vectorObservation.Count;
         //int remain = 38 - info.vectorObservation.Count;
@@ -286,44 +258,44 @@ public class OpenAIAntAgent : MarathonAgent
         //beforeTargetDist = targetDist;
 
         //action 페널티
-        const float self_electricity_cost = -2f;
-        float actionAbsSum = 0f;
-        const float self_stall_torque_cost = -0.1f;
-        float actionSqrSum = 0f;
-        for (int i = 0; i < Actions.Count; i++)
-        {
-            actionAbsSum += Mathf.Abs(Actions[i] * JointVelocity[i]);
-            actionSqrSum += Actions[i] * Actions[i];
-        }
-        float absMean = actionAbsSum / Actions.Count;
-        float sqrMean = actionSqrSum / Actions.Count;
-        float electricity_cost = self_electricity_cost * absMean + self_stall_torque_cost * sqrMean;
-        electricity_cost = Mathf.Clamp(electricity_cost, -1f, 1f);
+        //const float self_electricity_cost = -2f;
+        //float actionAbsSum = 0f;
+        //const float self_stall_torque_cost = -0.1f;
+        //float actionSqrSum = 0f;
+        //for (int i = 0; i < Actions.Count; i++)
+        //{
+        //    actionAbsSum += Mathf.Abs(Actions[i] * JointVelocity[i]);
+        //    actionSqrSum += Actions[i] * Actions[i];
+        //}
+        //float absMean = actionAbsSum / Actions.Count;
+        //float sqrMean = actionSqrSum / Actions.Count;
+        //float electricity_cost = self_electricity_cost * absMean + self_stall_torque_cost * sqrMean;
+        //electricity_cost = Mathf.Clamp(electricity_cost, -1f, 1f);
 
-        //joint stuck 페널티
-        const float self_joints_at_limit_cost = -0.1f;
-        int joints_at_limit = 0;
-        for (int i = 0; i < configurableJoints.Count; i++)
-        {
-            float lowerLimit = configurableJoints[i].lowAngularXLimit.limit * Mathf.Deg2Rad;
-            float upperLimit = configurableJoints[i].highAngularXLimit.limit * Mathf.Deg2Rad;
+        ////joint stuck 페널티
+        //const float self_joints_at_limit_cost = -0.1f;
+        //int joints_at_limit = 0;
+        //for (int i = 0; i < configurableJoints.Count; i++)
+        //{
+        //    float lowerLimit = configurableJoints[i].lowAngularXLimit.limit * Mathf.Deg2Rad;
+        //    float upperLimit = configurableJoints[i].highAngularXLimit.limit * Mathf.Deg2Rad;
 
-            //float pos = MarathonJoints[i].Joint.transform.position.x;
-            float pos = lowerLimit + (upperLimit - lowerLimit) * (Actions[i] + 1f) * 0.5f;
-            float pos_mid = 0.5f * (lowerLimit + upperLimit);
-            pos = 2 * (pos - pos_mid) / (upperLimit - lowerLimit);
+        //    //float pos = MarathonJoints[i].Joint.transform.position.x;
+        //    float pos = lowerLimit + (upperLimit - lowerLimit) * (Actions[i] + 1f) * 0.5f;
+        //    float pos_mid = 0.5f * (lowerLimit + upperLimit);
+        //    pos = 2 * (pos - pos_mid) / (upperLimit - lowerLimit);
 
-            if (Mathf.Abs(pos) > 0.99f)
-                joints_at_limit++;
-        }
-        float joints_at_limit_cost = self_joints_at_limit_cost * joints_at_limit;
+        //    if (Mathf.Abs(pos) > 0.99f)
+        //        joints_at_limit++;
+        //}
+        //float joints_at_limit_cost = self_joints_at_limit_cost * joints_at_limit;
 
-        //접촉 페널티
-        float feet_collision_cost = 0f; //상수
+        ////접촉 페널티
+        //float feet_collision_cost = 0f; //상수
 
         //float reward = alive_bonus + progress + electricity_cost + joints_at_limit_cost + feet_collision_cost;
-        float reward = progress + electricity_cost + joints_at_limit_cost + feet_collision_cost;
-        //float reward = progress;
+        //float reward = progress + electricity_cost + joints_at_limit_cost + feet_collision_cost;
+        float reward = progress;
 
         //print(string.Format("alive_bonus : {0}, progress : {1}, electricity_cost : {2}, joints_at_limit_cost : {3}, reward : {4}", alive_bonus, progress, electricity_cost, joints_at_limit_cost, reward));
         //print("reward : " + reward);

@@ -135,35 +135,35 @@ class BatchPolopt(RLAlgorithm):
                         pass
                     except KeyboardInterrupt:
                         raise
-                    except :
-                        print("error training")
+                    #except : #추가함 tensorflow network 재구성
+                    #    print("error training")
     
-                        unity_env = self.env._wrapped_env._wrapped_env.env
+                    #    unity_env = self.env._wrapped_env._wrapped_env.env
 
-                        brain_param = unity_env._env.aca_params.brain_parameters[0]
-                        obs_size = brain_param.vector_observation_size
-                        act_size = brain_param.vector_action_size[0]
+                    #    brain_param = unity_env._env.aca_params.brain_parameters[0]
+                    #    obs_size = brain_param.vector_observation_size
+                    #    act_size = brain_param.vector_action_size[0]
 
-                        high = np.array([np.inf] * obs_size)
-                        self.env.observation_space = spaces.Box(-high, high)
-                        high = np.array([1] * act_size)
-                        self.env.action_space = spaces.Box(-high, high)
+                    #    high = np.array([np.inf] * obs_size)
+                    #    self.env.observation_space = spaces.Box(-high, high)
+                    #    high = np.array([1] * act_size)
+                    #    self.env.action_space = spaces.Box(-high, high)
 
-                        self.env.spec = EnvSpec(observation_space=self.env.observation_space,action_space=self.env.action_space,)
+                    #    self.env.spec = EnvSpec(observation_space=self.env.observation_space,action_space=self.env.action_space,)
                         
-                        #self.env._wrapped_env = normalize(self.env)
+                    #    #self.env._wrapped_env = normalize(self.env)
                         
-                        self.policy = GaussianMLPPolicy(name='policy', env_spec=self.env.spec, create_count=1)
-                        self.init_opt()
-                        uninit_vars = []
-                        for var in tf.all_variables():
-                            try:
-                                sess.run(var)
-                            except tf.errors.FailedPreconditionError:
-                                uninit_vars.append(var)
-                        sess.run(tf.initialize_variables(uninit_vars))
-                        print("re init")
-                        paths = self.obtain_samples(itr)
+                    #    self.policy = GaussianMLPPolicy(name='policy', env_spec=self.env.spec, create_count=1)
+                    #    self.init_opt()
+                    #    uninit_vars = []
+                    #    for var in tf.all_variables():
+                    #        try:
+                    #            sess.run(var)
+                    #        except tf.errors.FailedPreconditionError:
+                    #            uninit_vars.append(var)
+                    #    sess.run(tf.initialize_variables(uninit_vars))
+                    #    print("re init")
+                    #    paths = self.obtain_samples(itr)
                     
                     logger.log("Processing samples...")
                     samples_data = self.process_samples(itr, paths)

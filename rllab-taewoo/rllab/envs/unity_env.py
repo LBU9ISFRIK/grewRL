@@ -56,8 +56,14 @@ class UnityGymEnv(Env, Serializable):
                 log_dir = log_dir.replace('\'', '')
         Serializable.quick_init(self, locals())
 
+        #추가함. 빌드 파일로 실행할때. 에디터와 연결할 때는 None으로.
+        #env_name = "D:\\grew_svn\\2020\\GitHub\\grewRL\\marathon-envs-0.5.0a + ml-agents-0.5-3.0a + TensorFlowSharp\\UnitySDK\\Build\\test_0914\\Unity Environment.exe"
+        
+        #print("env_name : ", env_name)
         #env = gym.envs.make(env_name)
+
         env = UnityEnv(env_name, 0, use_visual=False)
+        #env = UnityEnv(env_name, 0, use_visual=False, multiagent=True) #수정함
         self.env = env
         self.env_id = 1#env.spec.id
 
