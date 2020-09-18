@@ -58,6 +58,20 @@
     <Compile Include="Assets\Resources\Scripts\ObjectCreator.cs" />
     <Compile Include="Assets\Resources\Scripts\Client.cs" />
     <Compile Include="Assets\Resources\Scripts\TestScript.cs" />
+    <Compile Include="Assets\Resources\Scripts\TextureLoader\ImageLoaderHelper.cs" />
+    <Compile Include="Assets\Resources\Scripts\TextureLoader\BMPLoader.cs" />
+    <Compile Include="Assets\Resources\Scripts\TextureLoader\DDSLoader.cs" />
+    <Compile Include="Assets\Resources\Scripts\TextureLoader\TGALoader.cs" />
+    <Compile Include="Assets\Resources\Scripts\TextureLoader\ImageLoader.cs" />
+    <Compile Include="Assets\Resources\Scripts\TextureLoader\ImageUtils.cs" />
+    <Compile Include="Assets\Resources\Scripts\TextureLoader\BinaryExtensions.cs" />
+    <Compile Include="Assets\Resources\Scripts\TextureLoader\ColorExtensions.cs" />
+    <Compile Include="Assets\Resources\Scripts\CharWordReader.cs" />
+    <Compile Include="Assets\Resources\Scripts\MTLLoader.cs" />
+    <Compile Include="Assets\Resources\Scripts\OBJLoader.cs" />
+    <Compile Include="Assets\Resources\Scripts\OBJLoaderHelper.cs" />
+    <Compile Include="Assets\Resources\Scripts\OBJObjectBuilder.cs" />
+    <Compile Include="Assets\Resources\Scripts\StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

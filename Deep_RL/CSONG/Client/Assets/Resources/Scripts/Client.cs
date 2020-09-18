@@ -5,7 +5,8 @@ using System.Text;
 using System.Net;
 using System.Net.Sockets;
 using UnityEditor;
-using UnityEditor;
+using System.IO;
+using Dummiesman;
 
 public class Client : MonoBehaviour
 {
@@ -20,6 +21,10 @@ public class Client : MonoBehaviour
     float e1_pos_x, e1_pos_y, e1_pos_z, e1_vel_x, e1_vel_y, e1_vel_z;
     float e2_pos_x, e2_pos_y, e2_pos_z, e2_vel_x, e2_vel_y, e2_vel_z;
     float e3_pos_x, e3_pos_y, e3_pos_z, e3_vel_x, e3_vel_y, e3_vel_z;
+
+    string objPath = string.Empty;
+    string mtlPath = string.Empty;
+    string error = string.Empty;
 
     public struct UdpState
     {
@@ -43,53 +48,60 @@ public class Client : MonoBehaviour
     //GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
     private void Awake()
     {
-        gameObjects = new List<GameObject>();
-
-        for (int i = 1; i <= n; i++)
+        if (!File.Exists(objPath))
         {
-            //GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            modelRootGo = (GameObject)AssetDatabase.LoadMainAssetAtPath("Assets/Resources/Models/Wolf.fbx");
-            GameObject instanceRoot = Instantiate(modelRootGo);
-            instanceRoot.AddComponent<BoxCollider>();
-            instanceRoot.AddComponent<Rigidbody>();
-            gameObjects.Add(instanceRoot);
+            error = "File doesn't exist.";
+        }
+        else
+        {
+            gameObjects = new List<GameObject>();
 
-            
-            if (i == 1)
+            if (modelRootGo != null)
+                Destroy(modelRootGo);
+
+            for (int i = 1; i <= n; i++)
             {
-                gameObjects[0].transform.position = new Vector3(e1_pos_x, e1_pos_y, e1_pos_z);
-                gameObjects[0].GetComponent<Rigidbody>().velocity = new Vector3(e1_vel_x, e1_vel_y, e1_vel_z);
+                //GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+                //modelRootGo = (GameObject)AssetDatabase.LoadMainAssetAtPath("Assets/Resources/Models/Wolf.fbx");
+                //GameObject instanceRoot = Instantiate(modelRootGo);
+                modelRootGo = new OBJLoader().Load(objPath, mtlPath);
+                modelRootGo.AddComponent<BoxCollider>();
+                modelRootGo.AddComponent<Rigidbody>();
+                modelRootGo.name = "Obstacle_" + i;
+                gameObjects.Add(modelRootGo);
+
+
+                if (i == 1)
+                {
+                    gameObjects[0].transform.position = new Vector3(e1_pos_x, e1_pos_y, e1_pos_z);
+                    gameObjects[0].GetComponent<Rigidbody>().velocity = new Vector3(e1_vel_x, e1_vel_y, e1_vel_z);
+                }
+
+                if (i == 2)
+                {
+
+                    gameObjects[1].transform.position = new Vector3(e2_pos_x, e2_pos_y, e2_pos_z);
+                    gameObjects[1].GetComponent<Rigidbody>().velocity = new Vector3(e2_vel_x, e2_vel_y, e2_vel_z);
+                }
+
+                if (i == 3)
+                {
+
+                    gameObjects[2].transform.position = new Vector3(e3_pos_x, e3_pos_y, e3_pos_z);
+                    gameObjects[2].GetComponent<Rigidbody>().velocity = new Vector3(e3_vel_x, e3_vel_y, e3_vel_z);
+                }
+                if (i == 4)
+                {
+
+                    gameObjects[3].transform.position = new Vector3(6f, 2f, 6f);
+                }
+                if (i == 5)
+                {
+
+                    gameObjects[4].transform.position = new Vector3(8f, 2f, 2f);
+                }
+
             }
-
-            if (i == 2)
-            {
-                
-                gameObjects[1].transform.position = new Vector3(e2_pos_x, e2_pos_y, e2_pos_z);
-                gameObjects[1].GetComponent<Rigidbody>().velocity = new Vector3(e2_vel_x, e2_vel_y, e2_vel_z);
-            }
-
-            if (i == 3)
-            {           
-
-                gameObjects[2].transform.position = new Vector3(e3_pos_x, e3_pos_y, e3_pos_z);
-                gameObjects[2].GetComponent<Rigidbody>().velocity = new Vector3(e3_vel_x, e3_vel_y, e3_vel_z);
-            }
-            if (i == 4)
-            {
-
-                gameObjects[3].transform.position = new Vector3(6f, 2f, 6f);
-            }
-            if (i == 5)
-            {
-
-                gameObjects[4].transform.position = new Vector3(8f, 2f, 2f);
-            }
-
-
-
-
-
-
         }
 
     }
@@ -179,7 +191,7 @@ public class Client : MonoBehaviour
                     num = int.Parse(result[4]);   // number of entity
 
                     string FolderOfEntity = result[5];  // location of input entity
-                    
+                    objPath = result[5];
                     // entity_1 pos(x,y,z) and vel(x,y,z)
                     e1_pos_x = float.Parse(result[6]);  
                     e1_pos_y = float.Parse(result[7]);
