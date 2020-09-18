@@ -14,8 +14,9 @@ namespace MLAgents
             rotation,
             velocity,
             angularVelocity,
-            joint_velocity,
+            joint_angle,
             joint_angularVelocity,
+            joint_collisionSensor,
             end,
         }
 
@@ -177,6 +178,9 @@ namespace MLAgents
                 marathonSpawner.ApplyRandom();
                 SetupMarathon();
                 UpdateQ();
+
+                beforeAngle = new float[MarathonJoints.Count];
+                curAngle = new float[MarathonJoints.Count];
                 return;
             }
 
@@ -206,6 +210,9 @@ namespace MLAgents
             UpdateQ();
             _hasValidModel = true;
             recentVelocity = new List<float>();
+
+            beforeAngle = new float[MarathonJoints.Count];
+            curAngle = new float[MarathonJoints.Count];
         }
 
         void SetupMarathon()
@@ -282,16 +289,16 @@ namespace MLAgents
 
             if (!IsDone())
             {
-                //bool done = TerminateFunction();
+                bool done = TerminateFunction();
 
-                //if (done)
-                //{
-                //    Done();
-                //    //print("cumulativeReward = " + GetCumulativeReward());
-                //    //ResetReward();
-                //    SetReward(OnTerminateRewardValue);
-                //    //print("done reward = " + OnTerminateRewardValue);
-                //}
+                if (done)
+                {
+                    Done();
+                    //print("cumulativeReward = " + GetCumulativeReward());
+                    //ResetReward();
+                    SetReward(OnTerminateRewardValue);
+                    //print("done reward = " + OnTerminateRewardValue);
+                }
                 if (StepRewardFunction != null)
                 {
                     SetReward(StepRewardFunction());
@@ -743,6 +750,66 @@ namespace MLAgents
         {
             AddVectorObs(GetAngle(BodyParts["pelvis"].transform.localEulerAngles[xyz]) * Mathf.Deg2Rad);
             
+        }
+
+        public void CollectVelocity(int xyz)
+        {
+            AddVectorObs(GetAngle(BodyParts["pelvis"].velocity[xyz]));
+        }
+
+        public void CollectAngularVelocity(int xyz)
+        {
+            AddVectorObs(GetAngle(BodyParts["pelvis"].angularVelocity[xyz]));
+        }
+        
+        float[] curAngle;
+        //축을 고려하지 않은 float 값 하나 추가
+        public void CollectJointAngle(int unused)
+        {
+            for (int i = 0; i < configurableJoints.Count; i++)
+            {
+                GetJointAngle(i, out curAngle[i]);
+
+                AddVectorObs(curAngle[i]); //각도
+            }
+        }
+
+        private void GetJointAngle(int i, out float angle)
+        {
+            float lowerLimit = configurableJoints[i].lowAngularXLimit.limit * Mathf.Deg2Rad;
+            float upperLimit = configurableJoints[i].highAngularXLimit.limit * Mathf.Deg2Rad;
+
+            float pos = lowerLimit + (upperLimit - lowerLimit) * (Actions[i] + 1f) * 0.5f;
+            float angle_mid = 0.5f * (lowerLimit + upperLimit);
+            pos = 2 * (pos - angle_mid) / (upperLimit - lowerLimit);
+
+            angle = pos;
+        }
+
+        float[] beforeAngle;
+        //축을 고려하지 않은 float 값 하나 추가
+        public void CollectJointAngularVelocity(int unused)
+        {
+            for (int i = 0; i < configurableJoints.Count; i++)
+            {
+                float angle = 0f;
+                GetJointAngle(i, out angle);
+
+                float vel = angle - beforeAngle[i] / Time.fixedDeltaTime;
+                vel *= 0.1f;
+
+                AddVectorObs(vel); //각속도
+
+                beforeAngle[i] = angle;
+            }
+        }
+
+        public void CollectJointCollisionSensors(int unused)
+        {
+            for (int i = 0; i < collisionSensors.Count; i++)
+            {
+                AddVectorObs(collisionSensors[i].isCollision);
+            }
         }
     }
 }

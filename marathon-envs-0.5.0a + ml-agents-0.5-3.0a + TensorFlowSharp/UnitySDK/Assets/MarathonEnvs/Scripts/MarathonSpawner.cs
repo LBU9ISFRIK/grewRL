@@ -174,7 +174,7 @@ namespace MLAgents
             gameObject.transform.position = _orginalTransformPosition;
 
             GetComponent<MarathonAgent>().SetMarathonJoints(mujocoJoints);
-            //GetComponent<MarathonAgent>().SetMarathonSensors(mujocoSensors);
+            GetComponent<MarathonAgent>().SetMarathonSensors(mujocoSensors);
         }
 
         public void ApplyRandom()

@@ -33,19 +33,21 @@
             this.leg_count_label = new System.Windows.Forms.Label();
             this.domain_groupBox = new System.Windows.Forms.GroupBox();
             this.state_groupBox = new System.Windows.Forms.GroupBox();
-            this.checkedListBox6 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox5 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox4 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
+            this.state_joint_collisionSensor_checkedListBox = new System.Windows.Forms.CheckedListBox();
+            this.state_joint_collisionSensor_label = new System.Windows.Forms.Label();
+            this.state_joint_angularvelocity_checkedListBox = new System.Windows.Forms.CheckedListBox();
+            this.state_joint_angle_checkedListBox = new System.Windows.Forms.CheckedListBox();
+            this.state_angularvelocity_checkedListBox = new System.Windows.Forms.CheckedListBox();
+            this.state_velocity_checkedListBox = new System.Windows.Forms.CheckedListBox();
+            this.state_rotation_checkedListBox = new System.Windows.Forms.CheckedListBox();
             this.state_size_label = new System.Windows.Forms.Label();
             this.state_joint_angularvelocity_label = new System.Windows.Forms.Label();
-            this.state_joint_velocity_label = new System.Windows.Forms.Label();
+            this.state_joint_angle_label = new System.Windows.Forms.Label();
             this.state_angularvelocity_label = new System.Windows.Forms.Label();
             this.state_velocity_label = new System.Windows.Forms.Label();
             this.state_rotation_label = new System.Windows.Forms.Label();
             this.state_position_label = new System.Windows.Forms.Label();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.state_position_checkedListBox = new System.Windows.Forms.CheckedListBox();
             this.domain_groupBox.SuspendLayout();
             this.state_groupBox.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +69,8 @@
             this.send_textBox.Size = new System.Drawing.Size(100, 21);
             this.send_textBox.TabIndex = 2;
             this.send_textBox.Text = "6";
+            this.send_textBox.TextChanged += new System.EventHandler(this.UpdateCheckedStateCount);
+            this.send_textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.send_textBox_KeyPress);
             // 
             // leg_count_label
             // 
@@ -93,110 +97,127 @@
             // state_groupBox
             // 
             this.state_groupBox.CausesValidation = false;
-            this.state_groupBox.Controls.Add(this.checkedListBox6);
-            this.state_groupBox.Controls.Add(this.checkedListBox5);
-            this.state_groupBox.Controls.Add(this.checkedListBox4);
-            this.state_groupBox.Controls.Add(this.checkedListBox3);
-            this.state_groupBox.Controls.Add(this.checkedListBox2);
+            this.state_groupBox.Controls.Add(this.state_joint_collisionSensor_checkedListBox);
+            this.state_groupBox.Controls.Add(this.state_joint_collisionSensor_label);
+            this.state_groupBox.Controls.Add(this.state_joint_angularvelocity_checkedListBox);
+            this.state_groupBox.Controls.Add(this.state_joint_angle_checkedListBox);
+            this.state_groupBox.Controls.Add(this.state_angularvelocity_checkedListBox);
+            this.state_groupBox.Controls.Add(this.state_velocity_checkedListBox);
+            this.state_groupBox.Controls.Add(this.state_rotation_checkedListBox);
             this.state_groupBox.Controls.Add(this.state_size_label);
             this.state_groupBox.Controls.Add(this.state_joint_angularvelocity_label);
-            this.state_groupBox.Controls.Add(this.state_joint_velocity_label);
+            this.state_groupBox.Controls.Add(this.state_joint_angle_label);
             this.state_groupBox.Controls.Add(this.state_angularvelocity_label);
             this.state_groupBox.Controls.Add(this.state_velocity_label);
             this.state_groupBox.Controls.Add(this.state_rotation_label);
             this.state_groupBox.Controls.Add(this.state_position_label);
-            this.state_groupBox.Controls.Add(this.checkedListBox1);
+            this.state_groupBox.Controls.Add(this.state_position_checkedListBox);
             this.state_groupBox.Location = new System.Drawing.Point(6, 20);
             this.state_groupBox.Name = "state_groupBox";
-            this.state_groupBox.Size = new System.Drawing.Size(295, 186);
+            this.state_groupBox.Size = new System.Drawing.Size(295, 239);
             this.state_groupBox.TabIndex = 0;
             this.state_groupBox.TabStop = false;
             this.state_groupBox.Text = "State Space";
             // 
-            // checkedListBox6
+            // state_joint_collisionSensor_checkedListBox
             // 
-            this.checkedListBox6.CheckOnClick = true;
-            this.checkedListBox6.ColumnWidth = 50;
-            this.checkedListBox6.FormattingEnabled = true;
-            this.checkedListBox6.Items.AddRange(new object[] {
+            this.state_joint_collisionSensor_checkedListBox.CheckOnClick = true;
+            this.state_joint_collisionSensor_checkedListBox.FormattingEnabled = true;
+            this.state_joint_collisionSensor_checkedListBox.Items.AddRange(new object[] {
+            " "});
+            this.state_joint_collisionSensor_checkedListBox.Location = new System.Drawing.Point(132, 186);
+            this.state_joint_collisionSensor_checkedListBox.Name = "state_joint_collisionSensor_checkedListBox";
+            this.state_joint_collisionSensor_checkedListBox.Size = new System.Drawing.Size(157, 20);
+            this.state_joint_collisionSensor_checkedListBox.TabIndex = 19;
+            this.state_joint_collisionSensor_checkedListBox.UseTabStops = false;
+            this.state_joint_collisionSensor_checkedListBox.SelectedIndexChanged += new System.EventHandler(this.UpdateCheckedStateCount);
+            // 
+            // state_joint_collisionSensor_label
+            // 
+            this.state_joint_collisionSensor_label.AutoSize = true;
+            this.state_joint_collisionSensor_label.Location = new System.Drawing.Point(8, 190);
+            this.state_joint_collisionSensor_label.Margin = new System.Windows.Forms.Padding(5, 5, 5, 11);
+            this.state_joint_collisionSensor_label.Name = "state_joint_collisionSensor_label";
+            this.state_joint_collisionSensor_label.Size = new System.Drawing.Size(121, 12);
+            this.state_joint_collisionSensor_label.TabIndex = 18;
+            this.state_joint_collisionSensor_label.Text = "joint_collisionSensor";
+            // 
+            // state_joint_angularvelocity_checkedListBox
+            // 
+            this.state_joint_angularvelocity_checkedListBox.CheckOnClick = true;
+            this.state_joint_angularvelocity_checkedListBox.FormattingEnabled = true;
+            this.state_joint_angularvelocity_checkedListBox.Items.AddRange(new object[] {
+            " "});
+            this.state_joint_angularvelocity_checkedListBox.Location = new System.Drawing.Point(132, 158);
+            this.state_joint_angularvelocity_checkedListBox.Name = "state_joint_angularvelocity_checkedListBox";
+            this.state_joint_angularvelocity_checkedListBox.Size = new System.Drawing.Size(157, 20);
+            this.state_joint_angularvelocity_checkedListBox.TabIndex = 17;
+            this.state_joint_angularvelocity_checkedListBox.UseTabStops = false;
+            this.state_joint_angularvelocity_checkedListBox.SelectedIndexChanged += new System.EventHandler(this.UpdateCheckedStateCount);
+            // 
+            // state_joint_angle_checkedListBox
+            // 
+            this.state_joint_angle_checkedListBox.CheckOnClick = true;
+            this.state_joint_angle_checkedListBox.FormattingEnabled = true;
+            this.state_joint_angle_checkedListBox.Items.AddRange(new object[] {
+            " "});
+            this.state_joint_angle_checkedListBox.Location = new System.Drawing.Point(132, 130);
+            this.state_joint_angle_checkedListBox.Name = "state_joint_angle_checkedListBox";
+            this.state_joint_angle_checkedListBox.Size = new System.Drawing.Size(157, 20);
+            this.state_joint_angle_checkedListBox.TabIndex = 16;
+            this.state_joint_angle_checkedListBox.UseTabStops = false;
+            this.state_joint_angle_checkedListBox.SelectedIndexChanged += new System.EventHandler(this.UpdateCheckedStateCount);
+            // 
+            // state_angularvelocity_checkedListBox
+            // 
+            this.state_angularvelocity_checkedListBox.CheckOnClick = true;
+            this.state_angularvelocity_checkedListBox.ColumnWidth = 50;
+            this.state_angularvelocity_checkedListBox.FormattingEnabled = true;
+            this.state_angularvelocity_checkedListBox.Items.AddRange(new object[] {
             "x",
             "y",
             "z"});
-            this.checkedListBox6.Location = new System.Drawing.Point(132, 158);
-            this.checkedListBox6.MultiColumn = true;
-            this.checkedListBox6.Name = "checkedListBox6";
-            this.checkedListBox6.Size = new System.Drawing.Size(157, 20);
-            this.checkedListBox6.TabIndex = 17;
-            this.checkedListBox6.UseTabStops = false;
-            this.checkedListBox6.SelectedIndexChanged += new System.EventHandler(this.UpdateCheckedStateCount);
+            this.state_angularvelocity_checkedListBox.Location = new System.Drawing.Point(132, 102);
+            this.state_angularvelocity_checkedListBox.MultiColumn = true;
+            this.state_angularvelocity_checkedListBox.Name = "state_angularvelocity_checkedListBox";
+            this.state_angularvelocity_checkedListBox.Size = new System.Drawing.Size(157, 20);
+            this.state_angularvelocity_checkedListBox.TabIndex = 15;
+            this.state_angularvelocity_checkedListBox.UseTabStops = false;
+            this.state_angularvelocity_checkedListBox.SelectedIndexChanged += new System.EventHandler(this.UpdateCheckedStateCount);
             // 
-            // checkedListBox5
+            // state_velocity_checkedListBox
             // 
-            this.checkedListBox5.CheckOnClick = true;
-            this.checkedListBox5.ColumnWidth = 50;
-            this.checkedListBox5.FormattingEnabled = true;
-            this.checkedListBox5.Items.AddRange(new object[] {
+            this.state_velocity_checkedListBox.CheckOnClick = true;
+            this.state_velocity_checkedListBox.ColumnWidth = 50;
+            this.state_velocity_checkedListBox.FormattingEnabled = true;
+            this.state_velocity_checkedListBox.Items.AddRange(new object[] {
             "x",
             "y",
             "z"});
-            this.checkedListBox5.Location = new System.Drawing.Point(132, 130);
-            this.checkedListBox5.MultiColumn = true;
-            this.checkedListBox5.Name = "checkedListBox5";
-            this.checkedListBox5.Size = new System.Drawing.Size(157, 20);
-            this.checkedListBox5.TabIndex = 16;
-            this.checkedListBox5.UseTabStops = false;
-            this.checkedListBox5.SelectedIndexChanged += new System.EventHandler(this.UpdateCheckedStateCount);
+            this.state_velocity_checkedListBox.Location = new System.Drawing.Point(132, 74);
+            this.state_velocity_checkedListBox.MultiColumn = true;
+            this.state_velocity_checkedListBox.Name = "state_velocity_checkedListBox";
+            this.state_velocity_checkedListBox.Size = new System.Drawing.Size(157, 20);
+            this.state_velocity_checkedListBox.TabIndex = 14;
+            this.state_velocity_checkedListBox.UseTabStops = false;
+            this.state_velocity_checkedListBox.SelectedIndexChanged += new System.EventHandler(this.UpdateCheckedStateCount);
             // 
-            // checkedListBox4
+            // state_rotation_checkedListBox
             // 
-            this.checkedListBox4.CheckOnClick = true;
-            this.checkedListBox4.ColumnWidth = 50;
-            this.checkedListBox4.FormattingEnabled = true;
-            this.checkedListBox4.Items.AddRange(new object[] {
+            this.state_rotation_checkedListBox.CheckOnClick = true;
+            this.state_rotation_checkedListBox.ColumnWidth = 50;
+            this.state_rotation_checkedListBox.FormattingEnabled = true;
+            this.state_rotation_checkedListBox.Items.AddRange(new object[] {
             "x",
             "y",
             "z"});
-            this.checkedListBox4.Location = new System.Drawing.Point(132, 102);
-            this.checkedListBox4.MultiColumn = true;
-            this.checkedListBox4.Name = "checkedListBox4";
-            this.checkedListBox4.Size = new System.Drawing.Size(157, 20);
-            this.checkedListBox4.TabIndex = 15;
-            this.checkedListBox4.UseTabStops = false;
-            this.checkedListBox4.SelectedIndexChanged += new System.EventHandler(this.UpdateCheckedStateCount);
-            // 
-            // checkedListBox3
-            // 
-            this.checkedListBox3.CheckOnClick = true;
-            this.checkedListBox3.ColumnWidth = 50;
-            this.checkedListBox3.FormattingEnabled = true;
-            this.checkedListBox3.Items.AddRange(new object[] {
-            "x",
-            "y",
-            "z"});
-            this.checkedListBox3.Location = new System.Drawing.Point(132, 74);
-            this.checkedListBox3.MultiColumn = true;
-            this.checkedListBox3.Name = "checkedListBox3";
-            this.checkedListBox3.Size = new System.Drawing.Size(157, 20);
-            this.checkedListBox3.TabIndex = 14;
-            this.checkedListBox3.UseTabStops = false;
-            this.checkedListBox3.SelectedIndexChanged += new System.EventHandler(this.UpdateCheckedStateCount);
-            // 
-            // checkedListBox2
-            // 
-            this.checkedListBox2.CheckOnClick = true;
-            this.checkedListBox2.ColumnWidth = 50;
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Items.AddRange(new object[] {
-            "x",
-            "y",
-            "z"});
-            this.checkedListBox2.Location = new System.Drawing.Point(132, 46);
-            this.checkedListBox2.MultiColumn = true;
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(157, 20);
-            this.checkedListBox2.TabIndex = 13;
-            this.checkedListBox2.UseTabStops = false;
-            this.checkedListBox2.SelectedIndexChanged += new System.EventHandler(this.UpdateCheckedStateCount);
+            this.state_rotation_checkedListBox.Location = new System.Drawing.Point(132, 46);
+            this.state_rotation_checkedListBox.MultiColumn = true;
+            this.state_rotation_checkedListBox.Name = "state_rotation_checkedListBox";
+            this.state_rotation_checkedListBox.Size = new System.Drawing.Size(157, 20);
+            this.state_rotation_checkedListBox.TabIndex = 13;
+            this.state_rotation_checkedListBox.UseTabStops = false;
+            this.state_rotation_checkedListBox.SelectedIndexChanged += new System.EventHandler(this.UpdateCheckedStateCount);
             // 
             // state_size_label
             // 
@@ -217,15 +238,15 @@
             this.state_joint_angularvelocity_label.TabIndex = 6;
             this.state_joint_angularvelocity_label.Text = "joint_angularVelocity";
             // 
-            // state_joint_velocity_label
+            // state_joint_angle_label
             // 
-            this.state_joint_velocity_label.AutoSize = true;
-            this.state_joint_velocity_label.Location = new System.Drawing.Point(8, 134);
-            this.state_joint_velocity_label.Margin = new System.Windows.Forms.Padding(5, 5, 5, 11);
-            this.state_joint_velocity_label.Name = "state_joint_velocity_label";
-            this.state_joint_velocity_label.Size = new System.Drawing.Size(77, 12);
-            this.state_joint_velocity_label.TabIndex = 5;
-            this.state_joint_velocity_label.Text = "joint_velocity";
+            this.state_joint_angle_label.AutoSize = true;
+            this.state_joint_angle_label.Location = new System.Drawing.Point(8, 134);
+            this.state_joint_angle_label.Margin = new System.Windows.Forms.Padding(5, 5, 5, 11);
+            this.state_joint_angle_label.Name = "state_joint_angle_label";
+            this.state_joint_angle_label.Size = new System.Drawing.Size(65, 12);
+            this.state_joint_angle_label.TabIndex = 5;
+            this.state_joint_angle_label.Text = "joint_angle";
             // 
             // state_angularvelocity_label
             // 
@@ -267,22 +288,22 @@
             this.state_position_label.TabIndex = 1;
             this.state_position_label.Text = "position";
             // 
-            // checkedListBox1
+            // state_position_checkedListBox
             // 
-            this.checkedListBox1.CheckOnClick = true;
-            this.checkedListBox1.ColumnWidth = 50;
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.state_position_checkedListBox.CheckOnClick = true;
+            this.state_position_checkedListBox.ColumnWidth = 50;
+            this.state_position_checkedListBox.FormattingEnabled = true;
+            this.state_position_checkedListBox.Items.AddRange(new object[] {
             "x",
             "y",
             "z"});
-            this.checkedListBox1.Location = new System.Drawing.Point(132, 18);
-            this.checkedListBox1.MultiColumn = true;
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(157, 20);
-            this.checkedListBox1.TabIndex = 0;
-            this.checkedListBox1.UseTabStops = false;
-            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.UpdateCheckedStateCount);
+            this.state_position_checkedListBox.Location = new System.Drawing.Point(132, 18);
+            this.state_position_checkedListBox.MultiColumn = true;
+            this.state_position_checkedListBox.Name = "state_position_checkedListBox";
+            this.state_position_checkedListBox.Size = new System.Drawing.Size(157, 20);
+            this.state_position_checkedListBox.TabIndex = 0;
+            this.state_position_checkedListBox.UseTabStops = false;
+            this.state_position_checkedListBox.SelectedIndexChanged += new System.EventHandler(this.UpdateCheckedStateCount);
             // 
             // Server
             // 
@@ -312,17 +333,19 @@
         private System.Windows.Forms.GroupBox state_groupBox;
         private System.Windows.Forms.Label state_size_label;
         private System.Windows.Forms.Label state_joint_angularvelocity_label;
-        private System.Windows.Forms.Label state_joint_velocity_label;
+        private System.Windows.Forms.Label state_joint_angle_label;
         private System.Windows.Forms.Label state_angularvelocity_label;
         private System.Windows.Forms.Label state_velocity_label;
         private System.Windows.Forms.Label state_rotation_label;
         private System.Windows.Forms.Label state_position_label;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.CheckedListBox checkedListBox6;
-        private System.Windows.Forms.CheckedListBox checkedListBox5;
-        private System.Windows.Forms.CheckedListBox checkedListBox4;
-        private System.Windows.Forms.CheckedListBox checkedListBox3;
-        private System.Windows.Forms.CheckedListBox checkedListBox2;
+        private System.Windows.Forms.CheckedListBox state_position_checkedListBox;
+        private System.Windows.Forms.CheckedListBox state_joint_angularvelocity_checkedListBox;
+        private System.Windows.Forms.CheckedListBox state_joint_angle_checkedListBox;
+        private System.Windows.Forms.CheckedListBox state_angularvelocity_checkedListBox;
+        private System.Windows.Forms.CheckedListBox state_velocity_checkedListBox;
+        private System.Windows.Forms.CheckedListBox state_rotation_checkedListBox;
+        private System.Windows.Forms.CheckedListBox state_joint_collisionSensor_checkedListBox;
+        private System.Windows.Forms.Label state_joint_collisionSensor_label;
     }
 }
 

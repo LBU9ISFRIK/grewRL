@@ -58,8 +58,8 @@ public class OpenAIAntAgent : MarathonAgent
         //StepRewardFunction = StepRewardAnt_My;
         StepRewardFunction = StepRewardAnt_PyBullet;
 
-        //TerminateFunction = TerminateAnt;
-        TerminateFunction = TerminateAnt_My;
+        TerminateFunction = TerminateAnt;
+        //TerminateFunction = TerminateAnt_My;
 
         ObservationsFunction = ObservationsDefault;
 
@@ -80,100 +80,75 @@ public class OpenAIAntAgent : MarathonAgent
     {
         var pelvis = BodyParts["pelvis"];
         #region origin
-        //AddVectorObs(pelvis.velocity); //3
-        //AddVectorObs(pelvis.transform.forward); // gyroscope //3
-        //AddVectorObs(pelvis.transform.up); //3
+        AddVectorObs(pelvis.velocity); //3
+        AddVectorObs(pelvis.transform.forward); // gyroscope //3
+        AddVectorObs(pelvis.transform.up); //3
 
         //AddVectorObs(SensorIsInTouch); //xml 센서 수
-        ////string str = "";
-        ////for (int i = 0; i < SensorIsInTouch.Count; i++)
-        ////{
-        ////    str += SensorIsInTouch[i] + ", ";
-        ////}
-        ////print(str);
 
-        //JointRotations.ForEach(x => AddVectorObs(x)); //xml actuator 수 * 4
-        //AddVectorObs(JointVelocity); //xml actuator 수
+        for (int i = 0; i < collisionSensors.Count; i++)
+            AddVectorObs(collisionSensors[i].isCollision);
+        //string str = "";
+        //for (int i = 0; i < SensorIsInTouch.Count; i++)
+        //{
+        //    str += SensorIsInTouch[i] + ", ";
+        //}
+        //print(str);
 
-        ////수집한 observation이 brain에서 요구하는 observation size보다 적을 경우 0으로 채우기
-        ////brain.brainParameters.vectorObservationSize;
-        ////while(info.vectorObservation.Count < brain.brainParameters.vectorObservationSize)
-        ////{
-        ////    AddVectorObs(0f);
-        ////}
+        JointRotations.ForEach(x => AddVectorObs(x)); //xml actuator 수 * 4
+        AddVectorObs(JointVelocity); //xml actuator 수
+
+        //수집한 observation이 brain에서 요구하는 observation size보다 적을 경우 0으로 채우기
+        //brain.brainParameters.vectorObservationSize;
+        //while(info.vectorObservation.Count < brain.brainParameters.vectorObservationSize)
+        //{
+        //    AddVectorObs(0f);
+        //}
         #endregion
 
-        if(collectStateList.Count <= 0)
-        {
-            #region pybullet
-            //more //8
-            float torso_height = Mathf.Abs(pelvis.transform.position.y - init_y);
-            AddVectorObs(torso_height);
+        //if(collectStateList.Count <= 0)
+        //{
+        //    #region pybullet
+        //    //more //8
+        //    float torso_height = Mathf.Abs(pelvis.transform.position.y - init_y);
+        //    AddVectorObs(torso_height);
 
-            float self_walk_target_theta = Mathf.Atan2(target.z - pelvis.transform.position.z, target.x - pelvis.transform.position.x);
-            float yaw = GetAngle(pelvis.transform.localEulerAngles.y) * Mathf.Deg2Rad;
-            float angle_to_target = self_walk_target_theta - yaw;
-            //print(self_walk_target_theta + ", " + yaw);
-            float sin = Mathf.Sin(angle_to_target);
-            float cos = Mathf.Cos(angle_to_target);
-            //print(sin + ", " + cos);
-            AddVectorObs(sin);
-            AddVectorObs(cos);
+        //    float self_walk_target_theta = Mathf.Atan2(target.z - pelvis.transform.position.z, target.x - pelvis.transform.position.x);
+        //    float yaw = GetAngle(pelvis.transform.localEulerAngles.y) * Mathf.Deg2Rad;
+        //    float angle_to_target = self_walk_target_theta - yaw;
+        //    //print(self_walk_target_theta + ", " + yaw);
+        //    float sin = Mathf.Sin(angle_to_target);
+        //    float cos = Mathf.Cos(angle_to_target);
+        //    //print(sin + ", " + cos);
+        //    AddVectorObs(sin);
+        //    AddVectorObs(cos);
 
-            AddVectorObs(pelvis.velocity * 0.3f);
+        //    AddVectorObs(pelvis.velocity * 0.3f);
 
-            float pitch = GetAngle(pelvis.transform.localEulerAngles.x) * Mathf.Deg2Rad;
-            float roll = GetAngle(pelvis.transform.localEulerAngles.z) * Mathf.Deg2Rad;
+        //    float pitch = GetAngle(pelvis.transform.localEulerAngles.x) * Mathf.Deg2Rad;
+        //    float roll = GetAngle(pelvis.transform.localEulerAngles.z) * Mathf.Deg2Rad;
 
-            float clampedAngleX = Mathf.Clamp(pitch, -5f, 5f);
-            //float clampedAngleY = Mathf.Clamp(yaw, -5f, 5f);
-            float clampedAngleZ = Mathf.Clamp(roll, -5f, 5f);
+        //    float clampedAngleX = Mathf.Clamp(pitch, -5f, 5f);
+        //    //float clampedAngleY = Mathf.Clamp(yaw, -5f, 5f);
+        //    float clampedAngleZ = Mathf.Clamp(roll, -5f, 5f);
 
-            AddVectorObs(clampedAngleX);
-            //AddVectorObs(clampedAngleY);
-            AddVectorObs(clampedAngleZ);
+        //    AddVectorObs(clampedAngleX);
+        //    //AddVectorObs(clampedAngleY);
+        //    AddVectorObs(clampedAngleZ);
 
-            //j //16
-            for (int i = 0; i < configurableJoints.Count; i++)
-            {
-                float lowerLimit = configurableJoints[i].lowAngularXLimit.limit * Mathf.Deg2Rad;
-                float upperLimit = configurableJoints[i].highAngularXLimit.limit * Mathf.Deg2Rad;
-
-                //float pos = MarathonJoints[i].Joint.transform.position.x;
-                float pos = lowerLimit + (upperLimit - lowerLimit) * (Actions[i] + 1f) * 0.5f;
-                float pos_mid = 0.5f * (lowerLimit + upperLimit);
-                pos = 2 * (pos - pos_mid) / (upperLimit - lowerLimit);
-
-                //float vel = JointVelocity[i];// = self.get_state()
-                float vel = pos - beforeAngle[i] / Time.fixedDeltaTime;
-                vel *= 0.1f;
-
-                AddVectorObs(pos); //각도
-                AddVectorObs(vel); //각속도
-
-                beforeAngle[i] = pos;
-                //print("pos : " + pos + "  vel : " + vel);
-            }
-
-            //feet_contact //4
-            //string str = "";
-            for (int i = 0; i < collisionSensors.Count; i++)
-            {
-                AddVectorObs(collisionSensors[i].isCollision); //지면 접촉 여부
-                                                               //if (collisionSensors[i].isCollision)
-                                                               //    str += collisionSensors[i].name + ", ";
-            }
-            //print(str);
-            #endregion
-        }
+        //    CollectJointAngle(0); //joint 각도
+        //    CollectJointAngularVelocity(0); //joint 각속도
+        //    CollectJointCollisionSensors(0); //feet_contact, 지면 접촉 여부
+        //    #endregion
+        //}
 
         #region CSONG
-        foreach (var item in collectStateList)
-        {
-            item.collectState(item.index);
-        }
+        //foreach (var item in collectStateList)
+        //{
+        //    item.collectState(item.index);
+        //}
 
-        print(info.vectorObservation.Count);
+        ////print(info.vectorObservation.Count);
 
         int remain = brain.brainParameters.vectorObservationSize - info.vectorObservation.Count;
         //int remain = 38 - info.vectorObservation.Count;
@@ -286,44 +261,44 @@ public class OpenAIAntAgent : MarathonAgent
         //beforeTargetDist = targetDist;
 
         //action 페널티
-        const float self_electricity_cost = -2f;
-        float actionAbsSum = 0f;
-        const float self_stall_torque_cost = -0.1f;
-        float actionSqrSum = 0f;
-        for (int i = 0; i < Actions.Count; i++)
-        {
-            actionAbsSum += Mathf.Abs(Actions[i] * JointVelocity[i]);
-            actionSqrSum += Actions[i] * Actions[i];
-        }
-        float absMean = actionAbsSum / Actions.Count;
-        float sqrMean = actionSqrSum / Actions.Count;
-        float electricity_cost = self_electricity_cost * absMean + self_stall_torque_cost * sqrMean;
-        electricity_cost = Mathf.Clamp(electricity_cost, -1f, 1f);
+        //const float self_electricity_cost = -2f;
+        //float actionAbsSum = 0f;
+        //const float self_stall_torque_cost = -0.1f;
+        //float actionSqrSum = 0f;
+        //for (int i = 0; i < Actions.Count; i++)
+        //{
+        //    actionAbsSum += Mathf.Abs(Actions[i] * JointVelocity[i]);
+        //    actionSqrSum += Actions[i] * Actions[i];
+        //}
+        //float absMean = actionAbsSum / Actions.Count;
+        //float sqrMean = actionSqrSum / Actions.Count;
+        //float electricity_cost = self_electricity_cost * absMean + self_stall_torque_cost * sqrMean;
+        //electricity_cost = Mathf.Clamp(electricity_cost, -1f, 1f);
 
-        //joint stuck 페널티
-        const float self_joints_at_limit_cost = -0.1f;
-        int joints_at_limit = 0;
-        for (int i = 0; i < configurableJoints.Count; i++)
-        {
-            float lowerLimit = configurableJoints[i].lowAngularXLimit.limit * Mathf.Deg2Rad;
-            float upperLimit = configurableJoints[i].highAngularXLimit.limit * Mathf.Deg2Rad;
+        ////joint stuck 페널티
+        //const float self_joints_at_limit_cost = -0.1f;
+        //int joints_at_limit = 0;
+        //for (int i = 0; i < configurableJoints.Count; i++)
+        //{
+        //    float lowerLimit = configurableJoints[i].lowAngularXLimit.limit * Mathf.Deg2Rad;
+        //    float upperLimit = configurableJoints[i].highAngularXLimit.limit * Mathf.Deg2Rad;
 
-            //float pos = MarathonJoints[i].Joint.transform.position.x;
-            float pos = lowerLimit + (upperLimit - lowerLimit) * (Actions[i] + 1f) * 0.5f;
-            float pos_mid = 0.5f * (lowerLimit + upperLimit);
-            pos = 2 * (pos - pos_mid) / (upperLimit - lowerLimit);
+        //    //float pos = MarathonJoints[i].Joint.transform.position.x;
+        //    float pos = lowerLimit + (upperLimit - lowerLimit) * (Actions[i] + 1f) * 0.5f;
+        //    float pos_mid = 0.5f * (lowerLimit + upperLimit);
+        //    pos = 2 * (pos - pos_mid) / (upperLimit - lowerLimit);
 
-            if (Mathf.Abs(pos) > 0.99f)
-                joints_at_limit++;
-        }
-        float joints_at_limit_cost = self_joints_at_limit_cost * joints_at_limit;
+        //    if (Mathf.Abs(pos) > 0.99f)
+        //        joints_at_limit++;
+        //}
+        //float joints_at_limit_cost = self_joints_at_limit_cost * joints_at_limit;
 
-        //접촉 페널티
-        float feet_collision_cost = 0f; //상수
+        ////접촉 페널티
+        //float feet_collision_cost = 0f; //상수
 
         //float reward = alive_bonus + progress + electricity_cost + joints_at_limit_cost + feet_collision_cost;
-        float reward = progress + electricity_cost + joints_at_limit_cost + feet_collision_cost;
-        //float reward = progress;
+        //float reward = progress + electricity_cost + joints_at_limit_cost + feet_collision_cost;
+        float reward = progress;
 
         //print(string.Format("alive_bonus : {0}, progress : {1}, electricity_cost : {2}, joints_at_limit_cost : {3}, reward : {4}", alive_bonus, progress, electricity_cost, joints_at_limit_cost, reward));
         //print("reward : " + reward);

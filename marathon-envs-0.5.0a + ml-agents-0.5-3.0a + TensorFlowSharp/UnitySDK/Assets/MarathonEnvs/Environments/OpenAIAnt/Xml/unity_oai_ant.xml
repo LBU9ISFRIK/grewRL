@@ -82,10 +82,10 @@
     <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="hip_3" gear="150"/>
     <motor ctrllimited="true" ctrlrange="-1.0 1.0" joint="ankle_3" gear="150"/>
   </actuator>
-  <sensor>
+  <!--<sensor>
     <touch name="touch_left_ankle_geom" site="left_ankle_geom"/>
     <touch name="touch_right_ankle_geom" site="right_ankle_geom"/>
     <touch name="touch_third_ankle_geom" site="third_ankle_geom"/>
     <touch name="touch_fourth_ankle_geom" site="fourth_ankle_geom"/>
-  </sensor>
+  </sensor>-->
 </mujoco>

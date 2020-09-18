@@ -34,13 +34,14 @@ class BatchSampler(BaseSampler):
 
     def obtain_samples(self, itr, reset_args=None, return_dict=False, log_prefix=''):
         init_policy_params = cur_policy_params = self.algo.policy.get_param_values()
-        #if hasattr(self.algo.env,"get_param_values"): #삭제함
-        #    try:
-        #        cur_env_params = self.algo.env.get_param_values()
-        #    except:
-        #        cur_env_params = None
-        #else:
-        cur_env_params = None
+        if hasattr(self.algo.env,"get_param_values"): #삭제함
+            try:
+                cur_env_params = self.algo.env.get_param_values()
+            except:
+                cur_env_params = None
+        else:
+            cur_env_params = None
+
         import time
         start = time.time()
         if type(reset_args) != list and type(reset_args)!=np.ndarray:
@@ -51,7 +52,7 @@ class BatchSampler(BaseSampler):
             cur_policy_params = [cur_policy_params]*self.n_envs
         # do tasks sequentially and parallelize within rollouts per task.
         paths = {}
-        parallel_sampler.singleton_pool.G.policy = self.algo.policy #추가함
+        #parallel_sampler.singleton_pool.G.policy = self.algo.policy #추가함
         for i in range(self.n_envs):
             paths[i] = parallel_sampler.sample_paths(
                 policy_params=cur_policy_params[i],
