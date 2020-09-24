@@ -37,7 +37,10 @@ namespace Control_Suite
             send += "$" + t_s_x.Text;
             send += "$" + t_s_y.Text;
             send += "$" + t_e_count.Text;
-            send += "$" + e_3d_model.Text;
+            List<string> model_path = new List<string>(e_3d_model.Text.Split('\\')); ;
+            string sourcePath = string.Join("/", model_path.ToArray());
+            send += "$" + sourcePath;
+
             send += "$" + e1_pos_x.Text + "$" + e1_pos_y.Text + "$" + e1_pos_z.Text;  //obstacle_1 pos(x, y, z)
             send += "$" + e1_vel_x.Text + "$" + e1_vel_y.Text + "$" + e1_vel_z.Text;  //obstacle_1 vel(x, y, z)
 
@@ -46,6 +49,47 @@ namespace Control_Suite
 
             send += "$" + e3_pos_x.Text + "$" + e3_pos_y.Text + "$" + e3_pos_z.Text;  //obstacle_3 pos(x, y, z)
             send += "$" + e3_vel_x.Text + "$" + e3_vel_y.Text + "$" + e3_vel_z.Text;  //obstacle_3 vel(x, y, z)
+
+            
+
+            switch (choose_goal.Text)
+            {
+                case "Num 1":
+                    send += "$"+ "Num 1" + "$"+ goal_tem1.Text;
+                    break;
+                case "Num 2":
+                    send += "$" + "Num 2" + "$" + goal_tem2.Text;
+                    break;
+                case "Num 3":
+                    send += "$" + "Num 3" + "$" + goal_tem3.Text;
+                    break;
+                case "Num 4":
+                    send += "$" + "Num 4" + "$" + goal_tem4.Text;
+                    break;
+                default:
+                    send += "$" + "Num 1" + "$" + goal_tem1.Text;
+                    break;
+            }
+
+            switch (choose_reward.Text)
+            {
+                case "Num 1":
+                    send += "$" + "Num 1" + "$" + reward_1.Text;
+                    break;
+                case "Num 2":
+                    send += "$" + "Num 2" + "$" + reward_2.Text;
+                    break;
+                case "Num 3":
+                    send += "$" + "Num 3" + "$" + reward_3.Text;
+                    break;
+                case "Num 4":
+                    send += "$" + "Num 4" + "$" + reward_4.Text;
+                    break;
+                default:
+                    send += "$" + "Num 1" + "$" + reward_1.Text;
+                    break;
+            }
+
 
             data = Encoding.Default.GetBytes(send);
             udpServer.Send(data, data.Length, remoteEP);
@@ -79,6 +123,10 @@ namespace Control_Suite
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
+            this.AutoScroll = true;
+            
+
             udpServer = new UdpClient(port);
             remoteEP = new IPEndPoint(IPAddress.Parse(strIP), port);
 
@@ -200,13 +248,33 @@ namespace Control_Suite
             Pen grayPen = new Pen(gray, 2);
 
             // Top line
-            gobject.DrawLine(grayPen, 10, 25, 1440, 25);
+            //gobject.DrawLine(grayPen, 10, 25, 1440, 25);
             // Down Line
-            gobject.DrawLine(grayPen, 10, 500, 1440, 500);
+           // gobject.DrawLine(grayPen, 10, 500, 1440, 500);
 
         }
 
         private void g_s_width_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void choose_goal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripComboBox1_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void menuStrip9_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void toolStripComboBox5_Click(object sender, EventArgs e)
         {
 
         }
