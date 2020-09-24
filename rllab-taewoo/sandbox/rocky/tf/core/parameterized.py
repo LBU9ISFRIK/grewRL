@@ -95,7 +95,9 @@ class Parameterized(object):
         Serializable.__setstate__(self, d)
         global load_params
         if load_params:
-            tf.get_default_session().run(tf.initialize_variables(self.get_params()))
+            tf.get_default_session().run(tf.initialize_variables(self.get_params())) #수정함
+            #with tf.Session() as sess:
+            #    sess.run(tf.initialize_variables(self.get_params()))
             self.set_param_values(d["params"])
 
 

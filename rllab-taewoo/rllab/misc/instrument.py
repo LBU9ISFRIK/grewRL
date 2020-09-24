@@ -597,7 +597,8 @@ def _to_param_val(v):
 def to_local_command(params, python_command="python", script=osp.join(config.PROJECT_PATH,
                                                                       'scripts/run_experiment.py'),
                      use_gpu=False):
-    command = "cmd /C \"conda.bat activate & conda.bat activate mlagent & " + python_command + " " + script
+    #command = "cmd /C \"conda.bat activate & conda.bat activate mlagent & " + python_command + " " + script #수정함
+    command = python_command + " " + script
     if use_gpu and not config.USE_TF:
         command = "THEANO_FLAGS='device=gpu,dnn.enabled=auto' " + command
     for k, v in config.ENV.items():
@@ -607,12 +608,15 @@ def to_local_command(params, python_command="python", script=osp.join(config.PRO
         if isinstance(v, dict):
             for nk, nv in v.items():
                 if str(nk) == "_name":
-                    command += "  --%s %s" % (k, _to_param_val(nv))
+                    command += "  --%s %s" % (k, nv)
+                    #command += "  --%s %s" % (k, _to_param_val(nv))
                 else:
                     command += \
-                        "  --%s_%s %s" % (k, nk, _to_param_val(nv))
+                        "  --%s_%s %s" % (k, nk, nv)
+                        #"  --%s_%s %s" % (k, nk, _to_param_val(nv))
         else:
-            command += "  --%s %s" % (k, _to_param_val(v))
+            command += "  --%s %s" % (k, v)
+            #command += "  --%s %s" % (k, _to_param_val(v))
     return command + "\""
 
 def to_docker_command(params, docker_image, python_command="python", script='scripts/run_experiment.py',

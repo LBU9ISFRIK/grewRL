@@ -287,18 +287,18 @@ namespace MLAgents
 
             UpdateQ();
 
-            if (!IsDone())
+            //if (!IsDone())
             {
-                bool done = TerminateFunction();
+                //bool done = TerminateFunction();
 
-                if (done)
-                {
-                    Done();
-                    //print("cumulativeReward = " + GetCumulativeReward());
-                    //ResetReward();
-                    SetReward(OnTerminateRewardValue);
-                    //print("done reward = " + OnTerminateRewardValue);
-                }
+                //if (done)
+                //{
+                //    Done();
+                //    //print("cumulativeReward = " + GetCumulativeReward());
+                //    //ResetReward();
+                //    SetReward(OnTerminateRewardValue);
+                //    //print("done reward = " + OnTerminateRewardValue);
+                //}
                 if (StepRewardFunction != null)
                 {
                     SetReward(StepRewardFunction());

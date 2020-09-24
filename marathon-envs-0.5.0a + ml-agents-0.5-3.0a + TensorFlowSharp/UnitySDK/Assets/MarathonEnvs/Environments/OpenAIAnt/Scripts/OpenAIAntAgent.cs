@@ -58,8 +58,8 @@ public class OpenAIAntAgent : MarathonAgent
         //StepRewardFunction = StepRewardAnt_My;
         StepRewardFunction = StepRewardAnt_PyBullet;
 
-        TerminateFunction = TerminateAnt;
-        //TerminateFunction = TerminateAnt_My;
+        //TerminateFunction = TerminateAnt;
+        TerminateFunction = TerminateAnt_My;
 
         ObservationsFunction = ObservationsDefault;
 
@@ -80,78 +80,64 @@ public class OpenAIAntAgent : MarathonAgent
     {
         var pelvis = BodyParts["pelvis"];
         #region origin
-        AddVectorObs(pelvis.velocity); //3
-        AddVectorObs(pelvis.transform.forward); // gyroscope //3
-        AddVectorObs(pelvis.transform.up); //3
+        //AddVectorObs(pelvis.velocity); //3
+        //AddVectorObs(pelvis.transform.forward); // gyroscope //3
+        //AddVectorObs(pelvis.transform.up); //3
 
-        //AddVectorObs(SensorIsInTouch); //xml 센서 수
+        ////AddVectorObs(SensorIsInTouch); //xml 센서 수
 
-        for (int i = 0; i < collisionSensors.Count; i++)
-            AddVectorObs(collisionSensors[i].isCollision);
-        //string str = "";
-        //for (int i = 0; i < SensorIsInTouch.Count; i++)
-        //{
-        //    str += SensorIsInTouch[i] + ", ";
-        //}
-        //print(str);
+        //for (int i = 0; i < collisionSensors.Count; i++)
+        //    AddVectorObs(collisionSensors[i].isCollision);
 
-        JointRotations.ForEach(x => AddVectorObs(x)); //xml actuator 수 * 4
-        AddVectorObs(JointVelocity); //xml actuator 수
-
-        //수집한 observation이 brain에서 요구하는 observation size보다 적을 경우 0으로 채우기
-        //brain.brainParameters.vectorObservationSize;
-        //while(info.vectorObservation.Count < brain.brainParameters.vectorObservationSize)
-        //{
-        //    AddVectorObs(0f);
-        //}
+        //JointRotations.ForEach(x => AddVectorObs(x)); //xml actuator 수 * 4
+        //AddVectorObs(JointVelocity); //xml actuator 수
         #endregion
 
-        //if(collectStateList.Count <= 0)
-        //{
-        //    #region pybullet
-        //    //more //8
-        //    float torso_height = Mathf.Abs(pelvis.transform.position.y - init_y);
-        //    AddVectorObs(torso_height);
+        #region pybullet
+        if (collectStateList.Count <= 0)
+        {
+            //more //8
+            float torso_height = Mathf.Abs(pelvis.transform.position.y - init_y);
+            AddVectorObs(torso_height);
 
-        //    float self_walk_target_theta = Mathf.Atan2(target.z - pelvis.transform.position.z, target.x - pelvis.transform.position.x);
-        //    float yaw = GetAngle(pelvis.transform.localEulerAngles.y) * Mathf.Deg2Rad;
-        //    float angle_to_target = self_walk_target_theta - yaw;
-        //    //print(self_walk_target_theta + ", " + yaw);
-        //    float sin = Mathf.Sin(angle_to_target);
-        //    float cos = Mathf.Cos(angle_to_target);
-        //    //print(sin + ", " + cos);
-        //    AddVectorObs(sin);
-        //    AddVectorObs(cos);
+            float self_walk_target_theta = Mathf.Atan2(target.z - pelvis.transform.position.z, target.x - pelvis.transform.position.x);
+            float yaw = GetAngle(pelvis.transform.localEulerAngles.y) * Mathf.Deg2Rad;
+            float angle_to_target = self_walk_target_theta - yaw;
+            //print(self_walk_target_theta + ", " + yaw);
+            float sin = Mathf.Sin(angle_to_target);
+            float cos = Mathf.Cos(angle_to_target);
+            //print(sin + ", " + cos);
+            AddVectorObs(sin);
+            AddVectorObs(cos);
 
-        //    AddVectorObs(pelvis.velocity * 0.3f);
+            AddVectorObs(pelvis.velocity * 0.3f);
 
-        //    float pitch = GetAngle(pelvis.transform.localEulerAngles.x) * Mathf.Deg2Rad;
-        //    float roll = GetAngle(pelvis.transform.localEulerAngles.z) * Mathf.Deg2Rad;
+            float pitch = GetAngle(pelvis.transform.localEulerAngles.x) * Mathf.Deg2Rad;
+            float roll = GetAngle(pelvis.transform.localEulerAngles.z) * Mathf.Deg2Rad;
 
-        //    float clampedAngleX = Mathf.Clamp(pitch, -5f, 5f);
-        //    //float clampedAngleY = Mathf.Clamp(yaw, -5f, 5f);
-        //    float clampedAngleZ = Mathf.Clamp(roll, -5f, 5f);
+            float clampedAngleX = Mathf.Clamp(pitch, -5f, 5f);
+            //float clampedAngleY = Mathf.Clamp(yaw, -5f, 5f);
+            float clampedAngleZ = Mathf.Clamp(roll, -5f, 5f);
 
-        //    AddVectorObs(clampedAngleX);
-        //    //AddVectorObs(clampedAngleY);
-        //    AddVectorObs(clampedAngleZ);
+            AddVectorObs(clampedAngleX);
+            //AddVectorObs(clampedAngleY);
+            AddVectorObs(clampedAngleZ);
 
-        //    CollectJointAngle(0); //joint 각도
-        //    CollectJointAngularVelocity(0); //joint 각속도
-        //    CollectJointCollisionSensors(0); //feet_contact, 지면 접촉 여부
-        //    #endregion
-        //}
+            CollectJointAngle(0); //joint 각도
+            CollectJointAngularVelocity(0); //joint 각속도
+            CollectJointCollisionSensors(0); //feet_contact, 지면 접촉 여부
+        }
+        #endregion
 
         #region CSONG
-        //foreach (var item in collectStateList)
-        //{
-        //    item.collectState(item.index);
-        //}
+        foreach (var item in collectStateList)
+        {
+            item.collectState(item.index);
+        }
 
-        ////print(info.vectorObservation.Count);
+        //print(info.vectorObservation.Count);
 
         int remain = brain.brainParameters.vectorObservationSize - info.vectorObservation.Count;
-        //int remain = 38 - info.vectorObservation.Count;
         for (int i = 0; i < remain; i++)
         {
             AddVectorObs(0f);

@@ -115,7 +115,8 @@ public class Client : MonoBehaviour
 
                 for (int i = 0; i < marathonSpawners.Length; i++)
                 {
-                    string xmlPath = string.Format("N/pybullet_ant_{0}", leg_count); //TODO : 해당 파일 없을 경우 처리
+                    //string xmlPath = string.Format("N/pybullet_ant_{0}", leg_count); //TODO : 해당 파일 없을 경우 처리
+                    string xmlPath = string.Format("N/unity_oai_ant_{0}", leg_count); //TODO : 해당 파일 없을 경우 처리
                     TextAsset asset = Resources.Load<TextAsset>(xmlPath);
                     marathonSpawners[i].Xml = asset;
                     marathonAgents[i].AgentReset();

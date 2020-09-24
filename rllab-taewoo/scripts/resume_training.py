@@ -17,9 +17,11 @@ from rllab.misc.instrument import to_local_command
 filename = str(uuid.uuid4())
 
 if __name__ == "__main__":
+    default_file = "D:/grew_svn/2020/GitHub/grewRL/rllab-taewoo/data/exp_2020_09_22_10_11_49_state_75_action_12_leg_6_to_leg_4/params.pkl"
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('file', type=str,
+    parser.add_argument('--file', type=str, default=default_file,
+    #parser.add_argument('file', type=str,
                         help='path to the snapshot file')
     parser.add_argument('--log_dir', type=str, default=None,
                         help='path to the new log directory')
@@ -43,7 +45,8 @@ if __name__ == "__main__":
             params['log_dir'] = args.log_dir
         params['resume_from'] = args.file
         command = to_local_command(params, script='scripts/run_experiment_lite.py')
-        print(command)
+        #print("params : ", params)
+        print("command : ", command)
         try:
             subprocess.call(command, shell=True, env=os.environ)
         except Exception as e:
