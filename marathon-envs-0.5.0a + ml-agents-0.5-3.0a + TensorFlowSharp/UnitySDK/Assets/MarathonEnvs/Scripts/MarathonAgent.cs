@@ -57,6 +57,8 @@ namespace MLAgents
         /**< \brief Function which returns true to request termination of episode*/
         protected Func<bool> TerminateFunction;
 
+        protected List<Func<bool>> Goals = new List<Func<bool>>();
+
         [Tooltip("Function which sets reward based on actions")]
         /**< \brief Function which sets reward based on actions*/
         protected Func<float> StepRewardFunction;
@@ -289,16 +291,16 @@ namespace MLAgents
 
             //if (!IsDone())
             {
-                //bool done = TerminateFunction();
+                bool done = TerminateFunction();
 
-                //if (done)
-                //{
-                //    Done();
-                //    //print("cumulativeReward = " + GetCumulativeReward());
-                //    //ResetReward();
-                //    SetReward(OnTerminateRewardValue);
-                //    //print("done reward = " + OnTerminateRewardValue);
-                //}
+                if (done)
+                {
+                    Done();
+                    //print("cumulativeReward = " + GetCumulativeReward());
+                    //ResetReward();
+                    SetReward(OnTerminateRewardValue);
+                    //print("done reward = " + OnTerminateRewardValue);
+                }
                 if (StepRewardFunction != null)
                 {
                     SetReward(StepRewardFunction());
@@ -810,6 +812,27 @@ namespace MLAgents
             {
                 AddVectorObs(collisionSensors[i].isCollision);
             }
+        }
+
+        public void Set_Goal(int index)
+        {
+            if (index >= Goals.Count)
+            {
+                print("Goal Out of Index");
+                return;
+            }
+
+            TerminateFunction = Goals[index];
+        }
+
+        protected virtual bool Goal1()
+        {
+            return false;
+        }
+
+        protected virtual bool Goal2()
+        {
+            return false;
         }
     }
 }

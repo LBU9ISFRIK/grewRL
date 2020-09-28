@@ -7,6 +7,12 @@ using MLAgents;
 
 public class OpenAIAntAgent : MarathonAgent
 {
+    private void Start()
+    {
+        StepRewardFunction = StepRewardAnt_PyBullet;
+        TerminateFunction = TerminateAnt_My;
+    }
+
     public Vector3 target;
     public override void AgentReset()
     {
@@ -56,10 +62,8 @@ public class OpenAIAntAgent : MarathonAgent
 
         //StepRewardFunction = StepRewardAnt101;
         //StepRewardFunction = StepRewardAnt_My;
-        StepRewardFunction = StepRewardAnt_PyBullet;
 
         //TerminateFunction = TerminateAnt;
-        TerminateFunction = TerminateAnt_My;
 
         ObservationsFunction = ObservationsDefault;
 
@@ -67,8 +71,9 @@ public class OpenAIAntAgent : MarathonAgent
         SetupBodyParts();
 
         init_y = BodyParts["pelvis"].transform.position.y;
-    }
 
+        Init_GoalList();
+    }
 
     public override void AgentOnDone()
     {
@@ -155,6 +160,7 @@ public class OpenAIAntAgent : MarathonAgent
     [SerializeField] List<Transform> torso = new List<Transform>();
     bool TerminateAnt_My()
     {
+        print("Goal My");
         bool done = false;
         //for (int i = 0; i < torso.Count; i++)
         //{
@@ -290,5 +296,26 @@ public class OpenAIAntAgent : MarathonAgent
         //print("reward : " + reward);
 
         return reward;
+    }
+
+    void Init_GoalList()
+    {
+        Goals.Clear();
+
+        Goals.Add(TerminateAnt_My);
+        Goals.Add(Goal1);
+        Goals.Add(Goal2);
+    }
+
+    protected override bool Goal1()
+    {
+        print("Goal1");
+        return false;
+    }
+
+    protected override bool Goal2()
+    {
+        print("Goal2");
+        return true;
     }
 }

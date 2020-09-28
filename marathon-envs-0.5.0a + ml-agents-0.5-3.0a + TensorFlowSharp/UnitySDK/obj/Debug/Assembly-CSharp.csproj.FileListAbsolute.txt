@@ -620,6 +620,3 @@ D:\grew_svn\2020\GitHub\grewRL\marathon-envs-0.5.0a + ml-agents-0.5-3.0a + Tenso
 D:\grew_svn\2020\GitHub\grewRL\marathon-envs-0.5.0a + ml-agents-0.5-3.0a + TensorFlowSharp\UnitySDK\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 D:\grew_svn\2020\GitHub\grewRL\marathon-envs-0.5.0a + ml-agents-0.5-3.0a + TensorFlowSharp\UnitySDK\obj\Debug\Assembly-CSharp.dll
 D:\grew_svn\2020\GitHub\grewRL\marathon-envs-0.5.0a + ml-agents-0.5-3.0a + TensorFlowSharp\UnitySDK\obj\Debug\Assembly-CSharp.pdb
-D:\grew_svn\2020\GitHub\grewRL\marathon-envs-0.5.0a + ml-agents-0.5-3.0a + TensorFlowSharp\UnitySDK\Temp\bin\Debug\nunit.framework.dll
-D:\grew_svn\2020\GitHub\grewRL\marathon-envs-0.5.0a + ml-agents-0.5-3.0a + TensorFlowSharp\UnitySDK\Temp\bin\Debug\nunit.framework.pdb
-D:\grew_svn\2020\GitHub\grewRL\marathon-envs-0.5.0a + ml-agents-0.5-3.0a + TensorFlowSharp\UnitySDK\Temp\bin\Debug\nunit.framework.xml

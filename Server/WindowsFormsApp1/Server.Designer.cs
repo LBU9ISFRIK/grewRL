@@ -48,6 +48,10 @@
             this.state_rotation_label = new System.Windows.Forms.Label();
             this.state_position_label = new System.Windows.Forms.Label();
             this.state_position_checkedListBox = new System.Windows.Forms.CheckedListBox();
+            this.textBoxAgent = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxGoal = new System.Windows.Forms.TextBox();
             this.domain_groupBox.SuspendLayout();
             this.state_groupBox.SuspendLayout();
             this.SuspendLayout();
@@ -70,7 +74,7 @@
             this.send_textBox.TabIndex = 2;
             this.send_textBox.Text = "6";
             this.send_textBox.TextChanged += new System.EventHandler(this.UpdateCheckedStateCount);
-            this.send_textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.send_textBox_KeyPress);
+            this.send_textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Only_Digit_KeyPress);
             // 
             // leg_count_label
             // 
@@ -305,11 +309,49 @@
             this.state_position_checkedListBox.UseTabStops = false;
             this.state_position_checkedListBox.SelectedIndexChanged += new System.EventHandler(this.UpdateCheckedStateCount);
             // 
+            // textBoxAgent
+            // 
+            this.textBoxAgent.Location = new System.Drawing.Point(384, 51);
+            this.textBoxAgent.Name = "textBoxAgent";
+            this.textBoxAgent.Size = new System.Drawing.Size(100, 21);
+            this.textBoxAgent.TabIndex = 5;
+            this.textBoxAgent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Only_Digit_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(341, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 12);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Agent";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(514, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(31, 12);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Goal";
+            // 
+            // textBoxGoal
+            // 
+            this.textBoxGoal.Location = new System.Drawing.Point(557, 51);
+            this.textBoxGoal.Name = "textBoxGoal";
+            this.textBoxGoal.Size = new System.Drawing.Size(100, 21);
+            this.textBoxGoal.TabIndex = 7;
+            this.textBoxGoal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Only_Digit_KeyPress);
+            // 
             // Server
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(326, 351);
+            this.ClientSize = new System.Drawing.Size(669, 351);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBoxGoal);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBoxAgent);
             this.Controls.Add(this.domain_groupBox);
             this.Controls.Add(this.send_button);
             this.Name = "Server";
@@ -321,6 +363,7 @@
             this.state_groupBox.ResumeLayout(false);
             this.state_groupBox.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -346,6 +389,10 @@
         private System.Windows.Forms.CheckedListBox state_rotation_checkedListBox;
         private System.Windows.Forms.CheckedListBox state_joint_collisionSensor_checkedListBox;
         private System.Windows.Forms.Label state_joint_collisionSensor_label;
+        private System.Windows.Forms.TextBox textBoxAgent;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxGoal;
     }
 }
 
