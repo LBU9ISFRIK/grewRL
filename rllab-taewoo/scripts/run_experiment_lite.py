@@ -27,8 +27,17 @@ def run_experiment(argv):
     #rand_id = str(uuid.uuid4())[:5]
     timestamp = now.strftime('%Y_%m_%d_%H_%M_%S')
 
+    leg = 4
+    leg2 = 4
+    state = 28
+    action = 8
     #default_exp_name = 'experiment_%s_%s' % (timestamp, rand_id)
-    default_exp_name = 'experiment_%s' % (timestamp)
+    default_exp_name = 'exp_%s_state_%s_action_%s_leg_%s_pybullet' % (timestamp, state, action, leg)
+    #default_exp_name = 'exp_%s_state_%s_action_%s_leg_%s_to_leg_%s' % (timestamp, state, action, leg, leg2)
+
+    default_resume_from = None
+    #default_resume_from = 'data/exp_2020_09_18_10_09_35_leg_4_state_75_action_12/params.pkl'
+    #default_resume_from = 'D:/grew_svn/2020/GitHub/grewRL/rllab-taewoo/data/exp_2020_09_18_10_09_35_leg_4_state_75_action_12/params.pkl'
 
     parser = argparse.ArgumentParser()
 
@@ -53,7 +62,7 @@ def run_experiment(argv):
                         help='Name of the parameter log file (in json).')
     parser.add_argument('--variant_log_file', type=str, default='variant.json',
                         help='Name of the variant log file (in json).')
-    parser.add_argument('--resume_from', type=str, default=None,
+    parser.add_argument('--resume_from', type=str, default=default_resume_from,
                         help='Name of the pickle file to resume experiment from.')
     parser.add_argument('--plot', type=ast.literal_eval, default=False,
                         help='Whether to plot the iteration results')
@@ -111,7 +120,9 @@ def run_experiment(argv):
     logger.push_prefix("[%s] " % args.exp_name)
 
     if args.resume_from is not None:
+        print("args.resume_from : ", args.resume_from)
         data = joblib.load(args.resume_from)
+        print("data : ", data)
         assert 'algo' in data
         algo = data['algo']
         algo.train()

@@ -127,6 +127,10 @@ class BatchPolopt(RLAlgorithm):
             self.start_worker()
             start_time = time.time()
             for itr in range(self.start_itr, self.n_itr):
+                if itr == 20:
+                    print("wait input key. cur iteration : ", itr)
+                    input()
+
                 itr_start_time = time.time()
                 with logger.prefix('itr #%d | ' % itr):
                     try:

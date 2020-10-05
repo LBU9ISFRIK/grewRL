@@ -91,6 +91,8 @@ public class Client : MonoBehaviour
                             ChangeXML(sp[i]);
                         else if (sp[i].Contains("StateType"))
                             ChangeState(sp[i]);
+                        else if (sp[i].Contains("Agent"))
+                            ChangeGoal(sp[i]);
                     }
                 }
             }
@@ -103,7 +105,7 @@ public class Client : MonoBehaviour
         }
     }
 
-    public void ChangeXML(string str)
+    public void ChangeXML(string str) //LegCount:6
     {
         string[] split = str.Split(':');
         foreach (var item in split)
@@ -115,8 +117,13 @@ public class Client : MonoBehaviour
 
                 for (int i = 0; i < marathonSpawners.Length; i++)
                 {
-                    string xmlPath = string.Format("N/pybullet_ant_{0}", leg_count); //TODO : 해당 파일 없을 경우 처리
+                    //string xmlPath = string.Format("N/pybullet_ant_{0}", leg_count); //TODO : 해당 파일 없을 경우 처리
+                    string xmlPath = string.Format("N/unity_oai_ant_{0}", leg_count); //TODO : 해당 파일 없을 경우 처리
                     TextAsset asset = Resources.Load<TextAsset>(xmlPath);
+
+                    if (marathonSpawners[i].Xml == asset)
+                        return;
+
                     marathonSpawners[i].Xml = asset;
                     marathonAgents[i].AgentReset();
                 }
@@ -186,6 +193,45 @@ public class Client : MonoBehaviour
                     agent.collectStateList.Add(new MarathonAgent.CollectStateStruct(agent.CollectJointCollisionSensors, 0));
                 }
             }
+        }
+    }
+
+    public void ChangeGoal(string str) //Agent:1,Goal:1
+    {
+        string[] split = str.Split(',');
+
+        string agent = split[0]; //Agent:1
+        string goal = split[1]; //Goal:1
+
+        List<int> agents_index = new List<int>();
+        int goal_index = 0;
+
+        string[] temp;
+
+        if (agent.Contains("All"))
+        {
+            for (int i = 0; i < marathonAgents.Length; i++)
+            {
+                agents_index.Add(i);
+            }
+        }
+        else
+        {
+            temp = agent.Split(':');
+            int agent_index;
+            if (int.TryParse(temp[1], out agent_index) && agent_index <= marathonAgents.Length)
+                agents_index.Add(agent_index);
+            else
+                return;
+        }
+
+        temp = goal.Split(':');
+        if (!int.TryParse(temp[1], out goal_index))
+            return;
+
+        for (int i = 0; i < agents_index.Count; i++)
+        {
+            marathonAgents[agents_index[i]].Set_Goal(goal_index);
         }
     }
 

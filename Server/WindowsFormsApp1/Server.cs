@@ -64,7 +64,7 @@ namespace WindowsFormsApp1
         {
             //int width = 10;
             string sendString = "LegCount:" + send_textBox.Text;
-            //sendString += "$StateType:position,torso_velocity";
+
             string stateString = "$StateType,";
             for (int i = 0; i < checkedListBoxes.Count; i++)
             {
@@ -77,8 +77,10 @@ namespace WindowsFormsApp1
                     }
                 }
             }
-
             sendString += stateString;
+
+            string GoalString = string.Format("$Agent:{0},Goal:{1}", textBoxAgent.Text, textBoxGoal.Text);
+            sendString += GoalString;
 
             sendData = Encoding.Default.GetBytes(sendString);
             udpServer.Send(sendData, sendData.Length, remoteEP);
@@ -118,7 +120,7 @@ namespace WindowsFormsApp1
         }
 
         //정수만 입력
-        private void send_textBox_KeyPress(object sender, KeyPressEventArgs e)
+        private void Only_Digit_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar != '\b')
                 e.Handled = !char.IsDigit(e.KeyChar);

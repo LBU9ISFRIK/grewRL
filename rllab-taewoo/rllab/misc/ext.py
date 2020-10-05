@@ -7,6 +7,7 @@ from collections import OrderedDict
 import numpy as np
 import operator
 from functools import reduce
+import lasagne
 
 sys.setrecursionlimit(50000)
 
@@ -189,7 +190,7 @@ def set_seed(seed):
     seed %= 4294967294
     global seed_
     seed_ = seed
-    import lasagne
+    
     random.seed(seed)
     np.random.seed(seed)
     lasagne.random.set_rng(np.random.RandomState(seed))
