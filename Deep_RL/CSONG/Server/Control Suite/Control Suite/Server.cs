@@ -22,6 +22,8 @@ namespace Control_Suite
         IPEndPoint remoteEP;
 
         byte[] data;
+        private Label lblCount = new Label();
+        
 
         public Server()
         {
@@ -37,7 +39,7 @@ namespace Control_Suite
             send += "$" + t_s_x.Text;
             send += "$" + t_s_y.Text;
             send += "$" + t_e_count.Text;
-            List<string> model_path = new List<string>(e_3d_model.Text.Split('\\')); ;
+            List<string> model_path = new List<string>(e_3d_model.Text.Split('\\'));
             string sourcePath = string.Join("/", model_path.ToArray());
             send += "$" + sourcePath;
 
@@ -138,7 +140,14 @@ namespace Control_Suite
 
             //label1.Text = "전송된 데이터 : ";
             //label1.Text += result + "\n";
-        }
+
+            //this.BackColor = Color.White;
+
+
+            //this.lblCount.Text = "Adding by codding";
+            //this.lblCount.Location = new System.Drawing.Point(1, 1);
+            //this.lblCount.ForeColor = Color.Red;
+    }
 
         private void label10_Click(object sender, EventArgs e)
         {
@@ -275,6 +284,59 @@ namespace Control_Suite
         }
 
         private void toolStripComboBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reset_button_Click(object sender, EventArgs e)
+        {
+            g_s_width.Text = "10";
+            g_s_height.Text = "10";
+            t_s_x.Text = "1000";
+            t_s_y.Text = "1000";
+            t_e_count.Text = "3";
+            e_3d_model.Text = @"C:\Unity\Unity_learning\whnp3v2jflkw-Tree\Tree\Tree.fbx"; 
+            
+            //obstacle_1 pos(x, y, z)
+            e1_pos_x.Text = "10";
+            e1_pos_y.Text = "2"; 
+            e1_pos_z.Text = "0";
+
+            //obstacle_1 vel(x, y, z)
+            e1_vel_x.Text = "0";
+            e1_vel_y.Text = "0";
+            e1_vel_z.Text = "0";
+
+            //obstacle_2 pos(x, y, z)
+            e2_pos_x.Text = "20";
+            e2_pos_y.Text = "2";
+            e2_pos_z.Text = "10";
+
+            //obstacle_2 vel(x, y, z)
+            e2_vel_x.Text = "0";
+            e2_vel_y.Text = "0";
+            e2_vel_z.Text = "0";
+
+            //obstacle_3 pos(x, y, z)
+            e3_pos_x.Text = "30";
+            e3_pos_y.Text = "2";
+            e3_pos_z.Text = "20";
+
+            //obstacle_3 vel(x, y, z)
+            e3_vel_x.Text = "0";
+            e3_vel_y.Text = "0";
+            e3_vel_z.Text = "0";
+
+
+
+            choose_goal.Text = "Num 1";
+
+            choose_reward.Text = "Num 1";
+            
+
+        }
+
+        private void t_e_count_TextChanged(object sender, EventArgs e)
         {
 
         }
