@@ -243,7 +243,7 @@
             this.t_e_count.Name = "t_e_count";
             this.t_e_count.Size = new System.Drawing.Size(547, 20);
             this.t_e_count.TabIndex = 50;
-            this.t_e_count.Text = "40";
+            this.t_e_count.Text = "5";
             this.t_e_count.TextChanged += new System.EventHandler(this.t_e_count_TextChanged);
             // 
             // label9
@@ -1352,7 +1352,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1547, 634);
+            this.ClientSize = new System.Drawing.Size(1564, 634);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox4);
