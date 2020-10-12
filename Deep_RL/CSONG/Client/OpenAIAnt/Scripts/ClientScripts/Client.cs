@@ -20,11 +20,15 @@ namespace ModelLoader
             public int sizeZ;
             public Vector3 terrainSize;
             public List<GameObject> newObject;
-            int number_of_obstackles;
+        
             GameObject modelRootGo;
-            float e1_pos_x, e1_pos_y, e1_pos_z, e1_vel_x, e1_vel_y, e1_vel_z;
-            float e2_pos_x, e2_pos_y, e2_pos_z, e2_vel_x, e2_vel_y, e2_vel_z;
-            float e3_pos_x, e3_pos_y, e3_pos_z, e3_vel_x, e3_vel_y, e3_vel_z;
+
+            List<string> str_pos_x = new List<string>();
+            List<string> str_pos_y = new List<string>();
+            List<string> str_pos_z = new List<string>();
+            List<string> str_vel_x = new List<string>();
+            List<string> str_vel_y = new List<string>();
+            List<string> str_vel_z = new List<string>();
 
             string objPath = string.Empty;
             string mtlPath = string.Empty;
@@ -64,7 +68,7 @@ namespace ModelLoader
                     /*if (modelRootGo != null)
                         Destroy(modelRootGo);*/
 
-                    for (int i = 1; i <= n; i++)
+                    for (int j = 0; j < n; j++)
                     {
                         
 
@@ -78,27 +82,14 @@ namespace ModelLoader
                                 modelRootGo = assetLoader.LoadFromMemory(fileData, objPath);
                                 modelRootGo.AddComponent<BoxCollider>();
                                 modelRootGo.AddComponent<Rigidbody>();
-                                modelRootGo.name = "Obstacle_" + i;
+                                modelRootGo.name = "Obstacle_" + (j + 1).ToString();
                                 gameObjects.Add(modelRootGo);
 
-                                switch (i)
-                                {
-                                    case 1:
-                                        gameObjects[0].transform.position = new Vector3(e1_pos_x, e1_pos_y, e1_pos_z);
-                                        gameObjects[0].GetComponent<Rigidbody>().velocity = new Vector3(e1_vel_x, e1_vel_y, e1_vel_z);
-                                        break;
-                                    case 2:
-                                        gameObjects[1].transform.position = new Vector3(e2_pos_x, e2_pos_y, e2_pos_z);
-                                        gameObjects[1].GetComponent<Rigidbody>().velocity = new Vector3(e2_vel_x, e2_vel_y, e2_vel_z);
-                                        break;
-                                    case 3:
-                                        gameObjects[2].transform.position = new Vector3(e3_pos_x, e3_pos_y, e3_pos_z);
-                                        gameObjects[2].GetComponent<Rigidbody>().velocity = new Vector3(e3_vel_x, e3_vel_y, e3_vel_z);
-                                        break;
-                                    default:
-                                        break;
-                                }                            
-                               
+                                gameObjects[j].transform.position = new Vector3(float.Parse(str_pos_x[j]), float.Parse(str_pos_y[j]), float.Parse(str_pos_z[j]));
+                                gameObjects[j].GetComponent<Rigidbody>().velocity = new Vector3(float.Parse(str_vel_x[j]), float.Parse(str_vel_y[j]), float.Parse(str_vel_z[j]));
+
+
+
                             }
                         }
                         catch (Exception e)
@@ -193,32 +184,47 @@ namespace ModelLoader
                             terrain.terrainData.size = terrainSize;
 
                             num = int.Parse(result[4]);   // number of entity
-
+                            //print(num);
                             string FolderOfEntity = result[5];  // location of input entity
                             objPath = result[5];
-                            // entity_1 pos(x,y,z) and vel(x,y,z)
-                            e1_pos_x = float.Parse(result[6]);
-                            e1_pos_y = float.Parse(result[7]);
-                            e1_pos_z = float.Parse(result[8]);
-                            e1_vel_x = float.Parse(result[9]);
-                            e1_vel_y = float.Parse(result[10]);
-                            e1_vel_z = float.Parse(result[11]);
 
-                            // entity_2 pos(x,y,z) and vel(x,y,z)
-                            e2_pos_x = float.Parse(result[12]);
-                            e2_pos_y = float.Parse(result[13]);
-                            e2_pos_z = float.Parse(result[14]);
-                            e2_vel_x = float.Parse(result[15]);
-                            e2_vel_y = float.Parse(result[16]);
-                            e2_vel_z = float.Parse(result[17]);
 
-                            // entity_3 pos(x,y,z) and vel(x,y,z)
-                            e3_pos_x = float.Parse(result[18]);
-                            e3_pos_y = float.Parse(result[19]);
-                            e3_pos_z = float.Parse(result[20]);
-                            e3_vel_x = float.Parse(result[21]);
-                            e3_vel_y = float.Parse(result[22]);
-                            e3_vel_z = float.Parse(result[23]);
+                            for (int i = 1; i <= num; i++)
+                            {
+                                str_pos_x.Add(result[5 + i]);
+                                str_pos_y.Add(result[5 + num + i]);
+                                str_pos_z.Add(result[5+ num * 2 + i]);
+                                str_vel_x.Add(result[5+ num * 3 + i]);
+                                str_vel_y.Add(result[5+ num * 4 + i]);
+                                str_vel_z.Add(result[5+ num * 5 + i]);
+                            }
+
+                            foreach (var item in str_pos_x)
+                            {
+                                print("Pos x = "+item);
+                            }
+                            foreach (var item in str_pos_y)
+                            {
+                                print("Pos y = " + item);
+                            }
+                            foreach (var item in str_pos_z)
+                            {
+                                print("Pos z = " + item);
+                            }
+
+                            foreach (var item in str_vel_x)
+                            {
+                                print("Vel x = " + item);
+                            }
+                            foreach (var item in str_vel_y)
+                            {
+                                print("Vel y = " + item);
+                            }
+                            foreach (var item in str_vel_z)
+                            {
+                                print("Vel z = " + item);
+                            }
+
 
                             for (int i = 0; i < n; i++)
                             {
@@ -228,15 +234,16 @@ namespace ModelLoader
 
                             n = num;
                             Entity();
-                            string key_num_of_goal = result[24];
+                            string key_num_of_goal = result[5 + num * 6 + 1];
 
-                            goal = result[25];
+                            goal = result[5 + num * 6 + 2];
 
-                            string key_num_of_reward = result[26];
+                            string key_num_of_reward = result[5 + num * 6 + 3];
 
-                            reward = result[27];
+                            reward = result[5 + num * 6 + 4];
 
-                            //print(goal);
+                            print("Goal = "+goal);
+                            print("Reward = " + reward);
 
 
                         }

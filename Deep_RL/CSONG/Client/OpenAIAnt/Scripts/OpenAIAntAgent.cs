@@ -14,12 +14,12 @@ namespace ModelLoader
         {
             public Client client;
             public string goal;
-            public string reward;
+            public string str_reward;
             public override void AgentReset()
             {
 
                 goal = client.goal;
-                reward = client.reward;
+                str_reward = client.reward;
 
                 base.AgentReset();
 
@@ -28,7 +28,7 @@ namespace ModelLoader
 
                 
 
-                switch (reward)
+                switch (str_reward)
                 {
                     case "Reward1":
                         StepRewardFunction = StepRewardAnt_1;
@@ -126,7 +126,6 @@ namespace ModelLoader
                 float effort = GetEffort();
                 var effortPenality = 0.6f * (float)effort;
                 var jointsAtLimitPenality = GetJointsAtLimitPenality() * 4;
-
                 var reward = velocity
                              - jointsAtLimitPenality
                              - effortPenality;
@@ -135,11 +134,9 @@ namespace ModelLoader
                     var hist = new[] { reward, velocity, -jointsAtLimitPenality, -effortPenality }.ToList();
                     Monitor.Log("rewardHist", hist.ToArray());
                 }
-
                 return reward;
             }
-            float StepRewardAnt_2()
-            {
+            float StepRewardAnt_2()            {
                 float velocity = GetVelocity();
                 float effort = GetEffort();
                 var effortPenality = 0.4f * (float)effort;
@@ -153,11 +150,9 @@ namespace ModelLoader
                     var hist = new[] { reward, velocity, -jointsAtLimitPenality, -effortPenality }.ToList();
                     Monitor.Log("rewardHist", hist.ToArray());
                 }
-
                 return reward;
             }
-            float StepRewardAnt_3()
-            {
+            float StepRewardAnt_3()            {
                 float velocity = GetVelocity();
                 float effort = GetEffort();
                 var effortPenality = 0.7f * (float)effort;
@@ -171,7 +166,6 @@ namespace ModelLoader
                     var hist = new[] { reward, velocity, -jointsAtLimitPenality, -effortPenality }.ToList();
                     Monitor.Log("rewardHist", hist.ToArray());
                 }
-
                 return reward;
             }
             float StepRewardAnt_4()
@@ -180,7 +174,6 @@ namespace ModelLoader
                 float effort = GetEffort();
                 var effortPenality = 0.5f * (float)effort;
                 var jointsAtLimitPenality = GetJointsAtLimitPenality() * 4;
-
                 var reward = velocity
                              - jointsAtLimitPenality
                              - effortPenality;
@@ -189,7 +182,6 @@ namespace ModelLoader
                     var hist = new[] { reward, velocity, -jointsAtLimitPenality, -effortPenality }.ToList();
                     Monitor.Log("rewardHist", hist.ToArray());
                 }
-
                 return reward;
             }
         }
