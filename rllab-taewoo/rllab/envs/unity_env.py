@@ -62,8 +62,7 @@ class UnityGymEnv(Env, Serializable):
         #print("env_name : ", env_name)
         #env = gym.envs.make(env_name)
 
-        env = UnityEnv(env_name, 0, use_visual=False)
-        #env = UnityEnv(env_name, 0, use_visual=False, multiagent=True) #수정함
+        env = UnityEnv(env_name, 0, use_visual=False, multiagent=False) #수정함
         self.env = env
         self.env_id = 1#env.spec.id
 

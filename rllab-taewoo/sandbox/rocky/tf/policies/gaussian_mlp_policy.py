@@ -54,9 +54,9 @@ class GaussianMLPPolicy(StochasticPolicy, LayersPowered, Serializable):
             - softplus: the std will be computed as log(1+exp(x))
         :return:
         """
-        print("-======================= gaussian policy")
-        print("env_spec : ", env_spec)
-        print("env_spec type: ", type(env_spec))
+        #print("-======================= gaussian policy")
+        #print("env_spec : ", env_spec)
+        #print("env_spec type: ", type(env_spec))
 
         Serializable.quick_init(self, locals())
         assert isinstance(env_spec.action_space, Box)
@@ -181,7 +181,13 @@ class GaussianMLPPolicy(StochasticPolicy, LayersPowered, Serializable):
         means, log_stds = self._f_dist(flat_obs) # _f_dist runs the network forward.
         rnd = np.random.normal(size=means.shape)
         actions = rnd * np.exp(log_stds) + means
-        return actions, dict(mean=means, log_std=log_stds)
+        #return actions, dict(mean=means, log_std=log_stds)
+
+        result = []
+        for x in range(len(means)):
+            result.append(dict(mean=means[x], log_std=log_stds[x]))
+        
+        return actions, result
 
     def get_reparam_action_sym(self, obs_var, action_var, old_dist_info_vars):
         """

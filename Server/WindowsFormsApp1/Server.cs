@@ -79,8 +79,8 @@ namespace WindowsFormsApp1
             }
             sendString += stateString;
 
-            string GoalString = string.Format("$Agent:{0},Goal:{1}", textBoxAgent.Text, textBoxGoal.Text);
-            sendString += GoalString;
+            //string GoalString = string.Format("$Agent:{0},Goal:{1}", textBoxAgent.Text, textBoxGoal.Text);
+            //sendString += GoalString;
 
             sendData = Encoding.Default.GetBytes(sendString);
             udpServer.Send(sendData, sendData.Length, remoteEP);

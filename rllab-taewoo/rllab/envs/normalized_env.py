@@ -89,7 +89,24 @@ class NormalizedEnv(ProxyEnv, Serializable):
             next_obs = self._apply_normalize_obs(next_obs)
         if self._normalize_reward:
             reward = self._apply_normalize_reward(reward)
-        return Step(next_obs, reward * self._scale_reward, done, **info)
+
+        #추가함
+        if(len(action.shape) == 1):
+            return Step(next_obs, reward * self._scale_reward, done, **info)
+        else:
+            agentCount = action.shape[0]
+            result0 = []
+            result1 = []
+            result2 = []
+            result3 = []
+            for i in range(agentCount):
+                result = Step(next_obs[i], reward[i] * self._scale_reward, done[i], **info)
+                result0.append(result[0])
+                result1.append(result[1])
+                result2.append(result[2])
+                result3.append(result[3])
+
+            return np.array(result0), np.array(result1), np.array(result2), np.array(result3)
 
     def __str__(self):
         return "Normalized: %s" % self._wrapped_env

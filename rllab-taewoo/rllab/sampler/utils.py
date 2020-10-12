@@ -1,6 +1,8 @@
 import numpy as np
 from rllab.misc import tensor_utils
 import time
+import itertools
+
 
 def rollout(env, agent, max_path_length=np.inf, animated=False, speedup=1, save_video=False, video_filename='sim_out.mp4', reset_arg=None):
     observations = []
@@ -12,18 +14,38 @@ def rollout(env, agent, max_path_length=np.inf, animated=False, speedup=1, save_
     o = env.reset(reset_args=reset_arg)
     agent.reset()
     path_length = 0
+
+    done = False
+
     if animated:
         env.render()
     while path_length < max_path_length:
-        a, agent_info = agent.get_action(o)
-        next_o, r, d, env_info = env.step(a)
-        observations.append(env.observation_space.flatten(o))
-        rewards.append(r)
-        actions.append(env.action_space.flatten(a))
-        agent_infos.append(agent_info)
-        env_infos.append(env_info)
+        if env.wrapped_env.wrapped_env.env._multiagent: #추가 코드
+            a, agent_info = agent.get_actions(o) 
+            next_o, r, d, env_info = env.step(a)
+
+            for x in range(len(o)):
+                observations.append(o[x])
+                rewards.append(r[x])
+                actions.append(a[x])
+                agent_infos.append(agent_info[x])
+                env_infos.append(env_info[x])
+
+            done = d.all()
+        else: #기존 코드
+            a, agent_info = agent.get_action(o)
+            next_o, r, d, env_info = env.step(a)
+
+            observations.append(env.observation_space.flatten(o))
+            rewards.append(r)
+            actions.append(env.action_space.flatten(a))
+            agent_infos.append(agent_info)
+            env_infos.append(env_info)
+            
+            done = d
+        
         path_length += 1
-        if d: # and not animated:  # TODO testing
+        if done: # and not animated:  # TODO testing
             break
         o = next_o
         if animated:

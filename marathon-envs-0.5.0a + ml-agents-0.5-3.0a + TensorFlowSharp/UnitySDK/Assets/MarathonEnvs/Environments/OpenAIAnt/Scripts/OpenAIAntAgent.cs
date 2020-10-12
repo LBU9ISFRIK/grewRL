@@ -10,9 +10,11 @@ public class OpenAIAntAgent : MarathonAgent
     private void Start()
     {
         StepRewardFunction = StepRewardAnt_PyBullet;
-        TerminateFunction = TerminateAnt_My;
+        //TerminateFunction = TerminateAnt_My;
+        TerminateFunction = Goal1;
     }
 
+    public string terminateFunctionName;
     public Vector3 target;
     public override void AgentReset()
     {
@@ -85,53 +87,53 @@ public class OpenAIAntAgent : MarathonAgent
     {
         var pelvis = BodyParts["pelvis"];
         #region origin
-        //AddVectorObs(pelvis.velocity); //3
-        //AddVectorObs(pelvis.transform.forward); // gyroscope //3
-        //AddVectorObs(pelvis.transform.up); //3
+        AddVectorObs(pelvis.velocity); //3
+        AddVectorObs(pelvis.transform.forward); // gyroscope //3
+        AddVectorObs(pelvis.transform.up); //3
 
-        ////AddVectorObs(SensorIsInTouch); //xml 센서 수
+        //AddVectorObs(SensorIsInTouch); //xml 센서 수
 
-        //for (int i = 0; i < collisionSensors.Count; i++)
-        //    AddVectorObs(collisionSensors[i].isCollision);
+        for (int i = 0; i < collisionSensors.Count; i++)
+            AddVectorObs(collisionSensors[i].isCollision);
 
-        //JointRotations.ForEach(x => AddVectorObs(x)); //xml actuator 수 * 4
-        //AddVectorObs(JointVelocity); //xml actuator 수
+        JointRotations.ForEach(x => AddVectorObs(x)); //xml actuator 수 * 4
+        AddVectorObs(JointVelocity); //xml actuator 수
         #endregion
 
         #region pybullet
-        if (collectStateList.Count <= 0)
-        {
-            //more //8
-            float torso_height = Mathf.Abs(pelvis.transform.position.y - init_y);
-            AddVectorObs(torso_height);
+        //if (collectStateList.Count <= 0)
+        //{
+        //    //more //8
+        //    float torso_height = Mathf.Abs(pelvis.transform.position.y - init_y);
+        //    AddVectorObs(torso_height);
 
-            float self_walk_target_theta = Mathf.Atan2(target.z - pelvis.transform.position.z, target.x - pelvis.transform.position.x);
-            float yaw = GetAngle(pelvis.transform.localEulerAngles.y) * Mathf.Deg2Rad;
-            float angle_to_target = self_walk_target_theta - yaw;
-            //print(self_walk_target_theta + ", " + yaw);
-            float sin = Mathf.Sin(angle_to_target);
-            float cos = Mathf.Cos(angle_to_target);
-            //print(sin + ", " + cos);
-            AddVectorObs(sin);
-            AddVectorObs(cos);
+        //    float self_walk_target_theta = Mathf.Atan2(target.z - pelvis.transform.position.z, target.x - pelvis.transform.position.x);
+        //    float yaw = GetAngle(pelvis.transform.localEulerAngles.y) * Mathf.Deg2Rad;
+        //    float angle_to_target = self_walk_target_theta - yaw;
+        //    //print(self_walk_target_theta + ", " + yaw);
+        //    float sin = Mathf.Sin(angle_to_target);
+        //    float cos = Mathf.Cos(angle_to_target);
+        //    //print(sin + ", " + cos);
+        //    AddVectorObs(sin);
+        //    AddVectorObs(cos);
 
-            AddVectorObs(pelvis.velocity * 0.3f);
+        //    AddVectorObs(pelvis.velocity * 0.3f);
 
-            float pitch = GetAngle(pelvis.transform.localEulerAngles.x) * Mathf.Deg2Rad;
-            float roll = GetAngle(pelvis.transform.localEulerAngles.z) * Mathf.Deg2Rad;
+        //    float pitch = GetAngle(pelvis.transform.localEulerAngles.x) * Mathf.Deg2Rad;
+        //    float roll = GetAngle(pelvis.transform.localEulerAngles.z) * Mathf.Deg2Rad;
 
-            float clampedAngleX = Mathf.Clamp(pitch, -5f, 5f);
-            //float clampedAngleY = Mathf.Clamp(yaw, -5f, 5f);
-            float clampedAngleZ = Mathf.Clamp(roll, -5f, 5f);
+        //    float clampedAngleX = Mathf.Clamp(pitch, -5f, 5f);
+        //    //float clampedAngleY = Mathf.Clamp(yaw, -5f, 5f);
+        //    float clampedAngleZ = Mathf.Clamp(roll, -5f, 5f);
 
-            AddVectorObs(clampedAngleX);
-            //AddVectorObs(clampedAngleY);
-            AddVectorObs(clampedAngleZ);
+        //    AddVectorObs(clampedAngleX);
+        //    //AddVectorObs(clampedAngleY);
+        //    AddVectorObs(clampedAngleZ);
 
-            CollectJointAngle(0); //joint 각도
-            CollectJointAngularVelocity(0); //joint 각속도
-            CollectJointCollisionSensors(0); //feet_contact, 지면 접촉 여부
-        }
+        //    CollectJointAngle(0); //joint 각도
+        //    CollectJointAngularVelocity(0); //joint 각속도
+        //    CollectJointCollisionSensors(0); //feet_contact, 지면 접촉 여부
+        //}
         #endregion
 
         #region CSONG
@@ -160,7 +162,7 @@ public class OpenAIAntAgent : MarathonAgent
     [SerializeField] List<Transform> torso = new List<Transform>();
     bool TerminateAnt_My()
     {
-        print("Goal My");
+        terminateFunctionName = "Goal My";
         bool done = false;
         //for (int i = 0; i < torso.Count; i++)
         //{
@@ -309,13 +311,13 @@ public class OpenAIAntAgent : MarathonAgent
 
     protected override bool Goal1()
     {
-        print("Goal1");
+        terminateFunctionName = "Goal1";
         return false;
     }
 
     protected override bool Goal2()
     {
-        print("Goal2");
+        terminateFunctionName = "Goal2";
         return true;
     }
 }

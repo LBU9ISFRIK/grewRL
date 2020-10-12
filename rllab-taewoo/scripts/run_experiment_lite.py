@@ -27,13 +27,14 @@ def run_experiment(argv):
     #rand_id = str(uuid.uuid4())[:5]
     timestamp = now.strftime('%Y_%m_%d_%H_%M_%S')
 
-    leg = 4
+    leg = 6
     leg2 = 4
-    state = 28
-    action = 8
+    state = 75
+    action = 12
+    agent = 3
     #default_exp_name = 'experiment_%s_%s' % (timestamp, rand_id)
-    default_exp_name = 'exp_%s_state_%s_action_%s_leg_%s_pybullet' % (timestamp, state, action, leg)
-    #default_exp_name = 'exp_%s_state_%s_action_%s_leg_%s_to_leg_%s' % (timestamp, state, action, leg, leg2)
+    #default_exp_name = 'exp_%s_agent_%s_state_%s_action_%s_leg_%s_pybullet' % (timestamp, agent, state, action, leg)
+    default_exp_name = 'exp_%s_agent_%s_state_%s_action_%s_leg_%s_to_leg_%s' % (timestamp, agent, state, action, leg, leg2)
 
     default_resume_from = None
     #default_resume_from = 'data/exp_2020_09_18_10_09_35_leg_4_state_75_action_12/params.pkl'
