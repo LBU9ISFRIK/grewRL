@@ -29,7 +29,15 @@ namespace Control_Suite
         private ListBox lstBox = new ListBox();
         public List<Label> labels = new List<Label>();
         public int P_X = 1, P_Y = 1, P_Z = 1, V_X = 1, V_Y = 1, V_Z = 1;
-        
+
+        List<Label> l_entity_count = new List<Label>();
+        List<Label> l_pos_x = new List<Label>();
+        List<Label> l_pos_y = new List<Label>();
+        List<Label> l_pos_z = new List<Label>();
+        List<Label> l_vel_x = new List<Label>();
+        List<Label> l_vel_y = new List<Label>();
+        List<Label> l_vel_z = new List<Label>();
+
         List<TextBox> l_txb_pos_x = new List<TextBox>();
         List<TextBox> l_txb_pos_y = new List<TextBox>();
         List<TextBox> l_txb_pos_z = new List<TextBox>();
@@ -52,120 +60,7 @@ namespace Control_Suite
 
 
             panel1.BackColor = Color.White;
-            for (int i = 0; i < int.Parse(t_e_count.Text); i++)
-            {
-                Label label_entity = new Label();
-                Label label_pos_X = new Label();
-                Label label_pos_Y = new Label();
-                Label label_pos_Z = new Label();
-                Label label_vel_X = new Label();
-                Label label_vel_Y = new Label();
-                Label label_vel_Z = new Label();
-
-                TextBox txb_pos_X = new TextBox();
-                TextBox txb_pos_Y = new TextBox();
-                TextBox txb_pos_Z = new TextBox();
-                TextBox txb_vel_X = new TextBox();
-                TextBox txb_vel_Y = new TextBox();
-                TextBox txb_vel_Z = new TextBox();
-
-                int height = 28;
-                int distance_1 = 100;
-                int shift_litle = 3;
-                int txb_width = 45;
-                int txb_height = 15;
-
-                label_entity.Text = "Entity  " + (i+1).ToString();
-                label_entity.Location = new Point(1, label_entity.Controls.Count + shift_litle + i* height);
-                //label_entity.BackColor = Color.Gray;
-                label_entity.Size = new Size(55, 16);
-
-                label_pos_X.Text = "Pos X";
-                label_pos_X.Location = new Point(80, label_pos_X.Controls.Count+ shift_litle + i * height);
-                //label_pos_X.BackColor = Color.Gray;
-                label_pos_X.Size = new Size(40, 16);
-
-                txb_pos_X.Text = "5";
-                txb_pos_X.Location = new Point(125, txb_pos_X.Controls.Count + i * height);
-                txb_pos_X.Size = new Size(txb_width, 14);
-                panel1.Controls.Add(txb_pos_X);
-                l_txb_pos_x.Add(txb_pos_X);
-
-                label_pos_Y.Text = "Pos Y";
-                label_pos_Y.Location = new Point(175, label_pos_Y.Controls.Count + shift_litle + i * height);
-                //label_pos_Y.BackColor = Color.Gray;
-                label_pos_Y.Size = new Size(40, 16);
-
-                txb_pos_Y.Text = "10";
-                txb_pos_Y.Location = new Point(220, txb_pos_Y.Controls.Count + i * height);
-                txb_pos_Y.Size = new Size(txb_width, 14);
-                panel1.Controls.Add(txb_pos_Y);
-                l_txb_pos_y.Add(txb_pos_Y);
-
-                label_pos_Z.Text = "Pos Z";
-                label_pos_Z.Location = new Point(270, label_pos_Z.Controls.Count + shift_litle + i * height);
-                //label_pos_Z.BackColor = Color.Gray;
-                label_pos_Z.Size = new Size(40, 16);
-
-                txb_pos_Z.Text = "15";
-                txb_pos_Z.Location = new Point(315, txb_pos_Z.Controls.Count + i * height);
-                txb_pos_Z.Size = new Size(txb_width, 14);
-                panel1.Controls.Add(txb_pos_Z);
-                l_txb_pos_z.Add(txb_pos_Z);
-
-                label_vel_X.Text = "Vel X";
-                label_vel_X.Location = new Point(390, label_vel_X.Controls.Count + shift_litle + i * height);
-                //label_vel_X.BackColor = Color.Gray;
-                label_vel_X.Size = new Size(40, 16);
-
-                txb_vel_X.Text = "1";
-                txb_vel_X.Location = new Point(430, txb_vel_X.Controls.Count + i * height);
-                txb_vel_X.Size = new Size(txb_width, 14);
-                panel1.Controls.Add(txb_vel_X);
-                l_txb_vel_x.Add(txb_vel_X);
-
-                label_vel_Y.Text = "Vel Y";
-                label_vel_Y.Location = new Point(480, label_vel_Y.Controls.Count + shift_litle + i * height);
-                //label_vel_Y.BackColor = Color.Gray;
-                label_vel_Y.Size = new Size(40, 16);
-
-                txb_vel_Y.Text = "1";
-                txb_vel_Y.Location = new Point(515, txb_vel_Y.Controls.Count + i * height);
-                txb_vel_Y.Size = new Size(txb_width, 14);
-                panel1.Controls.Add(txb_vel_Y);
-                l_txb_vel_y.Add(txb_vel_Y);
-
-                label_vel_Z.Text = "Vel Z";
-                label_vel_Z.Location = new Point(570, label_vel_Z.Controls.Count + shift_litle + i * height);
-                //label_vel_Z.BackColor = Color.Gray;
-                label_vel_Z.Size = new Size(40, 16);
-
-                txb_vel_Z.Text = "1";
-                txb_vel_Z.Location = new Point(610, txb_vel_Z.Controls.Count + i * height);
-                txb_vel_Z.Size = new Size(txb_width, 14);
-                panel1.Controls.Add(txb_vel_Z);
-                l_txb_vel_z.Add(txb_vel_Z);
-
-                panel1.Controls.Add(label_entity);
-                panel1.Controls.Add(label_pos_X);
-                panel1.Controls.Add(label_pos_Y);
-                panel1.Controls.Add(label_pos_Z);
-                panel1.Controls.Add(label_vel_X);
-                panel1.Controls.Add(label_vel_Y);
-                panel1.Controls.Add(label_vel_Z);
-
-                //AddNewTextBox_pos_X();
-                //AddNewTextBox_pos_Y();
-                //AddNewTextBox_pos_Z();
-                //AddNewTextBox_vel_X();
-                //AddNewTextBox_vel_Y();
-                //AddNewTextBox_vel_Z();
-
-            }
-
-
-
-
+            
 
         }
         
@@ -218,17 +113,6 @@ namespace Control_Suite
                
                 send += "$" + item.Text;
             }
-
-            //send += "$" + e1_pos_x.Text + "$" + e1_pos_y.Text + "$" + e1_pos_z.Text;  //obstacle_1 pos(x, y, z)
-            //send += "$" + e1_vel_x.Text + "$" + e1_vel_y.Text + "$" + e1_vel_z.Text;  //obstacle_1 vel(x, y, z)
-
-            //send += "$" + e2_pos_x.Text + "$" + e2_pos_y.Text + "$" + e2_pos_z.Text;  //obstacle_2 pos(x, y, z)
-            //send += "$" + e2_vel_x.Text + "$" + e2_vel_y.Text + "$" + e2_vel_z.Text;  //obstacle_2 vel(x, y, z)
-
-            //send += "$" + e3_pos_x.Text + "$" + e3_pos_y.Text + "$" + e3_pos_z.Text;  //obstacle_3 pos(x, y, z)
-            //send += "$" + e3_vel_x.Text + "$" + e3_vel_y.Text + "$" + e3_vel_z.Text;  //obstacle_3 vel(x, y, z)
-
-
 
             switch (choose_goal.Text)
             {
@@ -432,6 +316,340 @@ namespace Control_Suite
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void groupBox2_Enter_1(object sender, EventArgs e)
+        {
+
+        }
+        int height = 28;
+        int distance_1 = 100;
+        int shift_litle = 3;
+        int txb_width = 45;
+        int txb_height = 15;
+        Label label_entity;
+        Label label_pos_X;
+        Label label_pos_Y;
+        Label label_pos_Z;
+        Label label_vel_X;
+        Label label_vel_Y;
+        Label label_vel_Z;
+
+        TextBox txb_pos_X;
+        TextBox txb_pos_Y;
+        TextBox txb_pos_Z;
+        TextBox txb_vel_X;
+        TextBox txb_vel_Y;
+        TextBox txb_vel_Z;
+
+        private void set_t_e_c_Click(object sender, EventArgs e)
+        {
+            if (int.Parse(t_e_count.Text) > 0)
+            {
+                foreach (var item in l_entity_count)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_entity_count.Clear();
+
+                foreach (var item in l_pos_x)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_pos_x.Clear();
+                foreach (var item in l_pos_y)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_pos_y.Clear();
+                foreach (var item in l_pos_z)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_pos_z.Clear();
+                foreach (var item in l_vel_x)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_vel_x.Clear();
+
+                foreach (var item in l_vel_y)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_vel_y.Clear();
+
+                foreach (var item in l_vel_z)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_vel_z.Clear();
+
+                foreach (var item in l_txb_pos_x)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_txb_pos_x.Clear();
+                foreach (var item in l_txb_pos_y)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_txb_pos_y.Clear();
+                foreach (var item in l_txb_pos_z)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_txb_pos_z.Clear();
+                foreach (var item in l_txb_vel_x)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_txb_vel_x.Clear();
+
+                foreach (var item in l_txb_vel_y)
+                {
+                    panel1.Controls.Remove(item);
+                }
+
+                l_txb_vel_y.Clear();
+
+                foreach (var item in l_txb_vel_z)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_txb_vel_z.Clear();
+
+                for (int i = 0; i < int.Parse(t_e_count.Text); i++)
+                {
+                    label_entity = new Label();
+                    label_pos_X = new Label();
+                    label_pos_Y = new Label();
+                    label_pos_Z = new Label();
+                    label_vel_X = new Label();
+                    label_vel_Y = new Label();
+                    label_vel_Z = new Label();
+
+                    txb_pos_X = new TextBox();
+                    txb_pos_Y = new TextBox();
+                    txb_pos_Z = new TextBox();
+                    txb_vel_X = new TextBox();
+                    txb_vel_Y = new TextBox();
+                    txb_vel_Z = new TextBox();
+
+
+
+                    label_entity.Text = "Entity  " + (i + 1).ToString();
+                    label_entity.Location = new Point(1, label_entity.Controls.Count + shift_litle + i * height);
+                    //label_entity.BackColor = Color.Gray;
+                    label_entity.Size = new Size(55, 16);
+                    l_entity_count.Add(label_entity);
+                                       
+                    label_pos_X.Text = "Pos X";
+                    label_pos_X.Location = new Point(80, label_pos_X.Controls.Count + shift_litle + i * height);
+                    //label_pos_X.BackColor = Color.Gray;
+                    label_pos_X.Size = new Size(40, 16);
+                    l_pos_x.Add(label_pos_X);
+
+                    txb_pos_X.Text = (i * 10).ToString();
+                    txb_pos_X.Location = new Point(125, txb_pos_X.Controls.Count + i * height);
+                    txb_pos_X.Size = new Size(txb_width, 14);                    
+                    l_txb_pos_x.Add(txb_pos_X);
+
+                    label_pos_Y.Text = "Pos Y";
+                    label_pos_Y.Location = new Point(175, label_pos_Y.Controls.Count + shift_litle + i * height);
+                    //label_pos_Y.BackColor = Color.Gray;
+                    label_pos_Y.Size = new Size(40, 16);
+                    l_pos_y.Add(label_pos_Y);
+
+                    txb_pos_Y.Text = "3";
+                    txb_pos_Y.Location = new Point(220, txb_pos_Y.Controls.Count + i * height);
+                    txb_pos_Y.Size = new Size(txb_width, 14);
+                    l_txb_pos_y.Add(txb_pos_Y);
+
+                    label_pos_Z.Text = "Pos Z";
+                    label_pos_Z.Location = new Point(270, label_pos_Z.Controls.Count + shift_litle + i * height);
+                    //label_pos_Z.BackColor = Color.Gray;
+                    label_pos_Z.Size = new Size(40, 16);
+                    l_pos_z.Add(label_pos_Z);
+
+                    txb_pos_Z.Text = (i * 10).ToString();
+                    txb_pos_Z.Location = new Point(315, txb_pos_Z.Controls.Count + i * height);
+                    txb_pos_Z.Size = new Size(txb_width, 14);
+                    l_txb_pos_z.Add(txb_pos_Z);
+
+                    label_vel_X.Text = "Vel X";
+                    label_vel_X.Location = new Point(390, label_vel_X.Controls.Count + shift_litle + i * height);
+                    //label_vel_X.BackColor = Color.Gray;
+                    label_vel_X.Size = new Size(40, 16);
+                    l_vel_x.Add(label_vel_X);
+
+                    txb_vel_X.Text = "0";
+                    txb_vel_X.Location = new Point(430, txb_vel_X.Controls.Count + i * height);
+                    txb_vel_X.Size = new Size(txb_width, 14);
+                    l_txb_vel_x.Add(txb_vel_X);
+
+                    label_vel_Y.Text = "Vel Y";
+                    label_vel_Y.Location = new Point(480, label_vel_Y.Controls.Count + shift_litle + i * height);
+                    //label_vel_Y.BackColor = Color.Gray;
+                    label_vel_Y.Size = new Size(40, 16);
+                    l_vel_y.Add(label_vel_Y);
+
+                    txb_vel_Y.Text = "0";
+                    txb_vel_Y.Location = new Point(520, txb_vel_Y.Controls.Count + i * height);
+                    txb_vel_Y.Size = new Size(txb_width, 14);
+                    l_txb_vel_y.Add(txb_vel_Y);
+
+                    label_vel_Z.Text = "Vel Z";
+                    label_vel_Z.Location = new Point(570, label_vel_Z.Controls.Count + shift_litle + i * height);
+                    //label_vel_Z.BackColor = Color.Gray;
+                    label_vel_Z.Size = new Size(40, 16);
+                    l_vel_z.Add(label_vel_Z);
+
+                    txb_vel_Z.Text = "0";
+                    txb_vel_Z.Location = new Point(610, txb_vel_Z.Controls.Count + i * height);
+                    txb_vel_Z.Size = new Size(txb_width, 14);                    
+                    l_txb_vel_z.Add(txb_vel_Z);
+
+                    
+
+                }
+            }
+
+            else if (int.Parse(t_e_count.Text) == 0)
+            {
+                foreach (var item in l_entity_count)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_entity_count.Clear();
+
+                foreach (var item in l_pos_x)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_pos_x.Clear();
+                foreach (var item in l_pos_y)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_pos_y.Clear();
+                foreach (var item in l_pos_z)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_pos_z.Clear();
+                foreach (var item in l_vel_x)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_vel_x.Clear();
+
+                foreach (var item in l_vel_y)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_vel_y.Clear();
+
+                foreach (var item in l_vel_z)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_vel_z.Clear();
+
+                foreach (var item in l_txb_pos_x)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_txb_pos_x.Clear();
+                foreach (var item in l_txb_pos_y)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_txb_pos_y.Clear();
+                foreach (var item in l_txb_pos_z)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_txb_pos_z.Clear();
+                foreach (var item in l_txb_vel_x)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_txb_vel_x.Clear();
+
+                foreach (var item in l_txb_vel_y)
+                {
+                    panel1.Controls.Remove(item);
+                }
+
+                l_txb_vel_y.Clear();
+
+                foreach (var item in l_txb_vel_z)
+                {
+                    panel1.Controls.Remove(item);
+                }
+                l_txb_vel_z.Clear();
+
+            }
+
+            foreach (var item in l_entity_count)
+            {
+                panel1.Controls.Add(item);
+            }
+
+            foreach (var item in l_pos_x)
+            {
+                panel1.Controls.Add(item);
+            }
+            foreach (var item in l_pos_y)
+            {
+                panel1.Controls.Add(item);
+            }
+            foreach (var item in l_pos_z)
+            {
+                panel1.Controls.Add(item);
+            }
+            foreach (var item in l_vel_x)
+            {
+                panel1.Controls.Add(item);
+            }
+            foreach (var item in l_vel_y)
+            {
+                panel1.Controls.Add(item);
+            }
+            foreach (var item in l_vel_z)
+            {
+                panel1.Controls.Add(item);
+            }
+
+            foreach (var item in l_txb_pos_x)
+            {
+                panel1.Controls.Add(item);
+            }
+            foreach (var item in l_txb_pos_y)
+            {
+                panel1.Controls.Add(item);
+            }
+            foreach (var item in l_txb_pos_z)
+            {
+                panel1.Controls.Add(item);
+            }
+            foreach (var item in l_txb_vel_x)
+            {
+                panel1.Controls.Add(item);
+            }
+            foreach (var item in l_txb_vel_y)
+            {
+                panel1.Controls.Add(item);
+            }
+            foreach (var item in l_txb_vel_z)
+            {
+                panel1.Controls.Add(item);
+            }
+
+
+
 
         }
 

@@ -141,6 +141,7 @@
             this.label44 = new System.Windows.Forms.Label();
             this.menuStrip4 = new System.Windows.Forms.MenuStrip();
             this.choose_reward = new System.Windows.Forms.ToolStripComboBox();
+            this.set_t_e_c = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -196,6 +197,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.set_t_e_c);
             this.groupBox2.Controls.Add(this.panel1);
             this.groupBox2.Controls.Add(this.button5);
             this.groupBox2.Controls.Add(this.e_3d_model);
@@ -208,6 +210,7 @@
             this.groupBox2.TabIndex = 13;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Entities(Obstacles)";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter_1);
             // 
             // panel1
             // 
@@ -223,7 +226,7 @@
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(650, 43);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(33, 23);
+            this.button5.Size = new System.Drawing.Size(36, 23);
             this.button5.TabIndex = 52;
             this.button5.Text = "...";
             this.button5.UseVisualStyleBackColor = true;
@@ -241,7 +244,7 @@
             // 
             this.t_e_count.Location = new System.Drawing.Point(136, 19);
             this.t_e_count.Name = "t_e_count";
-            this.t_e_count.Size = new System.Drawing.Size(547, 20);
+            this.t_e_count.Size = new System.Drawing.Size(496, 20);
             this.t_e_count.TabIndex = 50;
             this.t_e_count.Text = "5";
             this.t_e_count.TextChanged += new System.EventHandler(this.t_e_count_TextChanged);
@@ -1346,13 +1349,24 @@
             this.choose_reward.Size = new System.Drawing.Size(340, 23);
             this.choose_reward.Text = "Num 1";
             // 
+            // set_t_e_c
+            // 
+            this.set_t_e_c.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.set_t_e_c.Location = new System.Drawing.Point(650, 17);
+            this.set_t_e_c.Name = "set_t_e_c";
+            this.set_t_e_c.Size = new System.Drawing.Size(36, 23);
+            this.set_t_e_c.TabIndex = 54;
+            this.set_t_e_c.Text = "Set";
+            this.set_t_e_c.UseVisualStyleBackColor = true;
+            this.set_t_e_c.Click += new System.EventHandler(this.set_t_e_c_Click);
+            // 
             // Server
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1564, 634);
+            this.ClientSize = new System.Drawing.Size(1598, 634);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox4);
@@ -1526,6 +1540,7 @@
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label60;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button set_t_e_c;
     }
 }
 
