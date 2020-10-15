@@ -68,13 +68,23 @@ class BaseSampler(Sampler):
 
         for idx, path in enumerate(paths):
             path_baselines = np.append(all_path_baselines[idx], 0)
-            deltas = path["rewards"] + \
+
+            #deltas = path["rewards"] + \
+            #         self.algo.discount * path_baselines[1:] - \
+            #         path_baselines[:-1]
+
+            #수정함
+            deltas = path["rewards"].flatten() + \
                      self.algo.discount * path_baselines[1:] - \
                      path_baselines[:-1]
+
             path["advantages"] = special.discount_cumsum(
                 deltas, self.algo.discount * self.algo.gae_lambda)
             baselines.append(path_baselines[:-1])
-            returns.append(path["returns"])
+            #returns.append(path["returns"])
+
+            #수정함
+            returns.append(path["returns"].flatten())
 
         ev = special.explained_variance_1d(
             np.concatenate(baselines),

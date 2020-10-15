@@ -7,6 +7,9 @@ def compile_function(inputs, outputs, log_name=None):
     print("compile_function")
     def run(*input_vals):
         sess = tf.get_default_session()
+        #print("inputs : ", inputs)
+        #print("input_vals : ", input_vals)
+
         return sess.run(outputs, feed_dict=dict(list(zip(inputs, input_vals))))
 
     return run

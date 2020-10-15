@@ -25,17 +25,23 @@ public class Client : MonoBehaviour
 
     public MarathonAcademy marathonAcademy;
     public Brain brain;
-    public MarathonSpawner[] marathonSpawners;
+
+    private MarathonSpawner[] marathonSpawners;
     private MarathonAgent[] marathonAgents;
 
     int leg_count;
 
     void Start()
     {
-        marathonAgents = new MarathonAgent[marathonSpawners.Length];
-        for (int i = 0; i < marathonAgents.Length; i++)
+        GameObject[] ants = GameObject.FindGameObjectsWithTag("agent");
+
+        marathonSpawners = new MarathonSpawner[ants.Length];
+        marathonAgents = new MarathonAgent[ants.Length];
+        
+        for (int i = 0; i < ants.Length; i++)
         {
-            marathonAgents[i] = marathonSpawners[i].GetComponent<MarathonAgent>();
+            marathonSpawners[i] = ants[i].GetComponent<MarathonSpawner>();
+            marathonAgents[i] = ants[i].GetComponent<MarathonAgent>();
         }
 
         remoteEP = new IPEndPoint(IPAddress.Parse(strIP), port);
@@ -117,8 +123,8 @@ public class Client : MonoBehaviour
 
                 for (int i = 0; i < marathonSpawners.Length; i++)
                 {
-                    //string xmlPath = string.Format("N/pybullet_ant_{0}", leg_count); //TODO : 해당 파일 없을 경우 처리
-                    string xmlPath = string.Format("N/unity_oai_ant_{0}", leg_count); //TODO : 해당 파일 없을 경우 처리
+                    string xmlPath = string.Format("N/pybullet_ant_{0}", leg_count); //TODO : 해당 파일 없을 경우 처리
+                    //string xmlPath = string.Format("N/unity_oai_ant_{0}", leg_count); //TODO : 해당 파일 없을 경우 처리
                     TextAsset asset = Resources.Load<TextAsset>(xmlPath);
 
                     if (marathonSpawners[i].Xml == asset)
@@ -231,6 +237,9 @@ public class Client : MonoBehaviour
 
         for (int i = 0; i < agents_index.Count; i++)
         {
+            if (agents_index[i] >= marathonAgents.Length)
+                break;
+
             marathonAgents[agents_index[i]].Set_Goal(goal_index);
         }
     }
