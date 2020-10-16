@@ -246,7 +246,7 @@
             this.t_e_count.Name = "t_e_count";
             this.t_e_count.Size = new System.Drawing.Size(496, 20);
             this.t_e_count.TabIndex = 50;
-            this.t_e_count.Text = "5";
+            this.t_e_count.Text = "3";
             this.t_e_count.TextChanged += new System.EventHandler(this.t_e_count_TextChanged);
             // 
             // label9

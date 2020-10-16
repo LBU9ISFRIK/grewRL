@@ -60,7 +60,8 @@ namespace Control_Suite
 
 
             panel1.BackColor = Color.White;
-            
+
+            Table_Entity();
 
         }
         
@@ -345,6 +346,11 @@ namespace Control_Suite
 
         private void set_t_e_c_Click(object sender, EventArgs e)
         {
+            Table_Entity();
+        }
+
+        public void Table_Entity()
+        {
             if (int.Parse(t_e_count.Text) > 0)
             {
                 foreach (var item in l_entity_count)
@@ -444,7 +450,7 @@ namespace Control_Suite
                     //label_entity.BackColor = Color.Gray;
                     label_entity.Size = new Size(55, 16);
                     l_entity_count.Add(label_entity);
-                                       
+
                     label_pos_X.Text = "Pos X";
                     label_pos_X.Location = new Point(80, label_pos_X.Controls.Count + shift_litle + i * height);
                     //label_pos_X.BackColor = Color.Gray;
@@ -453,7 +459,7 @@ namespace Control_Suite
 
                     txb_pos_X.Text = (i * 10).ToString();
                     txb_pos_X.Location = new Point(125, txb_pos_X.Controls.Count + i * height);
-                    txb_pos_X.Size = new Size(txb_width, 14);                    
+                    txb_pos_X.Size = new Size(txb_width, 14);
                     l_txb_pos_x.Add(txb_pos_X);
 
                     label_pos_Y.Text = "Pos Y";
@@ -508,10 +514,10 @@ namespace Control_Suite
 
                     txb_vel_Z.Text = "0";
                     txb_vel_Z.Location = new Point(610, txb_vel_Z.Controls.Count + i * height);
-                    txb_vel_Z.Size = new Size(txb_width, 14);                    
+                    txb_vel_Z.Size = new Size(txb_width, 14);
                     l_txb_vel_z.Add(txb_vel_Z);
 
-                    
+
 
                 }
             }
@@ -647,10 +653,6 @@ namespace Control_Suite
             {
                 panel1.Controls.Add(item);
             }
-
-
-
-
         }
 
         private void menuStrip9_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -672,36 +674,6 @@ namespace Control_Suite
             t_e_count.Text = "3";
             e_3d_model.Text = @"C:\Unity\Unity_learning\whnp3v2jflkw-Tree\Tree\Tree.fbx"; 
             
-            ////obstacle_1 pos(x, y, z)
-            //e1_pos_x.Text = "10";
-            //e1_pos_y.Text = "2"; 
-            //e1_pos_z.Text = "0";
-
-            ////obstacle_1 vel(x, y, z)
-            //e1_vel_x.Text = "0";
-            //e1_vel_y.Text = "0";
-            //e1_vel_z.Text = "0";
-
-            ////obstacle_2 pos(x, y, z)
-            //e2_pos_x.Text = "20";
-            //e2_pos_y.Text = "2";
-            //e2_pos_z.Text = "10";
-
-            ////obstacle_2 vel(x, y, z)
-            //e2_vel_x.Text = "0";
-            //e2_vel_y.Text = "0";
-            //e2_vel_z.Text = "0";
-
-            ////obstacle_3 pos(x, y, z)
-            //e3_pos_x.Text = "30";
-            //e3_pos_y.Text = "2";
-            //e3_pos_z.Text = "20";
-
-            ////obstacle_3 vel(x, y, z)
-            //e3_vel_x.Text = "0";
-            //e3_vel_y.Text = "0";
-            //e3_vel_z.Text = "0";
-
 
 
             choose_goal.Text = "Num 1";
