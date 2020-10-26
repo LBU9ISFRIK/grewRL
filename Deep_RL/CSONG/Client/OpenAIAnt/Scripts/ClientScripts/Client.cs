@@ -63,6 +63,7 @@ namespace ModelLoader
                 }
                 else
                 {
+                   
                     gameObjects = new List<GameObject>();
 
                     /*if (modelRootGo != null)
@@ -70,7 +71,9 @@ namespace ModelLoader
 
                     for (int j = 0; j < n; j++)
                     {
-                        
+                       
+
+
 
                         try
                         {
@@ -188,9 +191,15 @@ namespace ModelLoader
                             string FolderOfEntity = result[5];  // location of input entity
                             objPath = result[5];
 
-
+                            str_pos_x.Clear();
+                            str_pos_y.Clear();
+                            str_pos_z.Clear();
+                            str_vel_x.Clear();
+                            str_vel_y.Clear();
+                            str_vel_z.Clear();
                             for (int i = 1; i <= num; i++)
                             {
+                                
                                 str_pos_x.Add(result[5 + i]);
                                 str_pos_y.Add(result[5 + num + i]);
                                 str_pos_z.Add(result[5+ num * 2 + i]);
@@ -199,32 +208,7 @@ namespace ModelLoader
                                 str_vel_z.Add(result[5+ num * 5 + i]);
                             }
 
-                            foreach (var item in str_pos_x)
-                            {
-                                print("Pos x = "+item);
-                            }
-                            foreach (var item in str_pos_y)
-                            {
-                                print("Pos y = " + item);
-                            }
-                            foreach (var item in str_pos_z)
-                            {
-                                print("Pos z = " + item);
-                            }
-
-                            foreach (var item in str_vel_x)
-                            {
-                                print("Vel x = " + item);
-                            }
-                            foreach (var item in str_vel_y)
-                            {
-                                print("Vel y = " + item);
-                            }
-                            foreach (var item in str_vel_z)
-                            {
-                                print("Vel z = " + item);
-                            }
-
+                            
 
                             for (int i = 0; i < n; i++)
                             {
