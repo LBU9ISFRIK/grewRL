@@ -63,13 +63,10 @@ namespace Control_Suite
 
             Table_Entity();
 
-        }
-        
+        }        
 
         private void button3_Click(object sender, EventArgs e)
-        {
-            
-
+        {       
             string send = g_s_width.Text;
             send += "$"+g_s_height.Text;
             send += "$" + t_s_x.Text;
@@ -672,14 +669,13 @@ namespace Control_Suite
             t_s_x.Text = "1000";
             t_s_y.Text = "1000";
             t_e_count.Text = "3";
-            e_3d_model.Text = @"C:\Unity\Unity_learning\whnp3v2jflkw-Tree\Tree\Tree.fbx"; 
+            e_3d_model.Text = @"C:\Unity\Unity_learning\whnp3v2jflkw-Tree\Tree\Tree.fbx";       
             
-
-
             choose_goal.Text = "Num 1";
 
             choose_reward.Text = "Num 1";
-            
+            Table_Entity();
+
 
         }
 
